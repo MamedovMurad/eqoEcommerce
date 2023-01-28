@@ -140,6 +140,7 @@
             $('#type_form').val('0')
             $('#foto').val('')
         }
+        ;
        function formEditButton(id_) {
 
            $("#partner_form").attr('action','/partners/'+id_)
