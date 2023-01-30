@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('partners', 'App\Http\Controllers\PartnerController')->names('partner');
-
+Route::get('about', [App\Http\Controllers\back\AboutController::class,'index'])->name('about.index');
+Route::post('about', [App\Http\Controllers\back\AboutController::class,'update'])->name('about.update');
 Route::get('/', function () {
     return view('back.dashboard');
 });

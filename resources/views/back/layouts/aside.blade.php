@@ -60,6 +60,11 @@
                                 <i class="mdi mdi-puzzle-outline"></i> <span data-key="t-widgets">Partnyorlar</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{route('about.index')}}">
+                                <i class="mdi mdi-puzzle-outline"></i> <span data-key="t-widgets">Haqqımızda</span>
+                            </a>
+                        </li>
                         <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
