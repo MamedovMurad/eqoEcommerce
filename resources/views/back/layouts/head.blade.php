@@ -2,7 +2,7 @@
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 
 
-<!-- Mirrored from themesbrand.com/velzon/html/material/dashboard-projects.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Jan 2023 05:27:18 GMT -->
+
 <head>
 
     <meta charset="utf-8" />
@@ -24,5 +24,8 @@
     <!-- custom Css-->
     <link href="{{asset('admin-panel')}}/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 
-
+    <link rel="stylesheet" type="text/css" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </head>

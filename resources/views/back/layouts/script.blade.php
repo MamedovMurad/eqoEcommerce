@@ -16,3 +16,22 @@
  <script src="{{asset('admin-panel')}}/assets/js/app.js"></script>
 
  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+ @jquery
+
+ @toastr_js
+
+ @toastr_render
+
+ <script>
+
+     @if(count($errors) > 0)
+
+         @foreach($errors->all() as $error)
+
+             toastr.error("{{$error}}");
+
+         @endforeach
+
+     @endif
+
+ </script>
