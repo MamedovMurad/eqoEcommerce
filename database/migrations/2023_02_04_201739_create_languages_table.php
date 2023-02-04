@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('news_categories', function (Blueprint $table) {
+        Schema::create('languages', function (Blueprint $table) {
             $table->id();
-            $table->string('slug');
+            $table->string('name');
+            $table->string('code');
+            $table->integer('default');
             $table->enum('status',['1','0'])->default('1');
             $table->unsignedInteger('order')->nullable();
-            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_categories');
+        Schema::dropIfExists('languages');
     }
 };
