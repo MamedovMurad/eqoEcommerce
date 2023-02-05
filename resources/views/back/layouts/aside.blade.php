@@ -57,6 +57,11 @@
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                         <li class="nav-item">
+                            <a class="nav-link menu-link" href="/">
+                                <i class="mdi mdi-puzzle-outline"></i> <span data-key="t-widgets">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link menu-link" href="{{route('partner.index')}}">
                                 <i class="mdi mdi-puzzle-outline"></i> <span data-key="t-widgets">Partnyorlar</span>
                             </a>
@@ -67,14 +72,23 @@
                             </a>
                         </li>
                       
+                      
+                       
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
-                                <i class="mdi mdi-speedometer"></i> <span data-key="t-dashboards">Dashboards</span>
+                                <i class="mdi mdi-speedometer"></i> <span data-key="t-dashboards">Xəbərlər</span>
                             </a>
-
+                            <div class="collapse menu-dropdown" id="sidebarDashboards">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{route('news_category.index')}}" class="nav-link" data-key="t-analytics"> Xəbər kateqoriyası </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link" data-key="t-analytics"> Xəbərlər </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li> <!-- end Dashboard Menu -->
-                       
-
 
                     </ul>
                 </div>

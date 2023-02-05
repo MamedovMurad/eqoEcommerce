@@ -3,7 +3,12 @@
 namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\NewsCategoryRequest;
+use App\Models\NewsCategory;
 use Illuminate\Http\Request;
+use App\Services\FIle_download;
+use App\Models\Language;
+use App\Models\NewsCategoryTranslation;
 
 class NewsCategoryController extends Controller
 {
@@ -14,7 +19,7 @@ class NewsCategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('back.news_category.index',['news_category'=>NewsCategory::paginate(10), 'languages'=>Language::where('status', 1)->get()]);
     }
 
     /**
@@ -33,9 +38,18 @@ class NewsCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NewsCategoryRequest $request)
     {
-        //
+
+        $requests=$request->all();
+       
+        $photo = new FIle_download();
+        $checkedPhoto =  $photo->download($request)??false;
+        if ($checkedPhoto){
+            $requests['image']=$checkedPhoto;
+        }
+        NewsCategory::create($requests);
+        return redirect()->back();
     }
 
     /**
@@ -46,7 +60,7 @@ class NewsCategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        return NewsCategory::find($id);
     }
 
     /**
@@ -67,9 +81,13 @@ class NewsCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(NewsCategoryRequest $request, $id)
     {
-        //
+        $news_category = NewsCategory::find($id);
+     
+        $photo = new FIle_download();
+        $news_category->image=$photo->download($request);
+        return redirect()->back();
     }
 
     /**
@@ -80,6 +98,7 @@ class NewsCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        NewsCategory::where('id',$id)->delete();
+        return redirect()->back();
     }
 }
