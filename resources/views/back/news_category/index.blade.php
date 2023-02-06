@@ -29,7 +29,7 @@
                                     <th scope="col">ID</th>
                                     <th scope="col">Başlıq</th>
                                     <th scope="col">Foto</th>
-                                    <th scope="col">Tipi</th>
+                                    <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                 </tr>
                                 </thead>
@@ -38,9 +38,9 @@
                                     <tr>
 
                                         <th scope="row"><a href="#" class="fw-semibold">#{{$partner->id}}</a></th>
-                                        <td>{{$partner->title}}</td>
+                                        <td>{{$partner->translate('az')->title}}</td>
                                         <td> <img src="{{$partner->image}}" width="50" height="50"> </td>
-                                        <td>{{$partner->type?' Partnyor ':'Referans'}}</td>
+                                        <td>{{$partner->status==1?' Aktiv ':'Passiv'}}</td>
                                         <td>
                                             <div class="flex-wrap gap-3 hstack">
 
@@ -48,7 +48,7 @@
                                                             data-bs-toggle="modal" data-bs-target="#partners_modal"
                                                             class="btn btn-ghost-info waves-effect waves-light shadow-none" onclick="formEditButton('{{$partner->id}}')"><i class="ri-edit-2-fill"></i></button>
 
-                                            <form action="{{route('partner.destroy',$partner->id)}}" method="post">
+                                            <form action="{{route('news_category.destroy',$partner->id)}}" method="post">
                                                 @method('delete')
                                                 @csrf
                                                 <button type="submit" class="from_edit btn btn-ghost-danger waves-effect waves-light shadow-none"><i class="ri-delete-bin-line"></i></button>
@@ -126,8 +126,8 @@
                                         </div>
                                     </div>
                                     <div class="form-check form-check-secondary mb-3">
-                                        <input type="hidden" name="status" value=0>
-                                        <input name="status" type="checkbox" value=1>
+                                        <input  type="hidden" name="status" value=0>
+                                        <input id="checkbox" name="status" type="checkbox" value=1>
                                         <label class="form-check-label" for="formCheck7">
                                            Status
                                         </label>
@@ -191,8 +191,14 @@
                    $('#titleInput').val(data.slug)
                    $('#update_photo').css({'width':'80px','height':'80px'})
                    $('#update_photo').attr('src','/'+data.image)
-                   $('#type_form').val(data.type)
-                
+                 
+                  
+            if($('#checkbox').val(data.status)== true){
+                console.log('sd');
+                $("#checkbox").prop('checked', true);
+            }else{
+                $("#checkbox").prop('checked', false);
+            }
                    $('.titlesParent').html('')
                    $('.nav-link').removeClass( 'active');
           

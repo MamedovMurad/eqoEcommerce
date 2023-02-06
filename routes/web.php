@@ -33,9 +33,9 @@ Route::post('/admin-post', [AuthController:: class, 'login_post'])->name('log_in
     Route::post('about', [App\Http\Controllers\back\AboutController::class,'update'])->name('about.update');
     Route::resource('news-categories', 'App\Http\Controllers\back\NewsCategoryController')->names('news_category');
 
-    Route::get('/', function () {
+   /*  Route::get('/', function () {
         return view('back.dashboard');
-    })->name('dashboard');
+    })->name('dashboard'); */
     Route::get('/logout', [AuthController:: class, 'logout'])->name('logout');
 
 /* }); */

@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\NewsCategoryRequest;
-use App\Models\NewsCategory;
+use App\Http\Requests\NewsRequest;
+use App\Models\News;
 use Illuminate\Http\Request;
 use App\Services\FIle_download;
 use App\Models\Language;
-use App\Models\NewsCategoryTranslation;
 
-class NewsCategoryController extends Controller
+
+class NewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class NewsCategoryController extends Controller
      */
     public function index()
     {
-        return view('back.news_category.index',['news_category'=>NewsCategory::paginate(10), 'languages'=>Language::where('status', 1)->get()]);
+        return view('back.news.index',['news'=>News::paginate(10), 'languages'=>Language::where('status', 1)->get()]);
     }
 
   
@@ -29,7 +29,7 @@ class NewsCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NewsCategoryRequest $request)
+    public function store(NewsRequest $request)
     {
 
         $requests=$request->all();
@@ -39,7 +39,7 @@ class NewsCategoryController extends Controller
         if ($checkedPhoto){
             $requests['image']=$checkedPhoto;
         }
-        NewsCategory::create($requests);
+        News::create($requests);
         return redirect()->back();
     }
 
@@ -51,7 +51,7 @@ class NewsCategoryController extends Controller
      */
     public function show($id)
     {
-        return NewsCategory::find($id);
+        return News::find($id);
     }
 
   
@@ -63,9 +63,9 @@ class NewsCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(NewsCategoryRequest $request, $id)
+    public function update(NewsRequest $request, $id)
     {
-        $news_category = NewsCategory::find($id);
+        $news = News::find($id);
      
           $requests=$request->all();
        
@@ -74,7 +74,7 @@ class NewsCategoryController extends Controller
         if ($checkedPhoto){
             $requests['image']=$checkedPhoto;
         }
-        $news_category->update($requests);
+        $news->update($requests);
         return redirect()->back();
         
     }
@@ -87,7 +87,7 @@ class NewsCategoryController extends Controller
      */
     public function destroy($id)
     {
-        NewsCategory::where('id',$id)->delete();
+        News::where('id',$id)->delete();
         return redirect()->back();
     }
 }
