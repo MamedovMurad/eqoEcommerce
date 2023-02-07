@@ -1,7 +1,7 @@
 @extends('back.layouts.master')
 @section('style')
 <style>
-    .titlesParent input:not(:first-child){
+    .titlesParent .title__input:not(:first-child){
         display: none;
      
     }
@@ -34,7 +34,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($news_category as $partner)
+                                @foreach($news as $partner)
                                     <tr>
 
                                         <th scope="row"><a href="#" class="fw-semibold">#{{$partner->id}}</a></th>
@@ -48,7 +48,7 @@
                                                             data-bs-toggle="modal" data-bs-target="#partners_modal"
                                                             class="btn btn-ghost-info waves-effect waves-light shadow-none" onclick="formEditButton('{{$partner->id}}')"><i class="ri-edit-2-fill"></i></button>
 
-                                            <form action="{{route('news_category.destroy',$partner->id)}}" method="post">
+                                            <form action="{{route('news.destroy',$partner->id)}}" method="post">
                                                 @method('delete')
                                                 @csrf
                                                 <button type="submit" class="from_edit btn btn-ghost-danger waves-effect waves-light shadow-none"><i class="ri-delete-bin-line"></i></button>
@@ -76,11 +76,11 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="partners_modalLabel">Xəbər kateqoriyası Əlavə Et</h5>
+                                <h5 class="modal-title" id="partners_modalLabel">Xəbər Əlavə Et</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{route('news_category.store')}}" id="partner_form" method="post"  enctype='multipart/form-data'>
+                                <form action="{{route('news.store')}}" id="partner_form" method="post"  enctype='multipart/form-data'>
                                    @csrf
                               
                                    <div class="row mb-3">
@@ -96,7 +96,12 @@
                                         </header>
                                         <div class="titlesParent">
                                         @foreach ($languages as $item )
-                                         <input type="text" class="form-control title__input" id="titleInput{{$item->code}}" placeholder="title {{$item->code}}" name="title:{{$item->code}}">   
+                                        <div id="titleInput{{$item->code}}" class="title__input">
+                                        
+                                            <input type="text" class="form-control "  placeholder="title {{$item->code}}" name="title:{{$item->code}}">  
+                                          <textarea name=""  class="form-control mt-3"  cols="30" rows="10">{{$item->code}}</textarea>
+                                       
+                                        </div>
                                          @endforeach
                                         </div>
                                      </div>
@@ -178,12 +183,12 @@
         ;
        function formEditButton(id_) {
 
-           $("#partner_form").attr('action','http://127.0.0.1:8000/news-categories/'+id_)
+           $("#partner_form").attr('action','http://127.0.0.1:8000/news/'+id_)
            $("#partner_form").append( `<input type="hidden" name="_method" value="PUT" id="hidden__">`)
-           $('#partners_modalLabel').text('Xəbər kateqoriyasını yenilə')
+           $('#partners_modalLabel').text('Xəbəri yenilə')
            $.ajax({
                type: "GET",
-               url: 'news-categories/'+id_,
+               url: 'news/'+id_,
                 // serializes the form's elements.
                success: function(data)
                {
@@ -193,12 +198,7 @@
                    $('#update_photo').attr('src','/'+data.image)
                  
                   
-            if($('#checkbox').val(data.status)== true){
-                console.log('sd');
-                $("#checkbox").prop('checked', true);
-            }else{
-                $("#checkbox").prop('checked', false);
-            }
+           
                    $('.titlesParent').html('')
                    $('.nav-link').removeClass( 'active');
           

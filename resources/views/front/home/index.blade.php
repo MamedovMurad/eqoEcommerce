@@ -1,1497 +1,1349 @@
 
 @extends('front.layouts.index')
-
 @section('content')
-
-        <div class="site-wrapper-reveal">
-
-            <!-- Hero Slider Area Start -->
-            <div class="hero-area hero-slider-five">
-                <div class="single-hero-slider-nine">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="hero-content-wrap">
-                                    <div class="hero-text-five mt-lg-5">
-                                        <h6 class=" mb-30 small-title">
-                                            CHAIR <br> COLLECTION <br> 2022
-                                        </h6>
-                                        <h1>Chanel Chair <br> High Quality Walnut</h1>
-
-                                        <div class="button-box section-space--mt_60">
-                                            <a href="shop-4-column.html" class="text-btn-normal font-weight--reguler font-lg-p">Discover Collection <i class="icon-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="inner-images">
-                                        <div class="image-one">
-                                            <img src="assets/images/hero/home-full-width-2.webp" class="img-fluid" width="515" height="515" alt="Image">
-                                        </div>
-                                        <div class="image-two">
-                                            <img src="assets/images/hero/home-full-width-4.webp" class="img-fluid" width="370" height="480" alt="Image">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="single-hero-slider-nine">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="hero-content-wrap">
-                                    <div class="hero-text-five mt-lg-5">
-                                        <h6 class=" mb-30 small-title">
-                                            CHAIR <br> COLLECTION <br> 2022
-                                        </h6>
-                                        <h1>Flower Vase <br>  Made Of Ceramic</h1>
-
-                                        <div class="button-box section-space--mt_60">
-                                            <a href="shop-4-column.html" class="text-btn-normal font-weight--reguler font-lg-p">Discover Collection <i class="icon-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="inner-images">
-                                        <div class="image-one">
-                                            <img src="assets/images/hero/home-full-width-2.webp" class="img-fluid" width="515" height="515" alt="Image">
-                                        </div>
-                                        <div class="image-two">
-                                            <img src="assets/images/hero/home-full-width-1.webp" class="img-fluid" width="597" height="407" alt="Image">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-            <!-- Hero Slider Area End -->
-
-            <!-- Shopping Support Area Start -->
-            <div class="shopping-support-area border-bottom section-space--pt_60">
+    <!--slider area start-->
+    <section class="slider_section slider_two mb-50">
+        <div class="slider_area owl-carousel">
+            <div class="single_slider d-flex align-items-center" data-bgimg="{{ asset('themeplate') }}/assets/img/slider/slider10.jpg">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-shopping-support">
-                                <div class="icon">
-                                    <i class="icon-phone-wave"></i>
-                                </div>
-                                <div class="content">
-                                    <h6>Support 24/7</h6>
-                                    <p>We are committed toserving you 24/7</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-shopping-support">
-                                <div class="icon">
-                                    <i class="icon-truck"></i>
-                                </div>
-                                <div class="content">
-                                    <h6>Free Shipping</h6>
-                                    <p>Free shipping international transport</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6s">
-                            <div class="single-shopping-support">
-                                <div class="icon">
-                                    <i class="icon-tab"></i>
-                                </div>
-                                <div class="content">
-                                    <h6>Free Returns</h6>
-                                    <p>You can return the item within 30 days.</p>
-                                </div>
+                        <div class="col-12">
+                            <div class="slider_content">
+                                <h2>Hight Quality</h2>
+                                <h1>The Parts Of Shock Absorbers Assembly</h1>
+                                <a class="button" href="shop.html">shopping now</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Shopping Support Area End -->
 
-            <!-- Category Section Start -->
-            <div class="category-section">
+            </div>
+            <div class="single_slider d-flex align-items-center" data-bgimg="{{ asset('themeplate') }}/assets/img/slider/slider11.jpg">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-6">
-                            <div class="single-category-item">
-                                <a href="#" class="category-item-thum">
-                                    <img src="assets/images/product/10-300x300.webp" width="240" height="240" alt="">
-                                </a>
-                                <div class="content">
-                                    <h6 class="title">Chair Furniture</h6>
-                                    <span class="number">11 Items</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-6">
-                            <div class="single-category-item">
-                                <a href="#" class="category-item-thum">
-                                    <img src="assets/images/product/11-300x300.webp" width="240" height="240" alt="">
-                                </a>
-                                <div class="content">
-                                    <h6 class="title">Table Furniture</h6>
-                                    <span class="number">13 Items</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-6">
-                            <div class="single-category-item">
-                                <a href="#" class="category-item-thum">
-                                    <img src="assets/images/product/12-300x300.webp" width="240" height="240" alt="">
-                                </a>
-                                <div class="content">
-                                    <h6 class="title">Accessories</h6>
-                                    <span class="number">06 Items</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-6">
-                            <div class="single-category-item">
-                                <a href="#" class="category-item-thum">
-                                    <img src="assets/images/product/13-300x300.webp" width="240" height="240" alt="">
-                                </a>
-                                <div class="content">
-                                    <h6 class="title">Home Decor</h6>
-                                    <span class="number">22 Items</span>
-                                </div>
+                        <div class="col-12">
+                            <div class="slider_content">
+                                <h2>Special Offer</h2>
+                                <h1>Get &250 In Total Discount On A New Set Of Tries</h1>
+                                <a class="button" href="shop.html">shopping now</a>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-            <!-- Category Section End -->
-
-
-            <!-- Product Area Start -->
-            <div class="product-wrapper section-space--ptb_120">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-sm-12">
-                            <div class="section-title text-center mb-30">
-                                <h2>New Products</h2>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <ul class="nav product-tab-menu justify-content-center" role="tablist">
-                                <li class="tab__item nav-item active">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#tab_list_01" role="tab">All Products</a>
-                                </li>
-                                <li class="tab__item nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab_list_02" role="tab">Accessories</a>
-                                </li>
-                                <li class="tab__item nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab_list_03" role="tab">Chair</a>
-                                </li>
-                                <li class="tab__item nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab_list_04" role="tab">Decoration</a>
-                                </li>
-                                <li class="tab__item nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab_list_05" role="tab">Furniture</a>
-                                </li>
-                                <li class="tab__item nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab_list_08" role="tab">Table</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <div class="tab-content mt-30">
-                        <div class="tab-pane fade show active" id="tab_list_01">
-                            <!-- product-slider-active -->
-                            <div class="product-slider-active">
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_1-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            <span class="ribbon out-of-stock ">
-                                            Out Of Stock
-                                        </span>
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Teapot with black tea</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£40.00</span> - <span class="old-price"> £635.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_2-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Simple Chair</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£70.00</span> - <span class="old-price"> £95.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_3-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Smooth Disk</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£46.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_4-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            <span class="ribbon onsale">
-                                        -14%
-                                        </span>
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Wooden Flowerpot</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£40.00</span> - <span class="old-price"> £635.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_5-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Living room & Bedroom lights</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£60.00</span> - <span class="old-price"> £69.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_6-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Gray lamp</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£80.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_7-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Decoration wood</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£50.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_8-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Teapot with black tea</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£20.00</span> - <span class="old-price"> £135.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tab_list_02">
-                            <div class="product-slider-active">
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_1-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            <span class="ribbon out-of-stock ">
-                                            Out Of Stock
-                                        </span>
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Teapot with black tea</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£40.00</span> - <span class="old-price"> £635.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_8-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Teapot with black tea</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£20.00</span> - <span class="old-price"> £135.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab_list_03">
-                            <!-- product-slider-active -->
-                            <div class="product-slider-active">
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_2-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Simple Chair</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£70.00</span> - <span class="old-price"> £95.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_3-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Smooth Disk</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£46.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_4-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            <span class="ribbon onsale">
-                                        -14%
-                                        </span>
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Wooden Flowerpot</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£40.00</span> - <span class="old-price"> £635.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_5-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Living room & Bedroom lights</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£60.00</span> - <span class="old-price"> £69.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_6-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Gray lamp</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£80.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_7-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Decoration wood</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£50.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab_list_04">
-                            <!-- product-slider-active -->
-                            <div class="product-slider-active">
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_3-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Smooth Disk</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£46.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_4-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            <span class="ribbon onsale">
-                                        -14%
-                                        </span>
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Wooden Flowerpot</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£40.00</span> - <span class="old-price"> £635.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_5-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Living room & Bedroom lights</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£60.00</span> - <span class="old-price"> £69.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_6-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Gray lamp</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£80.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_7-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Decoration wood</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£50.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab_list_05">
-                            <!-- product-slider-active -->
-                            <div class="product-slider-active">
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_4-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            <span class="ribbon onsale">
-                                        -14%
-                                        </span>
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Wooden Flowerpot</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£40.00</span> - <span class="old-price"> £635.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_5-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Living room & Bedroom lights</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£60.00</span> - <span class="old-price"> £69.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_6-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Gray lamp</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£80.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_7-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Decoration wood</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£50.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab_list_08">
-                            <!-- product-slider-active -->
-                            <div class="product-slider-active">
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_8-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Teapot with black tea</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£20.00</span> - <span class="old-price"> £135.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_5-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Living room & Bedroom lights</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£60.00</span> - <span class="old-price"> £69.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_6-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Gray lamp</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£80.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-                                <!-- Single Product Item Start -->
-                                <div class="single-product-item text-center">
-                                    <div class="products-images">
-                                        <a href="product-details.html" class="product-thumbnail">
-                                            <img src="assets/images/product/1_7-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                            <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                            <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h6 class="prodect-title"><a href="product-details.html">Decoration wood</a></h6>
-                                        <div class="prodect-price">
-                                            <span class="new-price">£50.00</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Product Item End -->
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-            <!-- Product Area End -->
-
-            <!-- Offer Colection Start -->
-            <div class="offer-colection-area container-fluid">
-                <div class="section-space--ptb_120 bg-img" data-bg="assets/images/bg/h1-countdown.webp">
-                    <div class="row">
-                        <div class="container">
-                            <div class="row ps-md-0 ps-3 pe-md-0 pe-3">
-                                <div class="col-lg-7 col-md-7">
-                                    <div class="colection-info-wrap">
-                                        <div class="section-title mb-30">
-                                            <h2 class="section-title--one ">Deco Collection <span class="text-red">50% OFF</span></h2>
-                                        </div>
-
-                                        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced for those. Sections 1.10.32 and 1.10.33 from “de Finibus Bonorum et Malorum</p>
-
-                                        <div class="timer text-center section-space--mt_60">
-                                            <!-- countdown start -->
-                                            <div class="countdown-deals counter-style--one" data-countdown="2022/12/01"></div>
-                                            <!-- countdown end -->
-                                        </div>
-
-                                        <div class="button-box section-space--mt_60">
-                                            <a href="shop-4-column.html" class="btn--md btn--black btn">Shop now <i class="icon-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Offer Colection End -->
-
-            <!-- Product Area Start -->
-            <div class="product-wrapper section-space--ptb_120">
+            <div class="single_slider d-flex align-items-center" data-bgimg="{{ asset('themeplate') }}/assets/img/slider/slider12.jpg">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section-title text-center mb-30">
-                                <h3 class="section-title">Best selling</h3>
+                        <div class="col-12">
+                            <div class="slider_content">
+                                <h2>HP Racer Skutex</h2>
+                                <h1>Feel The Greatest Oil Power With Best One Oil</h1>
+                                <a class="button" href="shop.html">shopping now</a>
                             </div>
                         </div>
-                        <div class="col-lg-12">
-                            <ul class="nav product-tab-menu justify-content-center" role="tablist">
-                                <li class="tab__item nav-item active">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#tab_list_11" role="tab">All Products</a>
-                                </li>
-                                <li class="tab__item nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab_list_12" role="tab">Accessories</a>
-                                </li>
-                                <li class="tab__item nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab_list_13" role="tab">Chair</a>
-                                </li>
-                                <li class="tab__item nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab_list_14" role="tab">Decoration</a>
-                                </li>
-                            </ul>
-                        </div>
-
                     </div>
+                </div>
 
-                    <div class="tab-content mt-30">
-                        <div class="tab-pane fade show active" id="tab_list_11">
-                            <!-- product-slider-active -->
-                            <div class="row">
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_1-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
+            </div>
+        </div>
+    </section>
+    <!--slider area end-->
 
-                                                <span class="ribbon out-of-stock ">
-                                                Out Of Stock
-                                            </span>
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Teapot with black tea</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£40.00</span> - <span class="old-price"> £635.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_2-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Teapot with black tea</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£20.00</span> - <span class="old-price"> £135.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_3-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Smooth Disk</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£46.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_4-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                                <span class="ribbon onsale">
-                                            -14%
-                                            </span>
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Wooden Flowerpot</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£40.00</span> - <span class="old-price"> £635.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_5-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Living room & Bedroom lights</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£60.00</span> - <span class="old-price"> £69.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_6-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Gray lamp</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£80.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_7-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Decoration wood</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£50.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_8-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Teapot with black tea</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£20.00</span> - <span class="old-price"> £135.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
+    <!--banner area start-->
+    <section class="banner_area mb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="banner_container">
+                        <div class="single_banner">
+                            <div class="banner_thumb">
+                                <a href="shop.html"><img src="{{ asset('themeplate') }}/assets/img/bg/banner3.jpg" alt=""></a>
+                                <div class="banner_text">
+                                    <h3>Car Audio</h3>
+                                    <h2>Super Natural Sound</h2>
+                                    <a href="shop.html">Shop Now</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab_list_12">
-                            <div class="row ">
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_1-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                                <span class="ribbon out-of-stock ">
-                                                Out Of Stock
-                                            </span>
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Teapot with black tea</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£40.00</span> - <span class="old-price"> £635.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_9-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Teapot with black tea</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£20.00</span> - <span class="old-price"> £135.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
+                        <div class="single_banner">
+                            <div class="banner_thumb">
+                                <a href="shop.html"><img src="{{ asset('themeplate') }}/assets/img/bg/banner4.jpg" alt=""></a>
+                                <div class="banner_text">
+                                    <h3>All - New</h3>
+                                    <h2>Perfomance Parts</h2>
+                                    <a href="shop.html">Shop Now</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="tab_list_13">
-                            <div class="row ">
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_2-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Simple Chair</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£40.00</span> - <span class="old-price"> £45.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/10-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Gray nancy chair</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£70.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/11-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Wooden chair</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£80.00</span> - <span class="old-price"> £195.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab_list_14">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_1-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                                <span class="ribbon out-of-stock ">
-                                                Out Of Stock
-                                            </span>
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Teapot with black tea</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£40.00</span> - <span class="old-price"> £635.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_2-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Simple Chair</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£70.00</span> - <span class="old-price"> £95.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_3-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Smooth Disk</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£46.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_4-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                                <span class="ribbon onsale">
-                                            -14%
-                                            </span>
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Wooden Flowerpot</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£40.00</span> - <span class="old-price"> £635.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_5-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Living room & Bedroom lights</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£60.00</span> - <span class="old-price"> £69.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_6-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Gray lamp</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£80.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_7-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Decoration wood</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£50.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="assets/images/product/1_8-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                            </a>
-                                            <div class="product-actions">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#prodect-modal"><i class="p-icon icon-plus"></i><span class="tool-tip">Quick View</span></a>
-                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                <a href="wishlist.html"><i class="p-icon icon-heart"></i> <span class="tool-tip">Browse Wishlist</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html">Teapot with black tea</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£20.00</span> - <span class="old-price"> £135.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                </div>
-
-                            </div>
-                        </div>
-
                     </div>
-
                 </div>
             </div>
-            <!-- Product Area End -->
+        </div>
+    </section>
+    <!--banner area end-->
 
+    <!--product area start-->
+    <section class="product_area mb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2><span> <strong>Special</strong>Offers</span></h2>
+                    </div>
+                    <div class="product_carousel product_column4 owl-carousel">
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product19.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product11.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
 
-            <!-- Our Blog Area Start -->
-            <div class="our-blog-area section-space--pb_90">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            <div class="section-title text-center mb-20">
-                                <h2 class="section-title">Latest from our blog</h2>
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="regular_price">$180.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                                <div class="quantity_progress">
+                                    <p class="product_sold">Sold: <span>199</span></p>
+                                    <p class="product_available">Availabe: <span>9800</span></p>
+                                </div>
+                                <div class="bar_percent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Bose SoundLink Bluetooth Speaker Ear Headphones </a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product12.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product13.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-47%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="current_price">$160.00</span>
+                                        <span class="old_price">$3200.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                                <div class="quantity_progress">
+                                    <p class="product_sold">Sold: <span>199</span></p>
+                                    <p class="product_available">Availabe: <span>9800</span></p>
+                                </div>
+                                <div class="bar_percent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Variable with soldout blanditiis product for title</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product15.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product14.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="regular_price">$150.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                                <div class="quantity_progress">
+                                    <p class="product_sold">Sold: <span>199</span></p>
+                                    <p class="product_available">Availabe: <span>9800</span></p>
+                                </div>
+                                <div class="bar_percent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Lorem ipsum dolor sit amet, consectetur</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product16.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product17.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="regular_price">$175.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                                <div class="quantity_progress">
+                                    <p class="product_sold">Sold: <span>199</span></p>
+                                    <p class="product_available">Availabe: <span>9800</span></p>
+                                </div>
+                                <div class="bar_percent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product18.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product1.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-07%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="current_price">$180.00</span>
+                                        <span class="old_price">$420.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                                <div class="quantity_progress">
+                                    <p class="product_sold">Sold: <span>199</span></p>
+                                    <p class="product_available">Availabe: <span>9800</span></p>
+                                </div>
+                                <div class="bar_percent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Accusantium dolorem the Security Camera</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product2.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product3.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="current_price">$140.00</span>
+                                        <span class="old_price">$320.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                                <div class="quantity_progress">
+                                    <p class="product_sold">Sold: <span>199</span></p>
+                                    <p class="product_available">Availabe: <span>9800</span></p>
+                                </div>
+                                <div class="bar_percent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Koss Porta Pro On Ear Bluetooth Speaker Headphones </a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product4.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product5.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="regular_price">$160.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                                <div class="quantity_progress">
+                                    <p class="product_sold">Sold: <span>199</span></p>
+                                    <p class="product_available">Availabe: <span>9800</span></p>
+                                </div>
+                                <div class="bar_percent">
+
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                            <!-- Single Blog Item Start -->
-                            <div class="single-blog-item mt-30">
-                                <div class="blog-thumbnail-box">
-                                    <a href="#" class="thumbnail">
-                                        <img src="assets/images/blog/8-570x370.webp" width="366" height="238" class="img-fluid" alt="Blog Images">
-                                    </a>
-                                    <a href="#" class="btn-blog"> Read more </a>
-                                </div>
-                                <div class="blog-contents">
-                                    <h6 class="blog-title"><a href="#">Interior design is the art, the interior designer is the artist.</a></h6>
-                                    <div class="meta-tag-box">
-                                        <div class="meta date"><span>October 15, 2022</span></div>
-                                        <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                        <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                                    </div>
-                                </div>
-                            </div><!-- Single Blog Item End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6  col-sm-6 col-12">
-                            <!-- Single Blog Item Start -->
-                            <div class="single-blog-item mt-30">
-                                <div class="blog-thumbnail-box">
-                                    <a href="#" class="thumbnail">
-                                        <img src="assets/images/blog/9-570x370.webp" width="366" height="238" class="img-fluid" alt="Blog Images">
-                                    </a>
-                                    <a href="#" class="btn-blog"> Read more </a>
-                                </div>
-                                <div class="blog-contents">
-                                    <h6 class="blog-title"><a href="#">Decorate your home with the most modern furnishings.</a></h6>
-                                    <div class="meta-tag-box">
-                                        <div class="meta date"><span>October 02, 2022</span></div>
-                                        <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                        <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                                    </div>
-                                </div>
-                            </div><!-- Single Blog Item End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                            <!-- Single Blog Item Start -->
-                            <div class="single-blog-item mt-30">
-                                <div class="blog-thumbnail-box">
-                                    <a href="#" class="thumbnail">
-                                        <img src="assets/images/blog/10-570x370.webp" width="366" height="238" class="img-fluid" alt="Blog Images">
-                                    </a>
-                                    <a href="#" class="btn-blog"> Read more </a>
-                                </div>
-                                <div class="blog-contents">
-                                    <h6 class="blog-title"><a href="#">Spatialize with the decorations of the Helendo store.</a></h6>
-                                    <div class="meta-tag-box">
-                                        <div class="meta date"><span>October 18, 2022</span></div>
-                                        <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                        <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                                    </div>
-                                </div>
-                            </div><!-- Single Blog Item End -->
-                        </div>
-                    </div>
-
                 </div>
             </div>
-            <!-- Our Blog Area End -->
-
 
         </div>
-@endsection
+    </section>
+    <!--product area end-->
+
+    <!--featured categories area start-->
+    <section class="featured_categories featured_c_four  mb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2><span> <strong>Featured</strong>Categories</span></h2>
+                    </div>
+                    <div class="product_carousel featured_four  product_column5 owl-carousel">
+                        <div class="single_featured">
+                            <div class="featured_thumb">
+                                <a href="#"><img src="{{ asset('themeplate') }}/assets/img/featured/featured.jpg" alt=""></a>
+                            </div>
+                            <div class="featured_content">
+                                <h3 class="product_name"><a href="#">Body Parts</a></h3>
+                                <div class="sub_featured">
+                                    <ul>
+                                        <li><a href="#">Handbag</a></li>
+                                        <li><a href="#">Accessories</a></li>
+                                        <li><a href="#">Clothing</a></li>
+                                        <li><a href="#">Shoes</a></li>
+                                    </ul>
+                                </div>
+                                <a class="view_more" href="#">shop now</a>
+                            </div>
+                        </div>
+                        <div class="single_featured">
+                            <div class="featured_thumb">
+                                <a href="#"><img src="{{ asset('themeplate') }}/assets/img/featured/featured1.jpg" alt=""></a>
+                            </div>
+                            <div class="featured_content">
+                                <h3 class="product_name"><a href="#">Brake Parts</a></h3>
+                                <div class="sub_featured">
+                                    <ul>
+                                        <li><a href="#">Handbag</a></li>
+                                        <li><a href="#">Accessories</a></li>
+                                        <li><a href="#">Clothing</a></li>
+                                        <li><a href="#">Shoes</a></li>
+                                    </ul>
+                                </div>
+                                <a class="view_more" href="#">shop now</a>
+                            </div>
+                        </div>
+                        <div class="single_featured">
+                            <div class="featured_thumb">
+                                <a href="#"><img src="{{ asset('themeplate') }}/assets/img/featured/featured2.jpg" alt=""></a>
+                            </div>
+                            <div class="featured_content">
+                                <h3 class="product_name"><a href="#">Lighting</a></h3>
+                                <div class="sub_featured">
+                                    <ul>
+                                        <li><a href="#">Handbag</a></li>
+                                        <li><a href="#">Accessories</a></li>
+                                        <li><a href="#">Clothing</a></li>
+                                        <li><a href="#">Shoes</a></li>
+                                    </ul>
+                                </div>
+                                <a class="view_more" href="#">shop now</a>
+                            </div>
+                        </div>
+                        <div class="single_featured">
+                            <div class="featured_thumb">
+                                <a href="#"><img src="{{ asset('themeplate') }}/assets/img/featured/featured3.jpg" alt=""></a>
+                            </div>
+                            <div class="featured_content">
+                                <h3 class="product_name"><a href="#">Moto Oil</a></h3>
+                                <div class="sub_featured">
+                                    <ul>
+                                        <li><a href="#">Handbag</a></li>
+                                        <li><a href="#">Accessories</a></li>
+                                        <li><a href="#">Clothing</a></li>
+                                        <li><a href="#">Shoes</a></li>
+                                    </ul>
+                                </div>
+                                <a class="view_more" href="#">shop now</a>
+                            </div>
+                        </div>
+                        <div class="single_featured">
+                            <div class="featured_thumb">
+                                <a href="#"><img src="{{ asset('themeplate') }}/assets/img/featured/featured4.jpg" alt=""></a>
+                            </div>
+                            <div class="featured_content">
+                                <h3 class="product_name"><a href="#">Turbo Systems</a></h3>
+                                <div class="sub_featured">
+                                    <ul>
+                                        <li><a href="#">Handbag</a></li>
+                                        <li><a href="#">Accessories</a></li>
+                                        <li><a href="#">Clothing</a></li>
+                                        <li><a href="#">Shoes</a></li>
+                                    </ul>
+                                </div>
+                                <a class="view_more" href="#">shop now</a>
+                            </div>
+                        </div>
+                        <div class="single_featured">
+                            <div class="featured_thumb">
+                                <a href="#"><img src="{{ asset('themeplate') }}/assets/img/featured/featured5.jpg" alt=""></a>
+                            </div>
+                            <div class="featured_content">
+                                <h3 class="product_name"><a href="#">Wheels & Tires</a></h3>
+                                <div class="sub_featured">
+                                    <ul>
+                                        <li><a href="#">Handbag</a></li>
+                                        <li><a href="#">Accessories</a></li>
+                                        <li><a href="#">Clothing</a></li>
+                                        <li><a href="#">Shoes</a></li>
+                                    </ul>
+                                </div>
+                                <a class="view_more" href="#">shop now</a>
+                            </div>
+                        </div>
+                        <div class="single_featured">
+                            <div class="featured_thumb">
+                                <a href="#"><img src="{{ asset('themeplate') }}/assets/img/featured/featured3.jpg" alt=""></a>
+                            </div>
+                            <div class="featured_content">
+                                <h3 class="product_name"><a href="#">Body Parts</a></h3>
+                                <div class="sub_featured">
+                                    <ul>
+                                        <li><a href="#">Handbag</a></li>
+                                        <li><a href="#">Accessories</a></li>
+                                        <li><a href="#">Clothing</a></li>
+                                        <li><a href="#">Shoes</a></li>
+                                    </ul>
+                                </div>
+                                <a class="view_more" href="#">shop now</a>
+                            </div>
+                        </div>
+                        <div class="single_featured">
+                            <div class="featured_thumb">
+                                <a href="#"><img src="{{ asset('themeplate') }}/assets/img/featured/featured5.jpg" alt=""></a>
+                            </div>
+                            <div class="featured_content">
+                                <h3 class="product_name"><a href="#">Brake Parts</a></h3>
+                                <div class="sub_featured">
+                                    <ul>
+                                        <li><a href="#">Handbag</a></li>
+                                        <li><a href="#">Accessories</a></li>
+                                        <li><a href="#">Clothing</a></li>
+                                        <li><a href="#">Shoes</a></li>
+                                    </ul>
+                                </div>
+                                <a class="view_more" href="#">shop now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--featured categories area end-->
+
+    <!--product area start-->
+    <section class="product_area mb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2><span> <strong>Our</strong>Products</span></h2>
+                    </div>
+                    <div class="product_carousel product_column5 owl-carousel">
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product5.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product6.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="regular_price">$180.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Bose SoundLink Bluetooth Speaker</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product7.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product8.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-47%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="current_price">$160.00</span>
+                                        <span class="old_price">$3200.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Variable with soldout product for title</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product9.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product10.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="regular_price">$150.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Lorem ipsum dolor sit amet, consectetur</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product16.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product17.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="regular_price">$175.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product18.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product1.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-07%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="current_price">$180.00</span>
+                                        <span class="old_price">$420.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Accusantium dolorem Security Camera</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product2.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product3.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="current_price">$140.00</span>
+                                        <span class="old_price">$320.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Koss Porta Pro On Ear Headphones </a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product4.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product5.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="regular_price">$160.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--product area end-->
+
+    
+
+    <!--product area start-->
+    <section class="product_area mb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2><span> <strong>Best</strong>Sellers</span></h2>
+                    </div>
+                    <div class="product_carousel product_column5 owl-carousel">
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product5.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product6.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="regular_price">$180.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Bose SoundLink Bluetooth Speaker</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product7.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product8.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-47%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="current_price">$160.00</span>
+                                        <span class="old_price">$3200.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Variable with soldout product for title</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product9.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product10.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="regular_price">$150.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Lorem ipsum dolor sit amet, consectetur</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product16.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product17.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="regular_price">$175.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product18.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product1.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-07%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="current_price">$180.00</span>
+                                        <span class="old_price">$420.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Accusantium dolorem Security Camera</a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product2.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product3.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="current_price">$140.00</span>
+                                        <span class="old_price">$320.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_product">
+                            <div class="product_name">
+                                <h3><a href="product-details.html">Koss Porta Pro On Ear Headphones </a></h3>
+                                <p class="manufacture_product"><a href="#">Accessories</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product4.jpg" alt=""></a>
+                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product5.jpg" alt=""></a>
+                                <div class="label_product">
+                                    <span class="label_sale">-57%</span>
+                                </div>
+
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content">
+                                <div class="product_ratings">
+                                    <ul>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                        <li><a href="#"><i class="ion-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_footer d-flex align-items-center">
+                                    <div class="price_box">
+                                        <span class="regular_price">$160.00</span>
+                                    </div>
+                                    <div class="add_to_cart">
+                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--product area end-->
+
+    <!--brand area start-->
+    <div class="brand_area mb-42">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="brand_container owl-carousel">
+                        <div class="single_brand">
+                            <a href="#"><img src="{{ asset('themeplate') }}/assets/img/brand/brand.png" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="{{ asset('themeplate') }}/assets/img/brand/brand1.png" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="{{ asset('themeplate') }}/assets/img/brand/brand2.png" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="{{ asset('themeplate') }}/assets/img/brand/brand3.png" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="{{ asset('themeplate') }}/assets/img/brand/brand4.png" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="{{ asset('themeplate') }}/assets/img/brand/brand2.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--brand area end-->
+
+    <!--blog area start-->
+    <section class="blog_section mb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2><span> <strong>Latest</strong>Blogs</span></h2>
+                    </div>
+                    <div class="blog_carousel blog_column4 owl-carousel">
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="blog-details.html"><img src="{{ asset('themeplate') }}/assets/img/blog/blog1.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content">
+                                <div class="date_post">
+                                    <span>07 Feb 2019</span>
+                                </div>
+                                <h3><a href="blog-details.html">2-Bromeliad Mount Care: How to Water and Care for Mounted</a></h3>
+                                <div class="blog_desc">
+                                    <p>Virtual reality and 3-D technology are already well-established in the entertainment...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="blog-details.html"><img src="{{ asset('themeplate') }}/assets/img/blog/blog2.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content">
+                                <div class="date_post">
+                                    <span>05 Feb 2019</span>
+                                </div>
+                                <h3><a href="blog-details.html">Bromeliad Mount Care: How to Water and Care for Mounted</a></h3>
+                                <div class="blog_desc">
+                                    <p>Virtual reality and 3-D technology are already well-established in the entertainment...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="blog-details.html"><img src="{{ asset('themeplate') }}/assets/img/blog/blog3.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content">
+                                <div class="date_post">
+                                    <span>04 Feb 2019</span>
+                                </div>
+                                <h3><a href="blog-details.html">Mounted Tropical Plant Care: How to Grow Tropical Plants</a></h3>
+                                <div class="blog_desc">
+                                    <p>Virtual reality and 3-D technology are already well-established in the entertainment...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="blog-details.html"><img src="{{ asset('themeplate') }}/assets/img/blog/blog4.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content">
+                                <div class="date_post">
+                                    <span>07 Feb 2019</span>
+                                </div>
+                                <h3><a href="blog-details.html">Plantlet Care: How To Pot Up and Care For Juvenile Houseplants</a></h3>
+                                <div class="blog_desc">
+                                    <p>Virtual reality and 3-D technology are already well-established in the entertainment...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="blog-details.html"><img src="{{ asset('themeplate') }}/assets/img/blog/blog5.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content">
+                                <div class="date_post">
+                                    <span>08 Feb 2019</span>
+                                </div>
+                                <h3><a href="blog-details.html">The Definitive List of Pumpkin Spice Everything fotr 2018</a></h3>
+                                <div class="blog_desc">
+                                    <p>Virtual reality and 3-D technology are already well-established in the entertainment...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="blog-details.html"><img src="{{ asset('themeplate') }}/assets/img/blog/blog3.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content">
+                                <div class="date_post">
+                                    <span>07 Feb 2019</span>
+                                </div>
+                                <h3><a href="blog-details.html">Mounted Tropical Plant Care: How to Grow Tropical Plants</a></h3>
+                                <div class="blog_desc">
+                                    <p>Virtual reality and 3-D technology are already well-established in the entertainment...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--blog area end-->
+    
+
+    <!--call to action start-->
+    <section class="call_to_action">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="call_action_inner">
+                        <div class="call_text">
+                            <h3>We Have <span>Recommendations</span> for You</h3>
+                            <p>Take 30% off when you spend $150 or more with code Autima11</p>
+                        </div>
+                        <div class="discover_now">
+                            <a href="#">discover now</a>
+                        </div>
+                        <div class="link_follow">
+                            <ul>
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--call to action end-->
+
+   @endsection

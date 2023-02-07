@@ -84,7 +84,7 @@
                                         <a href="{{route('news_category.index')}}" class="nav-link" data-key="t-analytics"> Xəbər kateqoriyası </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="" class="nav-link" data-key="t-analytics"> Xəbərlər </a>
+                                        <a href="{{route('news.index')}}" class="nav-link" data-key="t-analytics"> Xəbərlər </a>
                                     </li>
                                 </ul>
                             </div>

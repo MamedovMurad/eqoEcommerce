@@ -32,10 +32,13 @@ Route::post('/admin-post', [AuthController:: class, 'login_post'])->name('log_in
     Route::get('about', [App\Http\Controllers\back\AboutController::class,'index'])->name('about.index');
     Route::post('about', [App\Http\Controllers\back\AboutController::class,'update'])->name('about.update');
     Route::resource('news-categories', 'App\Http\Controllers\back\NewsCategoryController')->names('news_category');
+    Route::resource('news', 'App\Http\Controllers\back\NewsController')->names('news');
 
-   /*  Route::get('/', function () {
+
+
+    Route::get('/', function () {
         return view('back.dashboard');
-    })->name('dashboard'); */
+    })->name('dashboard');
     Route::get('/logout', [AuthController:: class, 'logout'])->name('logout');
 
 /* }); */
