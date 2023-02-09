@@ -187,8 +187,9 @@
                 // serializes the form's elements.
                success: function(data)
                {
-                   $('#titleInput').val(data.title)
+                         
                    $('#titleInput').val(data.slug)
+                   
                    $('#update_photo').css({'width':'80px','height':'80px'})
                    $('#update_photo').attr('src','/'+data.image)
                  

@@ -31,14 +31,15 @@ class NewsController extends Controller
      */
     public function store(NewsRequest $request)
     {
-
-        $requests=$request->all();
+     dd($requests=$request->all());
+      $requests=$request->all();
        
         $photo = new FIle_download();
         $checkedPhoto =  $photo->download($request)??false;
         if ($checkedPhoto){
             $requests['image']=$checkedPhoto;
         }
+   
         News::create($requests);
         return redirect()->back();
     }
@@ -65,15 +66,22 @@ class NewsController extends Controller
      */
     public function update(NewsRequest $request, $id)
     {
+     
         $news = News::find($id);
      
           $requests=$request->all();
-       
+        
         $photo = new FIle_download();
         $checkedPhoto =  $photo->download($request)??false;
         if ($checkedPhoto){
             $requests['image']=$checkedPhoto;
         }
+      
+        if(!isset($requests['status'])){
+            $requests['status']='0';
+        }
+      
+     
         $news->update($requests);
         return redirect()->back();
         
