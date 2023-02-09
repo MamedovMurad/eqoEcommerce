@@ -8,7 +8,7 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use App\Services\FIle_download;
 use App\Models\Language;
-
+use App\Models\NewsCategory;
 
 class NewsController extends Controller
 {
@@ -19,7 +19,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('back.news.index',['news'=>News::paginate(10), 'languages'=>Language::where('status', 1)->get()]);
+        return view('back.news.index',['news'=>News::paginate(10), 'languages'=>Language::where('status', 1)->get(),'categories'=>NewsCategory::get()]);
     }
 
   

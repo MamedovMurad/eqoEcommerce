@@ -36,7 +36,7 @@ Route::post('/admin-post', [AuthController:: class, 'login_post'])->name('log_in
 
 
 
-    Route::get('/', function () {
+    Route::get('/admin/dash', function () {
         return view('back.dashboard');
     })->name('dashboard');
     Route::get('/logout', [AuthController:: class, 'logout'])->name('logout');

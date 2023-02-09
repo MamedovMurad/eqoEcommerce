@@ -18,7 +18,7 @@
 
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1">Partnyorlar və Referanslar</h4>
+                            <h4 class="card-title mb-0 flex-grow-1">Xəbərlər</h4>
                             <button type="button"
                                 onclick="unSet()"   class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#partners_modal">Əlavə et</button>
                         </div>
@@ -89,7 +89,7 @@
                                          <ul class="nav nav-pills">
                                             @foreach ($languages as $key=>$item )
                                              <li onclick="setTab('titleInput{{$item->code}}',this)" class="nav-item">
-                                                 <label for="titleInput{{$item->code}}" class="nav-link {{$key==0?'active':''}}" >Başlıq_{{$item->code}}</label>
+                                                 <label for="titleInput{{$item->code}}" class="nav-link {{$key==0?'active':''}}" >{{$item->name}}</label>
                                              </li>
                                              @endforeach
                                          </ul>
@@ -99,7 +99,7 @@
                                         <div id="titleInput{{$item->code}}" class="title__input">
                                         
                                             <input type="text" class="form-control "  placeholder="title {{$item->code}}" name="title:{{$item->code}}">  
-                                          <textarea name=""  class="form-control mt-3"  cols="30" rows="10">{{$item->code}}</textarea>
+                                          <textarea name="description:{{$item->code}}"  class="form-control mt-3"  cols="30" rows="10"></textarea>
                                        
                                         </div>
                                          @endforeach
@@ -110,7 +110,21 @@
 
                                 </div>
                                 
-                                    
+                                <div class="row mb-3">
+                                    <div class="col-lg-3">
+                                        <label for="dateInput" class="form-label" >Kateqoriyası</label>
+                                    </div>
+                                    <div class="col-lg-9">
+
+                                        <select class="form-select " aria-label="Default select example" name="news_category" id="type_form">
+                                            @foreach ($categories as $item)
+                                            <option value="{{$item->id}}">{{$item->translate('az')->title}}</option>
+                                            @endforeach
+                                            
+                                           
+                                        </select>
+                                    </div>
+                                </div>
                                     <div class="row mb-3">
                                         <div class="col-lg-3">
                                             <label for="foto" class="form-label">Foto</label>
@@ -193,6 +207,7 @@
                success: function(data)
                {
                    $('#titleInput').val(data.title)
+                   $('#titleInput').val(data.description)
                    $('#titleInput').val(data.slug)
                    $('#update_photo').css({'width':'80px','height':'80px'})
                    $('#update_photo').attr('src','/'+data.image)
@@ -206,6 +221,7 @@
                    data.translations.forEach(item => {
 
                    $('.titlesParent').append($("<input/>").addClass('form-control title__input').attr({"id": 'titleInput'+item.locale, "name": 'title:'+item.locale,'value':item.title}))
+                   $('.titlesParent').append($("<textarea/>").addClass('form-control title__input').attr({"id": 'titleInput'+item.locale, "name": 'descripton:'+item.locale,'value':item.description}))
                 });
           }
            });
