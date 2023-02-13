@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
-class News extends Model implements TranslatableContract
+class Support extends Model implements TranslatableContract
 {
     use HasFactory, Translatable;
     public $translatedAttributes = ['title', 'description' ];
-    protected $fillable = ['news_category','slug','order','image','status'];
+    protected $fillable = ['slug','order','image','status'];
 }

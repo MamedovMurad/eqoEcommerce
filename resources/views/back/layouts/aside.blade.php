@@ -72,7 +72,22 @@
                             </a>
                         </li>
                       
-                      
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{route('service.index')}}">
+                                <i class="mdi mdi-puzzle-outline"></i> <span data-key="t-widgets">Xidmətlər</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{route('certificate.index')}}">
+                                <i class="mdi mdi-puzzle-outline"></i> <span data-key="t-widgets">Sertifikatlar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{route('support.index')}}">
+                                <i class="mdi mdi-puzzle-outline"></i> <span data-key="t-widgets">Texniki dəsdək</span>
+                            </a>
+                        </li>
                        
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
@@ -88,7 +103,23 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li> <!-- end Dashboard Menu -->
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                                <i class="mdi mdi-speedometer"></i> <span data-key="t-dashboards">Layihələr</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarDashboards">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{route('project.category.index')}}" class="nav-link" data-key="t-analytics"> Layihə kateqoriyası </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{route('project.index')}}" class="nav-link" data-key="t-analytics"> Layihələr </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li> 
+                        
 
                     </ul>
                 </div>

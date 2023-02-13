@@ -3,14 +3,13 @@
 namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\NewsRequest;
-use App\Models\News;
-use Illuminate\Http\Request;
+use App\Http\Requests\ProjectCategoryRequest;
+use App\Models\ProjectCategory;
 use App\Services\FIle_download;
 use App\Models\Language;
-use App\Models\NewsCategory;
 
-class NewsController extends Controller
+
+class ProjectCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,20 +18,28 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('back.news.index',['news'=>News::paginate(10), 'languages'=>Language::where('status', 1)->get(),'categories'=>NewsCategory::get()]);
+        return view('back.project-category.index',['project_category'=>ProjectCategory::paginate(10), 'languages'=>Language::where('status', 1)->get()]);
     }
 
-  
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NewsRequest $request)
+    public function store(ProjectCategoryRequest $request)
     {
-
-      $requests=$request->all();
+        $requests=$request->all();
        
         $photo = new FIle_download();
         $checkedPhoto =  $photo->download($request)??false;
@@ -40,7 +47,7 @@ class NewsController extends Controller
             $requests['image']=$checkedPhoto;
         }
    
-        News::create($requests);
+        ProjectCategory::create($requests);
         return redirect()->back();
     }
 
@@ -52,10 +59,19 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        return News::find($id);
+        return ProjectCategory::find($id);
     }
 
-  
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
 
     /**
      * Update the specified resource in storage.
@@ -64,10 +80,9 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(NewsRequest $request, $id)
+    public function update(ProjectCategoryRequest $request, $id)
     {
-     
-        $news = News::find($id);
+        $project_category = ProjectCategory::find($id);
      
           $requests=$request->all();
         
@@ -82,9 +97,8 @@ class NewsController extends Controller
         }
       
      
-        $news->update($requests);
+        $project_category->update($requests);
         return redirect()->back();
-        
     }
 
     /**
@@ -95,7 +109,7 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        News::where('id',$id)->delete();
+        ProjectCategory::where('id',$id)->delete();
         return redirect()->back();
     }
 }

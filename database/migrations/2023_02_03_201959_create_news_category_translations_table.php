@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('news_category_translations', function (Blueprint $table) {
-             $table->id();
+            $table->id();
             $table->unsignedBigInteger('news_category_id');
             $table->string('locale');
             $table->string('title');

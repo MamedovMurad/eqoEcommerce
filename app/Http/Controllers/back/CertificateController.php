@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\NewsRequest;
-use App\Models\News;
+use App\Http\Requests\CertificateRequest;
+use App\Models\Certificate;
 use Illuminate\Http\Request;
 use App\Services\FIle_download;
 use App\Models\Language;
-use App\Models\NewsCategory;
 
-class NewsController extends Controller
+
+class CertificateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,20 +19,28 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('back.news.index',['news'=>News::paginate(10), 'languages'=>Language::where('status', 1)->get(),'categories'=>NewsCategory::get()]);
+        return view('back.certificate.index',['certificate'=>Certificate::paginate(10), 'languages'=>Language::where('status', 1)->get()]);
     }
 
-  
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NewsRequest $request)
+    public function store(CertificateRequest $request)
     {
-
-      $requests=$request->all();
+        $requests=$request->all();
        
         $photo = new FIle_download();
         $checkedPhoto =  $photo->download($request)??false;
@@ -40,7 +48,7 @@ class NewsController extends Controller
             $requests['image']=$checkedPhoto;
         }
    
-        News::create($requests);
+        Certificate::create($requests);
         return redirect()->back();
     }
 
@@ -52,10 +60,19 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        return News::find($id);
+        return Certificate::find($id);
     }
 
-  
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
 
     /**
      * Update the specified resource in storage.
@@ -64,27 +81,25 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(NewsRequest $request, $id)
+    public function update(CertificateRequest $request, $id)
     {
+        $certificate = Certificate::find($id);
      
-        $news = News::find($id);
-     
-          $requests=$request->all();
-        
-        $photo = new FIle_download();
-        $checkedPhoto =  $photo->download($request)??false;
-        if ($checkedPhoto){
-            $requests['image']=$checkedPhoto;
-        }
+        $requests=$request->all();
       
-        if(!isset($requests['status'])){
-            $requests['status']='0';
-        }
-      
-     
-        $news->update($requests);
-        return redirect()->back();
-        
+      $photo = new FIle_download();
+      $checkedPhoto =  $photo->download($request)??false;
+      if ($checkedPhoto){
+          $requests['image']=$checkedPhoto;
+      }
+    
+      if(!isset($requests['status'])){
+          $requests['status']='0';
+      }
+    
+   
+      $certificate->update($requests);
+      return redirect()->back();
     }
 
     /**
@@ -95,7 +110,7 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        News::where('id',$id)->delete();
+        Certificate::where('id',$id)->delete();
         return redirect()->back();
     }
 }

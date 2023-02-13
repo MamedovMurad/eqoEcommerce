@@ -33,6 +33,12 @@ Route::post('/admin-post', [AuthController:: class, 'login_post'])->name('log_in
     Route::post('about', [App\Http\Controllers\back\AboutController::class,'update'])->name('about.update');
     Route::resource('news-categories', 'App\Http\Controllers\back\NewsCategoryController')->names('news_category');
     Route::resource('news', 'App\Http\Controllers\back\NewsController')->names('news');
+    Route::resource('service', 'App\Http\Controllers\back\ServiceController')->names('service');
+    Route::resource('certificate', 'App\Http\Controllers\back\CertificateController')->names('certificate');
+    Route::resource('project-category', 'App\Http\Controllers\back\ProjectCategoryController')->names('project.category');
+    Route::resource('project', 'App\Http\Controllers\back\ProjectController')->names('project');
+    Route::resource('support', 'App\Http\Controllers\back\SupportController')->names('support');
+    
 
 
 

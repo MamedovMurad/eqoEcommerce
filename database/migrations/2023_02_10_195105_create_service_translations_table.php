@@ -13,18 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('news', function (Blueprint $table) {
+        Schema::create('service_translations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('news_category_id');
-            $table->string('slug');
-            $table->enum('status',['1','0'])->default('1');
-            $table->string('image')->nullable();
-            $table->unsignedInteger('order')->nullable();
+            $table->unsignedBigInteger('service_id');
+            $table->string('locale');
+            $table->string('title');
+            $table->text('description');
             $table->timestamps();
 
-            $table->foreign('news_category_id')
+            $table->foreign('service_id')
             ->references('id')
-            ->on('news_categories')
+            ->on('services')
             ->onUpdate('cascade')
             ->onDelete('cascade');
         });
@@ -37,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news');
+        Schema::dropIfExists('service_translations');
     }
 };
