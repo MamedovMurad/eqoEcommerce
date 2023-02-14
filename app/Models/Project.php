@@ -11,5 +11,5 @@ class Project extends Model implements TranslatableContract
 {
     use HasFactory, Translatable;
     public $translatedAttributes = ['title', 'description' ];
-    protected $fillable = ['project_category','slug','order','image','status'];
+    protected $fillable = ['project_category_id','slug','order','image','status'];
 }

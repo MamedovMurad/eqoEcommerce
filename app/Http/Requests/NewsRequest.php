@@ -44,7 +44,7 @@ class NewsRequest extends FormRequest
             }
     
             $return[] = [
-                'news_category'=>['required','max:11'],
+                'news_category_id'=>['required','max:11'],
                 'slug' => ['max:255'],
                 'status'=>['max:2'],
                 'order'=>['max:11'],

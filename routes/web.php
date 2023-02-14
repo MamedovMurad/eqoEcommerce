@@ -17,7 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 //front
 Route::get('/', [HomeController:: class, 'index'])->name('home');
-Route::get('/news', [HomeController:: class, 'news'])->name('news');
+Route::get('/news1', [HomeController:: class, 'news'])->name('news');
+Route::get('/news-detail', [HomeController:: class, 'newsDetail'])->name('news.detail');
+Route::get('/about1', [HomeController:: class, 'about'])->name('about');
+Route::get('/contact', [HomeController:: class, 'contact'])->name('contact');
+Route::get('/products', [HomeController:: class, 'products'])->name('product');
+Route::get('/product-detail', [HomeController:: class, 'productDetail'])->name('product.detail');
 
 
 

@@ -18,7 +18,7 @@
 
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1">Partnyorlar və Referanslar</h4>
+                            <h4 class="card-title mb-0 flex-grow-1">Xidmətlər</h4>
                             <button type="button"
                                 onclick="unSet()"   class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#partners_modal">Əlavə et</button>
                         </div>
@@ -48,7 +48,7 @@
                                                             data-bs-toggle="modal" data-bs-target="#partners_modal"
                                                             class="btn btn-ghost-info waves-effect waves-light shadow-none" onclick="formEditButton('{{$partner->id}}')"><i class="ri-edit-2-fill"></i></button>
 
-                                            <form action="{{route('news.destroy',$partner->id)}}" method="post">
+                                            <form action="{{route('service.destroy',$partner->id)}}" method="post">
                                                 @method('delete')
                                                 @csrf
                                                 <button type="submit" class="from_edit btn btn-ghost-danger waves-effect waves-light shadow-none"><i class="ri-delete-bin-line"></i></button>
@@ -76,11 +76,11 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="partners_modalLabel">Xəbər Əlavə Et</h5>
+                                <h5 class="modal-title" id="partners_modalLabel">Xidmət Əlavə Et</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{route('news.store')}}" id="partner_form" method="post"  enctype='multipart/form-data'>
+                                <form action="{{route('service.store')}}" id="partner_form" method="post"  enctype='multipart/form-data'>
                                    @csrf
                               
                                    <div class="row mb-3">
@@ -186,12 +186,12 @@
         ;
        function formEditButton(id_) {
         $('#checkbox').prop("checked", false)
-           $("#partner_form").attr('action','http://127.0.0.1:8000/news/'+id_)
+           $("#partner_form").attr('action','http://127.0.0.1:8000/service/'+id_)
            $("#partner_form").append( `<input type="hidden" name="_method" value="PUT" id="hidden__">`)
-           $('#partners_modalLabel').text('Xəbəri yenilə')
+           $('#partners_modalLabel').text('Xidməti yenilə')
            $.ajax({
                type: "GET",
-               url: 'news/'+id_,
+               url: 'service/'+id_,
                 // serializes the form's elements.
                success: function(data)
                {

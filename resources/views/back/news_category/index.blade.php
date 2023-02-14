@@ -39,7 +39,7 @@
 
                                         <th scope="row"><a href="#" class="fw-semibold">#{{$partner->id}}</a></th>
                                         <td>{{$partner->translate('az')->title}}</td>
-                                        <td> <img src="{{$partner->image}}" width="50" height="50"> </td>
+                                        <td> <img src="/{{$partner->image}}" width="50" height="50"> </td>
                                         <td>{{$partner->status==1?' Aktiv ':'Passiv'}}</td>
                                         <td>
                                             <div class="flex-wrap gap-3 hstack">
@@ -126,8 +126,8 @@
                                         </div>
                                     </div>
                                     <div class="form-check form-check-secondary mb-3">
-                                        <input  type="hidden" name="status" value=0>
-                                        <input id="checkbox" name="status" type="checkbox" value=1>
+                                      
+                                        <input id="checkbox" name="status" type="checkbox" value="1">
                                         <label class="form-check-label" for="formCheck7">
                                            Status
                                         </label>

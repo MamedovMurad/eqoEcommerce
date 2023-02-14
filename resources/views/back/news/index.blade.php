@@ -129,7 +129,7 @@
                                         </div>
                                         <div class="col-lg-9">
 
-                                            <select name="news_category" class="form-select " aria-label="Default select example" name="type" id="type_form">
+                                            <select name="news_category_id" class="form-select " aria-label="Default select example" name="type" id="type_form">
                                                 @foreach ($categories as $item)
                                                 <option value="{{$item->id}}">{{$item->translate('az')->title}}</option>
                                                 @endforeach

@@ -41,7 +41,7 @@ class ProjectRequest extends FormRequest
             }
     
             $return[] = [
-                'project_category'=>['required','max:11'],
+                'project_category_id'=>['required','max:11'],
                 'slug' => ['max:255'],
                 'status'=>['max:2'],
                 'order'=>['max:11'],

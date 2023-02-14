@@ -15,7 +15,7 @@
                         <div class="card-header align-items-center d-flex">
                             <label for="titleAbout">Başlıq: &nbsp</label>
                             <div class="card-title mb-0 flex-grow-1">
-                                <input type="text" class="form-control" value="{{ $about->title }}" id="titleAbout"
+                                <input type="text" class="form-control" value="{{ $about->title ?? '' }}" id="titleAbout"
                                     placeholder="title" name="title" style="width: 300px">
                             </div>
 
@@ -30,7 +30,7 @@
                                 <label for="editor">Mətn: &nbsp;</label>
                                 <textarea id="editor" name="text">
 
-                                    {{ $about->text }}
+                                    {{ $about->text ?? '' }}
                                 </textarea>
                             </div>
 
@@ -38,7 +38,7 @@
                                 <label for="foto" class="form-label">Foto: &nbsp </label>
                                 <input class="form-control" name="file" type="file" id="foto"
                                     style="width:400px">
-                                <img src="{{ $about->image }}" alt="" width="100" height="90">
+                                <img src="{{ $about->image ?? '' }}" alt="" width="100" height="90">
                             </div>
                         </div>
                     </div>

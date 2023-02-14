@@ -16,18 +16,25 @@ class HomeController extends Controller
     public function news(){
         return view('front.news.index');
     }
-/*     public function update (Request $request){
 
-       $photo = new FIle_download();
-       $checkedPhoto =  $photo->download($request)??false;
+    public function newsDetail(){
+        return view('front.news.news');
+    }
 
-        $about = About::first();
-        $about->title = $request->title;
-        if ($checkedPhoto){
-            $about->image=$checkedPhoto;
-        }
-        $about->text=$request->text;
-        $about->save();
-        return redirect()->back();
-    } */
+    public function about(){
+        return view('front.about.about');
+    }
+
+    public function contact(){
+        return view('front.contact.contact');
+    }
+
+    public function products(){
+        return view('front.products.index');
+    }
+
+    public function productDetail(){
+        return view('front.products.product');
+    }
+
 }

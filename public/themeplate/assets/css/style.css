@@ -493,7 +493,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 /* 02. Element */
 .button {
-  background: #ffd54c;
+  background: #f61818;
   box-shadow: none;
   color: #ffffff;
   display: inline-block;
@@ -770,7 +770,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .header_top {
-  background: #ffd54c;
+  background: #ffffff;
 }
 @media only screen and (max-width: 767px) {
   .header_top {
@@ -966,7 +966,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .header_middle {
-  background: #ffd54c;
+  background: #ffffff;
   padding: 25px 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2817,7 +2817,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   text-transform: uppercase;
   padding: 0 18px;
   display: inline-block;
-  background: #ffd54c;
+  background: #f61818;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   pointer-events: visible;

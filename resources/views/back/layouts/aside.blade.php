@@ -105,10 +105,10 @@
                             </div>
                         </li> 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
-                                <i class="mdi mdi-speedometer"></i> <span data-key="t-dashboards">Layihələr</span>
+                            <a class="nav-link menu-link" href="#sidebarProjects" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProjects">
+                                <i class="mdi mdi-speedometer"></i> <span data-key="t-Projects">Layihələr</span>
                             </a>
-                            <div class="collapse menu-dropdown" id="sidebarDashboards">
+                            <div class="collapse menu-dropdown" id="sidebarProjects">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
                                         <a href="{{route('project.category.index')}}" class="nav-link" data-key="t-analytics"> Layihə kateqoriyası </a>
@@ -119,6 +119,25 @@
                                 </ul>
                             </div>
                         </li> 
+                     {{--    
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarProducts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProducts">
+                                <i class="mdi mdi-speedometer"></i> <span data-key="t-Products">Məhsullar</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarProducts">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{route('project.category.index')}}" class="nav-link" data-key="t-analytics"> Məhsul kateqoriyası </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{route('project.category.index')}}" class="nav-link" data-key="t-analytics"> Məhsul brendləri </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{route('project.index')}}" class="nav-link" data-key="t-analytics"> Məhsullar </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>  --}}
                         
 
                     </ul>

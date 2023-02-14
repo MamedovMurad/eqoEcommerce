@@ -2,187 +2,185 @@
 @extends('front.layouts.index')
 
 @section('content')
-<div class="site-wrapper-reveal border-bottom">
-
-    <!-- Blog Page Area Start -->
-    <div class="blog-page-wrapper section-space--pt_90 section-space--pb_120">
+    <!--breadcrumbs area start-->
+    <div class="breadcrumbs_area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <!-- Single Blog Item Start -->
-                    <div class="single-blog-item mt-40">
-                        <div class="blog-thumbnail-box">
-                            <a href="#" class="thumbnail">
-                                <img src="{{ asset('themeplate') }}/assets/images/blog/8-570x370.webp" class="img-fluid" alt="Blog Images">
-                            </a>
-                            <a href="#" class="btn-blog"> Read more </a>
-                        </div>
-                        <div class="blog-contents">
-                            <h6 class="blog-title"><a href="#">Interior design is the art, the interior designer is the artist.</a></h6>
-                            <div class="meta-tag-box">
-                                <div class="meta date"><span>October 16, 2022</span></div>
-                                <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                            </div>
-                        </div>
-                    </div><!-- Single Blog Item End -->
-                </div>
-                <div class="col-lg-4 col-md-6  col-sm-6 col-12">
-                    <!-- Single Blog Item Start -->
-                    <div class="single-blog-item mt-40">
-                        <div class="blog-thumbnail-box">
-                            <a href="#" class="thumbnail">
-                                <img src="{{ asset('themeplate') }}/assets/images/blog/9-570x370.webp" class="img-fluid" alt="Blog Images">
-                            </a>
-                            <a href="#" class="btn-blog"> Read more </a>
-                        </div>
-                        <div class="blog-contents">
-                            <h6 class="blog-title"><a href="#">Decorate your home with the most modern furnishings.</a></h6>
-                            <div class="meta-tag-box">
-                                <div class="meta date"><span>October 02, 2022</span></div>
-                                <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                            </div>
-                        </div>
-                    </div><!-- Single Blog Item End -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <!-- Single Blog Item Start -->
-                    <div class="single-blog-item mt-40">
-                        <div class="blog-thumbnail-box">
-                            <a href="#" class="thumbnail">
-                                <img src="{{ asset('themeplate') }}/assets/images/blog/10-570x370.webp" class="img-fluid" alt="Blog Images">
-                            </a>
-                            <a href="#" class="btn-blog"> Read more </a>
-                        </div>
-                        <div class="blog-contents">
-                            <h6 class="blog-title"><a href="#">Spatialize with the decorations of the Helendo store.</a></h6>
-                            <div class="meta-tag-box">
-                                <div class="meta date"><span>October 18, 2022</span></div>
-                                <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                            </div>
-                        </div>
-                    </div><!-- Single Blog Item End -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <!-- Single Blog Item Start -->
-                    <div class="single-blog-item mt-40">
-                        <div class="blog-thumbnail-box">
-                            <a href="#" class="thumbnail">
-                                <img src="{{ asset('themeplate') }}/assets/images/blog/1-570x370.webp" class="img-fluid" alt="Blog Images">
-                            </a>
-                            <a href="#" class="btn-blog"> Read more </a>
-                        </div>
-                        <div class="blog-contents">
-                            <h6 class="blog-title"><a href="#">Unique products that will impress your home in 2022.</a></h6>
-                            <div class="meta-tag-box">
-                                <div class="meta date"><span>October 15, 2022</span></div>
-                                <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                            </div>
-                        </div>
-                    </div><!-- Single Blog Item End -->
-                </div>
-                <div class="col-lg-4 col-md-6  col-sm-6 col-12">
-                    <!-- Single Blog Item Start -->
-                    <div class="single-blog-item mt-40">
-                        <div class="blog-thumbnail-box">
-                            <a href="#" class="thumbnail">
-                                <img src="{{ asset('themeplate') }}/assets/images/blog/2-570x370.webp" class="img-fluid" alt="Blog Images">
-                            </a>
-                            <a href="#" class="btn-blog"> Read more </a>
-                        </div>
-                        <div class="blog-contents">
-                            <h6 class="blog-title"><a href="#">Intelligent, award-winning product of the designer Thomas in 2022.</a></h6>
-                            <div class="meta-tag-box">
-                                <div class="meta date"><span>October 13, 2022</span></div>
-                                <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                            </div>
-                        </div>
-                    </div><!-- Single Blog Item End -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <!-- Single Blog Item Start -->
-                    <div class="single-blog-item mt-40">
-                        <div class="blog-thumbnail-box">
-                            <a href="#" class="thumbnail">
-                                <img src="{{ asset('themeplate') }}/assets/images/blog/3-570x370.webp" class="img-fluid" alt="Blog Images">
-                            </a>
-                            <a href="#" class="btn-blog"> Read more </a>
-                        </div>
-                        <div class="blog-contents">
-                            <h6 class="blog-title"><a href="#">Interior designer Nancy, the witch of the unique space.</a></h6>
-                            <div class="meta-tag-box">
-                                <div class="meta date"><span>October 18, 2022</span></div>
-                                <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                            </div>
-                        </div>
-                    </div><!-- Single Blog Item End -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <!-- Single Blog Item Start -->
-                    <div class="single-blog-item mt-40">
-                        <div class="blog-thumbnail-box">
-                            <a href="#" class="thumbnail">
-                                <img src="{{ asset('themeplate') }}/assets/images/blog/6-570x370.webp" class="img-fluid" alt="Blog Images">
-                            </a>
-                            <a href="#" class="btn-blog"> Read more </a>
-                        </div>
-                        <div class="blog-contents">
-                            <h6 class="blog-title"><a href="#">Design your home to your ideas.</a></h6>
-                            <div class="meta-tag-box">
-                                <div class="meta date"><span>October 23, 2022</span></div>
-                                <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                            </div>
-                        </div>
-                    </div><!-- Single Blog Item End -->
-                </div>
-                <div class="col-lg-4 col-md-6  col-sm-6 col-12">
-                    <!-- Single Blog Item Start -->
-                    <div class="single-blog-item mt-40">
-                        <div class="blog-thumbnail-box">
-                            <a href="#" class="thumbnail">
-                                <img src="{{ asset('themeplate') }}/assets/images/blog/7-570x370.webp" class="img-fluid" alt="Blog Images">
-                            </a>
-                            <a href="#" class="btn-blog"> Read more </a>
-                        </div>
-                        <div class="blog-contents">
-                            <h6 class="blog-title"><a href="#">The story of Helen Do’s lights in USA</a></h6>
-                            <div class="meta-tag-box">
-                                <div class="meta date"><span>October 02, 2022</span></div>
-                                <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                            </div>
-                        </div>
-                    </div><!-- Single Blog Item End -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <!-- Single Blog Item Start -->
-                    <div class="single-blog-item mt-40">
-                        <div class="blog-thumbnail-box">
-                            <a href="#" class="thumbnail">
-                                <img src="{{ asset('themeplate') }}/assets/images/blog/8-570x370.webp" class="img-fluid" alt="Blog Images">
-                            </a>
-                            <a href="#" class="btn-blog"> Read more </a>
-                        </div>
-                        <div class="blog-contents">
-                            <h6 class="blog-title"><a href="#">Top 10 unique deco products 2018</a></h6>
-                            <div class="meta-tag-box">
-                                <div class="meta date"><span>October 17, 2022</span></div>
-                                <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                            </div>
-                        </div>
-                    </div><!-- Single Blog Item End -->
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <ul>
+                            <li><a href="index.html">home</a></li>
+                            <li>blog</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Blog Page Area End -->
+    <!--breadcrumbs area end-->
 
-</div>
+    <!--blog area start-->
+    <div class="blog_page_section mt-23">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="blog_wrapper">
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="{{route('news.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/blog/blog6.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content">
+                                <h3><a href="{{route('news.detail')}}">2-Bromeliad Mount Care: How to Water and Care for Mounted Bromeliads</a></h3>
+                                <div class="blog_meta">
+                                    <span class="post_date"><i class="fa-calendar fa"></i> Feb 02, 2019</span>
+                                    
+                                    <span class="category">
+                                        <i class="fa fa-folder-open"></i>
+                                        <a href="#">Fashion</a>
+                                    </span>
+                                </div>
+                                <div class="blog_desc">
+                                    <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue </p>
+                                </div>
+                                <div class="readmore_button">
+                                    <a href="{{route('news.detail')}}">read more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="{{route('news.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/blog/blog7.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content">
+                                <h3><a href="{{route('news.detail')}}">Bromeliad Mount Care: How to Water and Care for Mounted Bromeliads</a></h3>
+                                <div class="blog_meta">
+                                    <span class="post_date"><i class="fa-calendar fa"></i> Feb 02, 2019</span>
+                                    
+                                    <span class="category">
+                                        <i class="fa fa-folder-open"></i>
+                                        <a href="#">Fashion</a>
+                                    </span>
+                                </div>
+                                <div class="blog_desc">
+                                    <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue </p>
+                                </div>
+                                <div class="readmore_button">
+                                    <a href="{{route('news.detail')}}">read more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="{{route('news.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/blog/blog8.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content">
+                                <h3><a href="{{route('news.detail')}}">Mounted Tropical Plant Care: How to Grow Epiphytic Tropical Plants</a></h3>
+                                <div class="blog_meta">
+                                    <span class="post_date"><i class="fa-calendar fa"></i> Feb 02, 2019</span>
+                                    
+                                    <span class="category">
+                                        <i class="fa fa-folder-open"></i>
+                                        <a href="#">Fashion</a>
+                                    </span>
+                                </div>
+                                <div class="blog_desc">
+                                    <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue </p>
+                                </div>
+                                <div class="readmore_button">
+                                    <a href="{{route('news.detail')}}">read more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="{{route('news.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/blog/blog9.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content">
+                                <h3><a href="{{route('news.detail')}}">Plantlet Care: How To Pot Up and Care For Juvenile Houseplants</a></h3>
+                                <div class="blog_meta">
+                                    <span class="post_date"><i class="fa-calendar fa"></i> Feb 02, 2019</span>
+                                    
+                                    <span class="category">
+                                        <i class="fa fa-folder-open"></i>
+                                        <a href="#">Fashion</a>
+                                    </span>
+                                </div>
+                                <div class="blog_desc">
+                                    <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue </p>
+                                </div>
+                                <div class="readmore_button">
+                                    <a href="{{route('news.detail')}}">read more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="{{route('news.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/blog/blog7.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content">
+                                <h3><a href="{{route('news.detail')}}">The Definitive List of Pumpkin Spice Everything fotr 2019</a></h3>
+                                <div class="blog_meta">
+                                    <span class="post_date"><i class="fa-calendar fa"></i> Feb 02, 2019</span>
+                                    
+                                    <span class="category">
+                                        <i class="fa fa-folder-open"></i>
+                                        <a href="#">Fashion</a>
+                                    </span>
+                                </div>
+                                <div class="blog_desc">
+                                    <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue </p>
+                                </div>
+                                <div class="readmore_button">
+                                    <a href="{{route('news.detail')}}">read more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="{{route('news.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/blog/blog8.jpg" alt=""></a>
+                            </div>
+                            <div class="blog_content">
+                                <h3><a href="{{route('news.detail')}}">Plantlet Care: How To Pot Up and Care For Juvenile Houseplants</a></h3>
+                                <div class="blog_meta">
+                                    <span class="post_date"><i class="fa-calendar fa"></i> Feb 02, 2019</span>
+                                    
+                                    <span class="category">
+                                        <i class="fa fa-folder-open"></i>
+                                        <a href="#">Fashion</a>
+                                    </span>
+                                </div>
+                                <div class="blog_desc">
+                                    <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue </p>
+                                </div>
+                                <div class="readmore_button">
+                                    <a href="{{route('news.detail')}}">read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--blog area end-->
+
+    <!--blog pagination area start-->
+    <div class="blog_pagination">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="pagination">
+                        <ul>
+                            <li class="current">1</li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li class="next"><a href="#">next</a></li>
+                            <li><a href="#">>></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--blog pagination area end-->
 @endsection

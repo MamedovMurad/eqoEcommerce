@@ -18,7 +18,7 @@
 
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1">Partnyorlar və Referanslar</h4>
+                            <h4 class="card-title mb-0 flex-grow-1">Layihələr</h4>
                             <button type="button"
                                 onclick="unSet()"   class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#partners_modal">Əlavə et</button>
                         </div>
@@ -48,7 +48,7 @@
                                                             data-bs-toggle="modal" data-bs-target="#partners_modal"
                                                             class="btn btn-ghost-info waves-effect waves-light shadow-none" onclick="formEditButton('{{$partner->id}}')"><i class="ri-edit-2-fill"></i></button>
 
-                                            <form action="{{route('news.destroy',$partner->id)}}" method="post">
+                                            <form action="{{route('project.destroy',$partner->id)}}" method="post">
                                                 @method('delete')
                                                 @csrf
                                                 <button type="submit" class="from_edit btn btn-ghost-danger waves-effect waves-light shadow-none"><i class="ri-delete-bin-line"></i></button>
@@ -76,11 +76,11 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="partners_modalLabel">Xəbər Əlavə Et</h5>
+                                <h5 class="modal-title" id="partners_modalLabel">Layihə Əlavə Et</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{route('news.store')}}" id="partner_form" method="post"  enctype='multipart/form-data'>
+                                <form action="{{route('project.store')}}" id="partner_form" method="post"  enctype='multipart/form-data'>
                                    @csrf
                               
                                    <div class="row mb-3">
@@ -123,7 +123,22 @@
                                         </div>
                                     </div>
 
-                                  
+                                    <div class="row mb-3">
+                                        <div class="col-lg-3">
+                                            <label for="dateInput" class="form-label" >Kateqoriya</label>
+                                        </div>
+                                        <div class="col-lg-9">
+
+                                            <select name="project_category_id" class="form-select " aria-label="Default select example" name="type" id="type_form">
+                                                @foreach ($categories as $item)
+                                                <option value="{{$item->id}}">{{$item->translate('az')->title}}</option>
+                                                @endforeach
+                                            
+
+                                             
+                                            </select>
+                                        </div>
+                                    </div>
 
                                     <div class="row mb-3">
                                         <div class="col-lg-3">
@@ -186,12 +201,12 @@
         ;
        function formEditButton(id_) {
         $('#checkbox').prop("checked", false)
-           $("#partner_form").attr('action','http://127.0.0.1:8000/news/'+id_)
+           $("#partner_form").attr('action','http://127.0.0.1:8000/project/'+id_)
            $("#partner_form").append( `<input type="hidden" name="_method" value="PUT" id="hidden__">`)
-           $('#partners_modalLabel').text('Xəbəri yenilə')
+           $('#partners_modalLabel').text('Layihəni yenilə')
            $.ajax({
                type: "GET",
-               url: 'news/'+id_,
+               url: 'project/'+id_,
                 // serializes the form's elements.
                success: function(data)
                {

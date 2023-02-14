@@ -10,5 +10,5 @@ class News extends Model implements TranslatableContract
 {
     use HasFactory, Translatable;
     public $translatedAttributes = ['title', 'description' ];
-    protected $fillable = ['news_category','slug','order','image','status'];
+    protected $fillable = ['news_category_id','slug','order','image','status'];
 }
