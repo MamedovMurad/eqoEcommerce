@@ -15,7 +15,16 @@ return new class extends Migration
     {
         Schema::create('brend_translations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('brend_id');
+            $table->string('locale');
+            $table->string('title');
             $table->timestamps();
+
+            $table->foreign('brend_id')
+            ->references('id')
+            ->on('brends')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

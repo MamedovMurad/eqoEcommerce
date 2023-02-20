@@ -14,17 +14,16 @@ class AboutController extends Controller
     }
 
     public function update (Request $request){
-
-       $photo = new FIle_download();
-       $checkedPhoto =  $photo->download($request)??false;
-
-        $about = About::first();
-        $about->title = $request->title;
-        if ($checkedPhoto){
-            $about->image=$checkedPhoto;
-        }
-        $about->text=$request->text;
-        $about->save();
-        return redirect()->back();
+         $about = About::first();
+     
+        $requests=$request->all();
+      
+      $photo = new FIle_download();
+      $checkedPhoto =  $photo->download($request)??false;
+      if ($checkedPhoto){
+          $requests['image']=$checkedPhoto;
+      }
+      $about->update($requests);
+      return redirect()->back();
     }
 }

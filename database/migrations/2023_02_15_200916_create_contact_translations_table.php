@@ -15,7 +15,16 @@ return new class extends Migration
     {
         Schema::create('contact_translations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('contact_id');
+            $table->string('locale');
+            $table->string('title');
             $table->timestamps();
+
+            $table->foreign('contact_id')
+            ->references('id')
+            ->on('contacts')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 
