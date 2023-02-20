@@ -15,6 +15,15 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('slug')->nullable();
+            $table->string('price')->nullable();
+            $table->string('discount')->nullable();
+            $table->string('stock')->nullable();
+            $table->enum('status',['1','0'])->default('1');
+            $table->unsignedInteger('order')->nullable();
+            $table->string('thumb_image_1')->nullable();
+            $table->string('thumb_image_2')->nullable();
+
             $table->timestamps();
         });
     }

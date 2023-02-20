@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('contact_id');
             $table->string('locale');
-            $table->string('title');
+            $table->string('address');
+            $table->string('text');
             $table->timestamps();
 
             $table->foreign('contact_id')
