@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class ContactTranslation extends Model
 {
     use HasFactory;
+    protected $fillable = ['address'];
 }
