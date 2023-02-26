@@ -15,7 +15,17 @@ return new class extends Migration
     {
         Schema::create('banner_translations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('banner_id');
+            $table->string('locale');
+            $table->string('title');
+            $table->string('sub_title');
             $table->timestamps();
+
+            $table->foreign('banner_id')
+            ->references('id')
+            ->on('banners')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

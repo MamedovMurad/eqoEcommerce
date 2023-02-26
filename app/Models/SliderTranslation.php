@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class SliderTranslation extends Model
 {
     use HasFactory;
+    protected $fillable =  ['title','description','link_title'];
 }
