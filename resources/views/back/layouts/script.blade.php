@@ -16,11 +16,11 @@
  <script src="{{asset('admin-panel')}}/assets/js/app.js"></script>
 
  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
- @jquery
+ {{-- @jquery
 
  @toastr_js
 
- @toastr_render
+ @toastr_render --}}
 
  <script>
 

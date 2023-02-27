@@ -88,7 +88,16 @@
                                 <i class="mdi mdi-puzzle-outline"></i> <span data-key="t-widgets">Texniki dəsdək</span>
                             </a>
                         </li>
-                       
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{route('support.index')}}">
+                                <i class="mdi mdi-puzzle-outline"></i> <span data-key="t-widgets">Bannerlər</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{route('support.index')}}">
+                                <i class="mdi mdi-puzzle-outline"></i> <span data-key="t-widgets">Slayderlər</span>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
                                 <i class="mdi mdi-speedometer"></i> <span data-key="t-dashboards">Xəbərlər</span>
@@ -119,7 +128,7 @@
                                 </ul>
                             </div>
                         </li> 
-                     {{--    
+                        
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarProducts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProducts">
                                 <i class="mdi mdi-speedometer"></i> <span data-key="t-Products">Məhsullar</span>
@@ -127,18 +136,24 @@
                             <div class="collapse menu-dropdown" id="sidebarProducts">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="{{route('project.category.index')}}" class="nav-link" data-key="t-analytics"> Məhsul kateqoriyası </a>
+                                        <a href="{{route('category.index')}}" class="nav-link" data-key="t-analytics"> Məhsul kateqoriyası </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('project.category.index')}}" class="nav-link" data-key="t-analytics"> Məhsul brendləri </a>
+                                        <a href="{{route('brend.index')}}" class="nav-link" data-key="t-analytics"> Məhsul brendləri </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('project.index')}}" class="nav-link" data-key="t-analytics"> Məhsullar </a>
+                                        <a href="{{route('product.index')}}" class="nav-link" data-key="t-analytics"> Məhsullar </a>
                                     </li>
                                 </ul>
                             </div>
-                        </li>  --}}
+                        </li> 
                         
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{-- {{route('contact.index')}} --}}">
+                                <i class="mdi mdi-puzzle-outline"></i> <span data-key="t-widgets">Əlaqə</span>
+                            </a>
+                        </li>
 
                     </ul>
                 </div>

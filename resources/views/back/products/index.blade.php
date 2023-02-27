@@ -12,8 +12,7 @@
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
                             <h4 class="card-title mb-0 flex-grow-1">Məhsullar</h4>
-                            <button type="button"
-                                onclick="unSet()"   class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#partners_modal">Əlavə et</button>
+                           <a href="{{route('product.create')}}"  class="btn btn-primary "> Əlavə et</a>
                         </div>
                         <div class="card-body">
                             <table class="table table-nowrap">

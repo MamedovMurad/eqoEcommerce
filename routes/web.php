@@ -43,7 +43,12 @@ Route::post('/admin-post', [AuthController:: class, 'login_post'])->name('log_in
     Route::resource('project-category', 'App\Http\Controllers\back\ProjectCategoryController')->names('project.category');
     Route::resource('project', 'App\Http\Controllers\back\ProjectController')->names('project');
     Route::resource('support', 'App\Http\Controllers\back\SupportController')->names('support');
-    
+    Route::resource('banner', 'App\Http\Controllers\back\BannerController')->names('news');
+    Route::resource('slider', 'App\Http\Controllers\back\SliderController')->names('slider');
+    Route::resource('category', 'App\Http\Controllers\back\CategoryController')->names('category');
+    Route::resource('product', 'App\Http\Controllers\back\ProductController')->names('product');
+    Route::resource('brend', 'App\Http\Controllers\back\BrendController')->names('brend');
+    Route::resource('contact', 'App\Http\Controllers\back\ContactController')->names('news');
 
 
 
