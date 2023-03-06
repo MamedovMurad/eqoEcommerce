@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\Language;
+use Illuminate\Support\Arr;
 
 class BrendRequest extends FormRequest
 {
@@ -13,7 +15,7 @@ class BrendRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +25,33 @@ class BrendRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
+       
+        $return = [];
+
+        $active_langs = Language::get();
+
+        foreach ($active_langs as $lang){
+      
+            $return[] = [
+               
+                'title:' . $lang['code'] => ['required', 'max:255'],
+               
+           
+            ];
+
+     
+        }
+
+        $return[] = [
+           
+            'slug' => ['max:255'],
+            'status'=>['max:2'],
+            'order'=>['max:11'],
+            'image'=>['max:2024']
+
         ];
+
+
+        return Arr::collapse($return);
     }
 }

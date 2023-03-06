@@ -27,9 +27,7 @@ class NewsRequest extends FormRequest
         
             $return = [];
 
-            $active_langs = Language::get(); /* Cache::rememberForever('active_langs', function () {
-                return Language::get();
-            }); */
+            $active_langs = Language::get();
    
             foreach ($active_langs as $lang){
           
@@ -51,13 +49,7 @@ class NewsRequest extends FormRequest
                 'image'=>['max:2024']
 
             ];
-  /*   dd( $return); */
-            // For Update
-          /*   if ($this->filled('_method') && $this->get('_method') == 'PUT') {
-                $return[] = [
-                    'image' => 'filled',
-                ];
-            } */
+ 
     
             return Arr::collapse($return);
         

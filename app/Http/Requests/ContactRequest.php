@@ -3,7 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+use App\Models\Language;
+use Illuminate\Support\Arr;
 class ContactRequest extends FormRequest
 {
     /**
@@ -13,7 +14,7 @@ class ContactRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +24,33 @@ class ContactRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
+       
+        $return = [];
+
+        $active_langs = Language::get();
+
+        foreach ($active_langs as $lang){
+      
+            $return[] = [
+               
+                'address:' . $lang['code'] => ['required', 'max:255'],
+              
+           
+            ];
+
+     
+        }
+
+        $return[] = [
+            'email'=>['required','max:11'],
+            'phone' => ['max:255'],
+            'map'=>['max:2'],
+            'facebook'=>['max:11'],
+            'instagram'=>['max:2024']
+
         ];
+
+
+        return Arr::collapse($return);
     }
 }

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
+use App\Models\Language;
+use App\Services\FIle_download;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -15,28 +18,27 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('back.categories.index',['products'=>Category::paginate(10)]);
+        return view('back.categories.index',['categories'=>Category::paginate(10), 'languages'=>Language::where('status', 1)->get()]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
+   
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        //
+        $requests=$request->all();
+       
+        $photo = new FIle_download();
+        $checkedPhoto =  $photo->download($request)??false;
+        if ($checkedPhoto){
+            $requests['image']=$checkedPhoto;
+        }
+        Category::create($requests);
+        return redirect()->back();
     }
 
     /**
@@ -47,20 +49,10 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        return Category::find($id);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
+   
     /**
      * Update the specified resource in storage.
      *
@@ -68,9 +60,19 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
-        //
+        $category = Category::find($id);
+     
+        $requests=$request->all();
+     
+      $photo = new FIle_download();
+      $checkedPhoto =  $photo->download($request)??false;
+      if ($checkedPhoto){
+          $requests['image']=$checkedPhoto;
+      }
+      $category->update($requests);
+      return redirect()->back();
     }
 
     /**
@@ -81,6 +83,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::where('id',$id)->delete();
+        return redirect()->back();
     }
 }

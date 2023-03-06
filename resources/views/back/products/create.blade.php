@@ -118,7 +118,16 @@
                                                 <input type="text" class="form-control" id="basiInput">
                                             </div>
                                         </div>
-
+                                        <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
+                                            <div>
+                                                <label for="basiInput" class="form-label">Basic Input</label>
+                                        <select class="form-select mb-3" aria-label=".form-select-lg example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">One</option>
+                                           
+                                        </select>
+                                        </div>
+                                    </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Basic Input</label>

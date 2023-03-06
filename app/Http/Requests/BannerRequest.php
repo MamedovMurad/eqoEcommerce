@@ -2,10 +2,11 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Language;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Arr;
-class CategoryRequest extends FormRequest
+
+class BannerRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +25,7 @@ class CategoryRequest extends FormRequest
      */
     public function rules()
     {
-       
+        
         $return = [];
 
         $active_langs = Language::get();
@@ -34,7 +35,7 @@ class CategoryRequest extends FormRequest
             $return[] = [
                
                 'title:' . $lang['code'] => ['required', 'max:255'],
-               
+                'sub_title:' . $lang['code'] => ['required','max:255'],
            
             ];
 
@@ -42,9 +43,8 @@ class CategoryRequest extends FormRequest
         }
 
         $return[] = [
-            'parent_id'=>['max:11'],
-            'home'=>['max:11'],
-            'slug' => ['max:255'],
+       
+            'link' => ['max:255'],
             'status'=>['max:2'],
             'order'=>['max:11'],
             'image'=>['max:2024']

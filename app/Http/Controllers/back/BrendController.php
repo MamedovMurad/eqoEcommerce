@@ -3,6 +3,11 @@
 namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BrendRequest;
+use App\Models\Brend;
+use App\Models\Language;
+use App\Models\Slider;
+use App\Services\FIle_download;
 use Illuminate\Http\Request;
 
 class BrendController extends Controller
@@ -14,7 +19,7 @@ class BrendController extends Controller
      */
     public function index()
     {
-        //
+        return view('back.brends.index',['brend'=>Brend::paginate(10), 'languages'=>Language::where('status', 1)->get()]);
     }
 
     /**
@@ -33,9 +38,18 @@ class BrendController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BrendRequest $request)
     {
-        //
+        $requests=$request->all();
+       
+        $photo = new FIle_download();
+        $checkedPhoto =  $photo->download($request)??false;
+        if ($checkedPhoto){
+            $requests['image']=$checkedPhoto;
+        }
+   
+        Brend::create($requests);
+        return redirect()->back();
     }
 
     /**
@@ -46,7 +60,7 @@ class BrendController extends Controller
      */
     public function show($id)
     {
-        //
+        return Slider::find($id);
     }
 
     /**
@@ -67,9 +81,19 @@ class BrendController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BrendRequest $request, $id)
     {
-        //
+        $category = Brend::find($id);
+     
+        $requests=$request->all();
+     
+      $photo = new FIle_download();
+      $checkedPhoto =  $photo->download($request)??false;
+      if ($checkedPhoto){
+          $requests['image']=$checkedPhoto;
+      }
+      $category->update($requests);
+      return redirect()->back();
     }
 
     /**
@@ -80,6 +104,7 @@ class BrendController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Brend::where('id',$id)->delete();
+        return redirect()->back();
     }
 }

@@ -3,6 +3,11 @@
 namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BannerRequest;
+use App\Models\Banner;
+use App\Models\Language;
+use App\Models\Slider;
+use App\Services\FIle_download;
 use Illuminate\Http\Request;
 
 class BannerController extends Controller
@@ -14,7 +19,7 @@ class BannerController extends Controller
      */
     public function index()
     {
-        //
+        return view('back.banner.index',['banner'=>Banner::paginate(10), 'languages'=>Language::where('status', 1)->get()]);
     }
 
     /**
@@ -33,9 +38,18 @@ class BannerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BannerRequest $request)
     {
-        //
+        $requests=$request->all();
+       
+        $photo = new FIle_download();
+        $checkedPhoto =  $photo->download($request)??false;
+        if ($checkedPhoto){
+            $requests['image']=$checkedPhoto;
+        }
+   
+        Banner::create($requests);
+        return redirect()->back();
     }
 
     /**
@@ -46,7 +60,7 @@ class BannerController extends Controller
      */
     public function show($id)
     {
-        //
+        return Slider::find($id);
     }
 
     /**
@@ -67,9 +81,19 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BannerRequest $request, $id)
     {
-        //
+        $category = Banner::find($id);
+     
+        $requests=$request->all();
+     
+      $photo = new FIle_download();
+      $checkedPhoto =  $photo->download($request)??false;
+      if ($checkedPhoto){
+          $requests['image']=$checkedPhoto;
+      }
+      $category->update($requests);
+      return redirect()->back();
     }
 
     /**
@@ -80,6 +104,7 @@ class BannerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Banner::where('id',$id)->delete();
+        return redirect()->back();
     }
 }
