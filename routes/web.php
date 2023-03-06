@@ -20,7 +20,7 @@ Route::get('/', [HomeController:: class, 'index'])->name('home');
 Route::get('/news1', [HomeController:: class, 'news'])->name('news');
 Route::get('/news-detail', [HomeController:: class, 'newsDetail'])->name('news.detail');
 Route::get('/about1', [HomeController:: class, 'about'])->name('about');
-Route::get('/contact', [HomeController:: class, 'contact'])->name('contact');
+Route::get('/elaqe', [HomeController:: class, 'elaqe'])->name('elaqe');
 Route::get('/products', [HomeController:: class, 'products'])->name('product');
 Route::get('/product-detail', [HomeController:: class, 'productDetail'])->name('product.detail');
 
@@ -43,12 +43,12 @@ Route::post('/admin-post', [AuthController:: class, 'login_post'])->name('log_in
     Route::resource('project-category', 'App\Http\Controllers\back\ProjectCategoryController')->names('project.category');
     Route::resource('project', 'App\Http\Controllers\back\ProjectController')->names('project');
     Route::resource('support', 'App\Http\Controllers\back\SupportController')->names('support');
-    Route::resource('banner', 'App\Http\Controllers\back\BannerController')->names('news');
+    Route::resource('banner', 'App\Http\Controllers\back\BannerController')->names('banner');
     Route::resource('slider', 'App\Http\Controllers\back\SliderController')->names('slider');
     Route::resource('category', 'App\Http\Controllers\back\CategoryController')->names('category');
     Route::resource('product', 'App\Http\Controllers\back\ProductController')->names('product');
     Route::resource('brend', 'App\Http\Controllers\back\BrendController')->names('brend');
-    Route::resource('contact', 'App\Http\Controllers\back\ContactController')->names('news');
+    Route::resource('contact', 'App\Http\Controllers\back\ContactController')->names('contact');
 
 
 

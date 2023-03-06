@@ -12,7 +12,7 @@
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('admin-panel')}}/assets/images/favicon.ico">
-
+    @yield('css')
     <!-- Layout config Js -->
     <script src="{{asset('admin-panel')}}/assets/js/layout.js"></script>
     <!-- Bootstrap Css -->

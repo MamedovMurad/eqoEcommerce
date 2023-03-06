@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Language;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -25,7 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.products.create',['categories'=>Category::get(),'languages'=>Language::get()]);
     }
 
     /**

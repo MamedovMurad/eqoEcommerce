@@ -215,7 +215,7 @@
                                         </ul>
                                     </li>
                                     <li><a href="{{route('about')}}">HAQQIMIZDA</a></li>
-                                    <li><a href="{{route('contact')}}">BİZİMLƏ ƏLAQƏ</a></li>
+                                    <li><a href="{{route('elaqe')}}">BİZİMLƏ ƏLAQƏ</a></li>
                                 </ul>
                             </nav>
                         </div>

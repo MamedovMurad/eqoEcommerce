@@ -25,7 +25,7 @@ class HomeController extends Controller
         return view('front.about.about');
     }
 
-    public function contact(){
+    public function elaqe(){
         return view('front.contact.contact');
     }
 
