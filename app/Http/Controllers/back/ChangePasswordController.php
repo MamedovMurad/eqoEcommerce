@@ -14,7 +14,7 @@ class ChangePasswordController extends Controller
     public function change_password(){
 
         return view('back.change_password.password');
-
+ 
 
 
     }

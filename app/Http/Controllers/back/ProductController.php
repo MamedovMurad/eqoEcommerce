@@ -54,7 +54,7 @@ class ProductController extends Controller
             foreach($files as $file){
                 $name=$file->getClientOriginalName();
                 $file->move('image',$name);
-                $images[]=$name;
+                $images[]=$name; 
             }
         }
         ProductImage::insert( ['image'=>  implode("|",$images),]);
