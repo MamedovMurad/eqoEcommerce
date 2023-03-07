@@ -10,7 +10,9 @@
 
         <div class="page-content">
             <div class="container-fluid">
-
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
@@ -25,8 +27,8 @@
                                             <div class="card">
                                              
                                                 <div class="card-body">
-                                                   
-                                                       
+                                                    <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
+                                                       @csrf
                                                         <div class="step-arrow-nav mb-4">
                 
                                                             <ul class="nav nav-pills custom-nav nav-justified" role="tablist">
@@ -89,7 +91,7 @@
                                             <div class="mt-4 mt-lg-0">
                                                 <h5 class="fs-14 mb-1">Kateqoriyalar</h5>
                                             
-                                                <form>
+                                          
                                                     <select name="category" required multiple="multiple" name="favorite_cars" id="multiselect-header">
                                                         @foreach ($categories as $item)
                                                         <option value="{{$item->id}}">{{$item->translate('az')->title}}</option>
@@ -97,7 +99,7 @@
                                                       
                                                        
                                                     </select>
-                                                </form>
+                                              
                                             </div>
                                         </div>
                                         
@@ -105,31 +107,31 @@
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Slug</label>
-                                                <input type="text" class="form-control" id="basiInput">
+                                                <input name="slug" type="text" class="form-control" id="basiInput">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Qiymət</label>
-                                                <input type="text" class="form-control" id="basiInput">
+                                                <input name="price" type="text" class="form-control" id="basiInput">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Endirimli qiymət</label>
-                                                <input type="text" class="form-control" id="basiInput">
+                                                <input name="discount_price" type="text" class="form-control" id="basiInput">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Stok</label>
-                                                <input type="text" class="form-control" id="basiInput">
+                                                <input name="stock" type="text" class="form-control" id="basiInput">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Brendlər</label>
-                                        <select name="brend" class="form-select mb-3" aria-label=".form-select-lg example">
+                                        <select name="brend_id" class="form-select mb-3" aria-label=".form-select-lg example">
                                             <option selected>Brend Seç</option>
                                             @foreach ($brends as $item)
                                             <option value="1">{{$item->translate('az')->title}}</option>
@@ -165,7 +167,7 @@
                                                 
                                                 <div class="live-preview">
                                                       <div class="form-check form-switch form-switch-lg text-start" dir="ltr">
-                                            <input type="checkbox" class="form-check-input" id="customSwitchsizelg" checked="">
+                                            <input name="status" type="checkbox" class="form-check-input" id="customSwitchsizelg" checked="" value=1>
                                             <label class="form-check-label" for="customSwitchsizelg">Passiv/Aktiv</label>
                                         </div>
                                                         <div class="text-end">
@@ -173,7 +175,7 @@
                                                         </div>
                                                     
                                                 </div>
-                                               
+                                            </form>
                                             </div>
                                         </div>
                                     </div>

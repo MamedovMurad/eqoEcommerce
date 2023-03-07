@@ -43,6 +43,7 @@ class ProductRequest extends FormRequest
         }
 
         $return[] = [
+            'id'=>['max:11'],
             'brend_id'=>['required','max:11'],
             'slug' => ['max:255'],
             'price' => ['required','max:255'],

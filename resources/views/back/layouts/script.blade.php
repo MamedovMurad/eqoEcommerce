@@ -22,7 +22,7 @@
 
  @toastr_render --}}
 
- <script>
+{{--  <script>
 
      @if(count($errors) > 0)
 
@@ -34,4 +34,4 @@
 
      @endif
 
- </script>
+ </script> --}}
