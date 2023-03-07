@@ -92,7 +92,7 @@
                                                 <form>
                                                     <select name="category" required multiple="multiple" name="favorite_cars" id="multiselect-header">
                                                         @foreach ($categories as $item)
-                                                        <option value="{{$item->id}}">{{$item->translate(App::getLocale())->title}}</option>
+                                                        <option value="{{$item->id}}">{{$item->translate('az')->title}}</option>
                                                         @endforeach
                                                       
                                                        
@@ -129,10 +129,10 @@
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Brendlər</label>
-                                        <select class="form-select mb-3" aria-label=".form-select-lg example">
+                                        <select name="brend" class="form-select mb-3" aria-label=".form-select-lg example">
                                             <option selected>Brend Seç</option>
                                             @foreach ($brends as $item)
-                                            <option value="1">{{$item->translate(App::getLocale())->title}}</option>
+                                            <option value="1">{{$item->translate('az')->title}}</option>
                                             @endforeach
                                            
                                            
@@ -142,19 +142,19 @@
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Ön şəkil </label>
-                                                <input type="file" class="form-control" id="basiInput">
+                                                <input type="file" name="thumb_image_1" class="form-control" id="basiInput">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">2-ci Ön şəkil</label>
-                                                <input type="file" class="form-control" id="basiInput">
+                                                <input type="file" name="thumb_image_2" class="form-control" id="basiInput">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Məhsul Şəkilləri</label>
-                                                <input type="file" class="form-control" id="basiInput">
+                                                <input type="file" name="images[]" class="form-control" id="basiInput" multiple>
                                             </div>
                                         </div>
                                        

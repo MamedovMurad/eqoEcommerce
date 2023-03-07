@@ -11,7 +11,7 @@ use App\Models\Product;
 use App\Models\ProductImage;
 use App\Services\FIle_download;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 class ProductController extends Controller
 {
     /**
@@ -47,18 +47,23 @@ class ProductController extends Controller
         $photo = new FIle_download();
         $checkedPhoto =  $photo->download($request)??false;
         if ($checkedPhoto){
-            $requests['image']=$checkedPhoto;
+            $requests['thumb_image_1']=$checkedPhoto;
         }
-        $images=[];
-        if($files=$request->file('images')){
-            foreach($files as $file){
-                $name=$file->getClientOriginalName();
-                $file->move('image',$name);
-                $images[]=$name; 
-            }
+        if ($checkedPhoto){
+            $requests['thumb_image_2']=$checkedPhoto;
         }
-        ProductImage::insert( ['image'=>  implode("|",$images),]);
+      
+       
         Product::create($requests);
+
+        foreach ($request->file('images') as $imagefile) {
+            $image = new ProductImage();
+            $imageName= time() . "-" . uniqid() . '.' .$request->image->getClientOriginalExtension();
+            $request->image->move(public_path('uploads'),$imageName);
+            $image->image='/uploads/'.$imageName;
+            $image->product_id = $requests['id'];
+            $image->save();
+          }
         return redirect()->back();
     }
 

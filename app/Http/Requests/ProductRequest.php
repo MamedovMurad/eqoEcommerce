@@ -51,8 +51,9 @@ class ProductRequest extends FormRequest
             'status'=>['max:2'],
             'order'=>['max:11'],
             'thumb_image_1'=>['max:2024'],
-            'thumb_image_2'=>['max:2024']
-
+            'thumb_image_2'=>['max:2024'],
+            'images' => 'required',
+            'images.*' => 'required|mimes:png,gif,jpg,jpeg,bmp|max:2048',
 
         ];
 
