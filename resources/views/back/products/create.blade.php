@@ -48,12 +48,16 @@
                                                             <div class="tab-pane fade" id="steparrow-{{$item->id}}-info" role="tabpanel" aria-labelledby="steparrow-{{$item->id}}-info-tab">
                                                                 <div>
                                                                             <div class="mb-3">
-                                                                                <label for="formFile" class="form-label">Text</label>
-                                                                                <input class="form-control" type="text" id="formFile" />
+                                                                                <label for="formFile" class="form-label">Başlıq-{{$item->code}}</label>
+                                                                                <input class="form-control" name="title:{{$item->code}}" type="text" id="formFile" />
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                                <label for="formFile" class="form-label">Qısa mətn-{{$item->code}}</label>
+                                                                                <input class="form-control" name="sub_title:{{$item->code}}" type="text" id="formFile" />
                                                                             </div>
                                                                             <div>
-                                                                                <label class="form-label" for="des-info-description-input">Description</label>
-                                                                                <textarea class="form-control" placeholder="Enter Description" id="des-info-description-input" rows="3" required></textarea>
+                                                                                <label class="form-label" for="des-info-description-input">Ətraflı-{{$item->code}}</label>
+                                                                                <textarea class="form-control" name="description:{{$item->code}}" placeholder="Enter Description" id="des-info-description-input" rows="3" required></textarea>
                                                                                 <div class="invalid-feedback">Please enter a description</div>
                                                                             </div>
                                                                        
@@ -64,20 +68,6 @@
                                                             @endforeach
                                                             <!-- end tab pane -->
                 
-                                                            <div class="tab-pane fade show active" id="steparrow-description-info" role="tabpanel" aria-labelledby="steparrow-description-info-tab">
-                                                                <div>
-                                                                    <div class="mb-3">
-                                                                        <label for="formFile" class="form-label">Text</label>
-                                                                        <input class="form-control" type="text" id="formFile" />
-                                                                    </div>
-                                                                    <div>
-                                                                        <label class="form-label" for="des-info-description-input">Description</label>
-                                                                        <textarea class="form-control" placeholder="Enter Description" id="des-info-description-input" rows="3" required></textarea>
-                                                                        <div class="invalid-feedback">Please enter a description</div>
-                                                                    </div>
-                                                                </div>
-                                                               
-                                                            </div>
                                                             <!-- end tab pane -->
                 
                                                   
@@ -100,9 +90,9 @@
                                                 <h5 class="fs-14 mb-1">Kateqoriyalar</h5>
                                             
                                                 <form>
-                                                    <select required multiple="multiple" name="favorite_cars" id="multiselect-header">
+                                                    <select name="category" required multiple="multiple" name="favorite_cars" id="multiselect-header">
                                                         @foreach ($categories as $item)
-                                                        <option>{{$item->translate('az')->title}}</option>
+                                                        <option value="{{$item->id}}">{{$item->translate(App::getLocale())->title}}</option>
                                                         @endforeach
                                                       
                                                        
@@ -114,28 +104,61 @@
 
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
-                                                <label for="basiInput" class="form-label">Basic Input</label>
+                                                <label for="basiInput" class="form-label">Slug</label>
                                                 <input type="text" class="form-control" id="basiInput">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
-                                                <label for="basiInput" class="form-label">Basic Input</label>
+                                                <label for="basiInput" class="form-label">Qiymət</label>
+                                                <input type="text" class="form-control" id="basiInput">
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
+                                            <div>
+                                                <label for="basiInput" class="form-label">Endirimli qiymət</label>
+                                                <input type="text" class="form-control" id="basiInput">
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
+                                            <div>
+                                                <label for="basiInput" class="form-label">Stok</label>
+                                                <input type="text" class="form-control" id="basiInput">
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
+                                            <div>
+                                                <label for="basiInput" class="form-label">Brendlər</label>
                                         <select class="form-select mb-3" aria-label=".form-select-lg example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
+                                            <option selected>Brend Seç</option>
+                                            @foreach ($brends as $item)
+                                            <option value="1">{{$item->translate(App::getLocale())->title}}</option>
+                                            @endforeach
+                                           
                                            
                                         </select>
                                         </div>
                                     </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
-                                                <label for="basiInput" class="form-label">Basic Input</label>
+                                                <label for="basiInput" class="form-label">Ön şəkil </label>
+                                                <input type="file" class="form-control" id="basiInput">
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
+                                            <div>
+                                                <label for="basiInput" class="form-label">2-ci Ön şəkil</label>
+                                                <input type="file" class="form-control" id="basiInput">
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
+                                            <div>
+                                                <label for="basiInput" class="form-label">Məhsul Şəkilləri</label>
                                                 <input type="file" class="form-control" id="basiInput">
                                             </div>
                                         </div>
                                        
-                                    <div class="col-xxl-6">
+                                    <div class="col-xxl-12">
                                         <div class="card">
                                           
                                             <div class="card-body">
@@ -146,7 +169,7 @@
                                             <label class="form-check-label" for="customSwitchsizelg">Passiv/Aktiv</label>
                                         </div>
                                                         <div class="text-end">
-                                                            <button type="submit" class="btn btn-primary">Add Leave</button>
+                                                            <button type="submit" class="btn btn-primary">Əlavə et</button>
                                                         </div>
                                                     
                                                 </div>

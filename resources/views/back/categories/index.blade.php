@@ -18,7 +18,7 @@
 
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1">Partnyorlar və Referanslar</h4>
+                            <h4 class="card-title mb-0 flex-grow-1">Kateqoriyalar</h4>
                             <button type="button"
                                 onclick="unSet()"   class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#partners_modal">Əlavə et</button>
                         </div>
@@ -130,8 +130,8 @@
                                         <div class="col-lg-9">
 
                                             <select name="parent_id" class="form-select " aria-label="Default select example" name="type" id="type_form">
+                                               {{--  <option selected>Üst Kateqoriya</option> --}}
                                                 @foreach ($categories as $item)
-                                                <option >Üst Kateqoriya</option>
                                                 <option value="{{$item->id}}">{{$item->translate('az')->title}}</option>
                                                 @endforeach
                                             

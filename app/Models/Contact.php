@@ -10,6 +10,6 @@ use Astrotomic\Translatable\Translatable;
 class Contact extends Model implements TranslatableContract
 {
     use HasFactory, Translatable;
-    public $translatedAttributes = ['title', 'description' ];
+    public $translatedAttributes = ['address' ];
     protected $fillable = ['email','phone','map','facebook','instagram'];
 }
