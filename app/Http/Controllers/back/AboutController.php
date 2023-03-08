@@ -3,17 +3,19 @@
 namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AboutRequest;
 use App\Models\About;
+use App\Models\Language;
 use App\Services\FIle_download;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
     public function index(){
-        return view('back.about.index',['about'=>About::first()]);
+        return view('back.about.index',['about'=>About::first(),'languages'=>Language::where('status', 1)->get()]);
     }
 
-    public function update (Request $request){
+    public function update (AboutRequest $request){
          $about = About::first();
      
         $requests=$request->all();

@@ -60,7 +60,7 @@ class BannerController extends Controller
      */
     public function show($id)
     {
-        return Slider::find($id);
+        return Banner::find($id);
     }
 
     /**

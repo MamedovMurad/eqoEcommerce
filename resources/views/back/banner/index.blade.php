@@ -18,7 +18,7 @@
 
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1">Partnyorlar və Referanslar</h4>
+                            <h4 class="card-title mb-0 flex-grow-1">Bannerlər</h4>
                             <button type="button"
                                 onclick="unSet()"   class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#partners_modal">Əlavə et</button>
                         </div>
@@ -34,7 +34,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($news as $partner)
+                                @foreach($banner as $partner)
                                     <tr>
 
                                         <th scope="row"><a href="#" class="fw-semibold">#{{$partner->id}}</a></th>
@@ -48,7 +48,7 @@
                                                             data-bs-toggle="modal" data-bs-target="#partners_modal"
                                                             class="btn btn-ghost-info waves-effect waves-light shadow-none" onclick="formEditButton('{{$partner->id}}')"><i class="ri-edit-2-fill"></i></button>
 
-                                            <form action="{{route('news.destroy',$partner->id)}}" method="post">
+                                            <form action="{{route('banner.destroy',$partner->id)}}" method="post">
                                                 @method('delete')
                                                 @csrf
                                                 <button type="submit" class="from_edit btn btn-ghost-danger waves-effect waves-light shadow-none"><i class="ri-delete-bin-line"></i></button>
@@ -76,11 +76,11 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="partners_modalLabel">Xəbər Əlavə Et</h5>
+                                <h5 class="modal-title" id="partners_modalLabel">Banner Əlavə Et</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{route('news.store')}}" id="partner_form" method="post"  enctype='multipart/form-data'>
+                                <form action="{{route('banner.store')}}" id="partner_form" method="post"  enctype='multipart/form-data'>
                                    @csrf
                               
                                    <div class="row mb-3">
@@ -99,7 +99,7 @@
                                         <div id="titleInput{{$item->code}}" class="title__input">
                                         
                                             <input type="text" class="form-control "  placeholder="title {{$item->code}}" name="title:{{$item->code}}">  
-                                          <textarea name="description:{{$item->code}}"  class="form-control mt-3"  cols="30" rows="10">{{$item->code}}</textarea>
+                                            <input type="text" class="form-control "  placeholder="sub title {{$item->code}}" name="sub_title:{{$item->code}}">  
                                        
                                         </div>
                                          @endforeach
@@ -122,32 +122,15 @@
 
                                         </div>
                                     </div>
-
                                     <div class="row mb-3">
                                         <div class="col-lg-3">
-                                            <label for="dateInput" class="form-label" >Kateqoriya</label>
+                                            <label for="titleInput" class="form-label">Link</label>
                                         </div>
                                         <div class="col-lg-9">
-
-                                            <select name="news_category_id" class="form-select " aria-label="Default select example" name="type" id="type_form">
-                                                @foreach ($categories as $item)
-                                                <option value="{{$item->id}}">{{$item->translate('az')->title}}</option>
-                                                @endforeach
-                                            
-
-                                             
-                                            </select>
+                                            <input type="text" class="form-control" id="titleInput" placeholder="Link" name="link">
                                         </div>
                                     </div>
-
-                                    <div class="row mb-3">
-                                        <div class="col-lg-3">
-                                            <label for="titleInput" class="form-label">Slug</label>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control" id="titleInput" placeholder="Slug" name="slug">
-                                        </div>
-                                    </div>
+                                
                                     <div class="form-check form-check-secondary mb-3">
                                        
                                         <input id="checkbox" name="status" type="checkbox" value="1">
@@ -201,17 +184,17 @@
         ;
        function formEditButton(id_) {
         $('#checkbox').prop("checked", false)
-           $("#partner_form").attr('action','http://127.0.0.1:8000/news/'+id_)
+           $("#partner_form").attr('action','http://127.0.0.1:8000/banner/'+id_)
            $("#partner_form").append( `<input type="hidden" name="_method" value="PUT" id="hidden__">`)
            $('#partners_modalLabel').text('Xəbəri yenilə')
            $.ajax({
                type: "GET",
-               url: 'news/'+id_,
+               url: 'banner/'+id_,
                 // serializes the form's elements.
                success: function(data)
                {
                    $('#titleInput').val(data.title)
-                   $('#titleInput').val(data.slug)
+                   $('#titleInput').val(data.link)
                    $('#update_photo').css({'width':'80px','height':'80px'})
                    $('#update_photo').attr('src','/'+data.image)
                  
@@ -229,7 +212,8 @@
                    data.translations.forEach(item => {
                   let custom_input=  $("<div/>").addClass('title__input').attr('id','titleInput'+item.locale)
                    $('.titlesParent').append(custom_input.append($("<input/>").addClass('form-control ').attr({ "name": 'title:'+item.locale,'value':item.title})))
-                   $('.titlesParent').append(custom_input.append($('<textarea/>').addClass('form-control mt-3').attr({"name":'description:'+item.locale,"cols":"30", "rows":"10"}).val(item.description)))
+                   $('.titlesParent').append(custom_input.append($("<input/>").addClass('form-control ').attr({ "name": 'sub_title:'+item.locale,'value':item.sub_title})))
+                /*    $('.titlesParent').append(custom_input.append($('<textarea/>').addClass('form-control mt-3').attr({"name":'description:'+item.locale,"cols":"30", "rows":"10"}).val(item.description))) */
                 });
           }
            });

@@ -60,7 +60,7 @@ class BrendController extends Controller
      */
     public function show($id)
     {
-        return Slider::find($id);
+        return Brend::find($id);
     }
 
     /**

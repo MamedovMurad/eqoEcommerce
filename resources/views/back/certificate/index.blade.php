@@ -76,7 +76,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="partners_modalLabel">Xəbər Əlavə Et</h5>
+                                <h5 class="modal-title" id="partners_modalLabel">Sertifikat Əlavə Et</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
                             </div>
                             <div class="modal-body">
@@ -181,7 +181,7 @@
         $('#checkbox').prop("checked", false)
            $("#partner_form").attr('action','http://127.0.0.1:8000/certificate/'+id_)
            $("#partner_form").append( `<input type="hidden" name="_method" value="PUT" id="hidden__">`)
-           $('#partners_modalLabel').text('Xəbəri yenilə')
+           $('#partners_modalLabel').text('Sertifikatı yenilə')
            $.ajax({
                type: "GET",
                url: 'certificate/'+id_,

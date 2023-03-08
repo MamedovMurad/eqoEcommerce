@@ -42,11 +42,14 @@ class ProjectController extends Controller
     {
         $requests=$request->all();
        
-        $photo = new FIle_download();
-        $checkedPhoto =  $photo->download($request)??false;
-        if ($checkedPhoto){
-            $requests['image']=$checkedPhoto;
-        }
+        if($request->hasFile('image')){
+
+            $imgExtension = $requests['image']->getClientOriginalExtension();
+            $imageName = time() . "-" . uniqid() . '.' . $imgExtension;
+             $requests['image']->move(public_path('uploads'),$imageName);
+    
+             $requests['image']= 'uploads/'.$imageName;
+        };
    
         Project::create($requests);
         return redirect()->back();
@@ -87,11 +90,14 @@ class ProjectController extends Controller
      
           $requests=$request->all();
         
-        $photo = new FIle_download();
-        $checkedPhoto =  $photo->download($request)??false;
-        if ($checkedPhoto){
-            $requests['image']=$checkedPhoto;
-        }
+          if($request->hasFile('image')){
+
+            $imgExtension = $requests['image']->getClientOriginalExtension();
+            $imageName = time() . "-" . uniqid() . '.' . $imgExtension;
+             $requests['image']->move(public_path('uploads'),$imageName);
+    
+             $requests['image']= 'uploads/'.$imageName;
+        };
       
         if(!isset($requests['status'])){
             $requests['status']='0';

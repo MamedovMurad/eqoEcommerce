@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Language;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Arr;
 
 class AboutRequest extends FormRequest
 {
@@ -13,7 +15,7 @@ class AboutRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +25,30 @@ class AboutRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
+        $return = [];
+
+        $active_langs = Language::get();
+
+        foreach ($active_langs as $lang){
+      
+            $return[] = [
+               
+                'title:' . $lang['code'] => ['required', 'max:255'],
+                'text:' . $lang['code'] => ['required','max:255'],
+           
+            ];
+
+     
+        }
+
+        $return[] = [
+       
+          
+            'image'=>['max:2024']
+
         ];
+
+
+        return Arr::collapse($return);
     }
 }
