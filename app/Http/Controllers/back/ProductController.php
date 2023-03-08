@@ -44,14 +44,22 @@ class ProductController extends Controller
     {
         $requests=$request->all();
        
-        $photo = new FIle_download();
-        $checkedPhoto =  $photo->download($request)??false;
-        if ($checkedPhoto){
-            $requests['thumb_image_1']=$checkedPhoto;
-        }
-        if ($checkedPhoto){
-            $requests['thumb_image_2']=$checkedPhoto;
-        }
+        if($request->hasFile('thumb_image_1')){
+
+            $imgExtension = $requests['thumb_image_1']->getClientOriginalExtension();
+            $imageName = time() . "-" . uniqid() . '.' . $imgExtension;
+             $requests['thumb_image_1']->move(public_path('uploads'),$imageName);
+    
+             $requests['thumb_image_1']= 'uploads/'.$imageName;
+        };
+        if($request->hasFile('thumb_image_1')){
+
+            $imgExtension = $requests['thumb_image_2']->getClientOriginalExtension();
+            $imageName = time() . "-" . uniqid() . '.' . $imgExtension;
+             $requests['thumb_image_2']->move(public_path('uploads'),$imageName);
+    
+             $requests['thumb_image_2']= 'uploads/'.$imageName;
+        };
       
        
         $product = Product::create($requests);
@@ -86,7 +94,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        return view('back.products.edit',['categories'=>Category::get(),'languages'=>Language::get(),'brends'=>Brend::where('status', true)->get()]);
+        $categories =Category::get();
+        $languages = Language::get();
+        $brends = Brend::where('status', true)->get();
+
+        return view('back.products.edit',['categories'=>Category::get(),'languages'=>Language::get(),'brends'=>Brend::where('status', true)->get(),'product'=>Product::find($id),'images'=>ProductImage::where('product_id', $id)->get()]);
     }
 
     /**
@@ -101,18 +113,27 @@ class ProductController extends Controller
         $product = Product::find($id);
         $requests=$request->all();
        
-        $photo = new FIle_download();
-        $checkedPhoto =  $photo->download($request)??false;
-        if ($checkedPhoto){
-            $requests['thumb_image_1']=$checkedPhoto;
-        }
-        if ($checkedPhoto){
-            $requests['thumb_image_2']=$checkedPhoto;
-        }
+        if($request->hasFile('thumb_image_1')){
+
+            $imgExtension = $requests['thumb_image_1']->getClientOriginalExtension();
+            $imageName = time() . "-" . uniqid() . '.' . $imgExtension;
+             $requests['thumb_image_1']->move(public_path('uploads'),$imageName);
+    
+             $requests['thumb_image_1']= 'uploads/'.$imageName;
+        };
+        if($request->hasFile('thumb_image_1')){
+
+            $imgExtension = $requests['thumb_image_2']->getClientOriginalExtension();
+            $imageName = time() . "-" . uniqid() . '.' . $imgExtension;
+             $requests['thumb_image_2']->move(public_path('uploads'),$imageName);
+    
+             $requests['thumb_image_2']= 'uploads/'.$imageName;
+        };
       
        
         $product->update($requests);
-        
+        if (is_array($request->file('images')) || is_object($request->file('images')))
+{
         foreach ($request->file('images') as $imagefile) {
             $image = new ProductImage();
             $imageName= time() . "-" . uniqid() . '.' .$imagefile->getClientOriginalExtension();
@@ -121,7 +142,8 @@ class ProductController extends Controller
             $image->product_id = $product->id;
             $image->save();
           }
-        return redirect()->back();
+        }
+        return redirect()->route('product.index');
     }
 
     /**
@@ -132,6 +154,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::where('id',$id)->delete();
+        return redirect()->back();
     }
 }

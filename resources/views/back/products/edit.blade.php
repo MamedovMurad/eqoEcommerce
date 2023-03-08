@@ -17,7 +17,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header align-items-center d-flex">
-                                <h4 class="card-title mb-0 flex-grow-1">Məhsul əlavə et</h4>
+                                <h4 class="card-title mb-0 flex-grow-1">Məhsul redaktə et</h4>
                                 
                             </div><!-- end card header -->
                             <div class="card-body">
@@ -27,7 +27,8 @@
                                             <div class="card">
                                              
                                                 <div class="card-body">
-                                                    <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
+                                                    <form action="{{route('product.update',$product->id)}}" method="POST" enctype="multipart/form-data">
+                                                        @method('PUT')
                                                        @csrf
                                                         <div class="step-arrow-nav mb-4">
                 
@@ -51,15 +52,15 @@
                                                                 <div>
                                                                             <div class="mb-3">
                                                                                 <label for="formFile" class="form-label">Başlıq-{{$item->code}}</label>
-                                                                                <input class="form-control" name="title:{{$item->code}}" type="text" id="formFile" />
+                                                                                <input value="{{$product->translate($item->code)->title}}" class="form-control" name="title:{{$item->code}}" type="text" id="formFile" />
                                                                             </div>
                                                                             <div class="mb-3">
                                                                                 <label for="formFile" class="form-label">Qısa mətn-{{$item->code}}</label>
-                                                                                <input class="form-control" name="sub_title:{{$item->code}}" type="text" id="formFile" />
+                                                                                <input value="{{$product->translate($item->code)->sub_title}}" class="form-control" name="sub_title:{{$item->code}}" type="text" id="formFile" />
                                                                             </div>
                                                                             <div>
                                                                                 <label class="form-label" for="des-info-description-input">Ətraflı-{{$item->code}}</label>
-                                                                                <textarea class="form-control" name="description:{{$item->code}}" placeholder="Enter Description" id="des-info-description-input" rows="3" required></textarea>
+                                                                                <textarea class="form-control" name="description:{{$item->code}}" placeholder="Enter Description" id="des-info-description-input" rows="3" required>{{$product->translate($item->code)->description}}</textarea>
                                                                                 <div class="invalid-feedback">Please enter a description</div>
                                                                             </div>
                                                                        
@@ -107,32 +108,32 @@
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Slug</label>
-                                                <input name="slug" type="text" class="form-control" id="basiInput">
+                                                <input value="{{$product->slug}}" name="slug" type="text" class="form-control" id="basiInput">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Qiymət</label>
-                                                <input name="price" type="text" class="form-control" id="basiInput">
+                                                <input value="{{$product->price}}" name="price" type="text" class="form-control" id="basiInput">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Endirimli qiymət</label>
-                                                <input name="discount_price" type="text" class="form-control" id="basiInput">
+                                                <input value="{{$product->discount_price}}" name="discount_price" type="text" class="form-control" id="basiInput">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Stok</label>
-                                                <input name="stock" type="text" class="form-control" id="basiInput">
+                                                <input value="{{$product->stock}}" name="stock" type="text" class="form-control" id="basiInput">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Brendlər</label>
                                         <select name="brend_id" class="form-select mb-3" aria-label=".form-select-lg example">
-                                            <option selected>Brend Seç</option>
+                                            <option value="{{$product->brend->id}}" selected>{{$product->brend->translate('az')->title}}</option>
                                             @foreach ($brends as $item)
                                             <option value="{{$item->id}}">{{$item->translate('az')->title}}</option>
                                             @endforeach
@@ -145,18 +146,26 @@
                                             <div>
                                                 <label for="basiInput" class="form-label">Ön şəkil </label>
                                                 <input type="file" name="thumb_image_1" class="form-control" id="basiInput">
+                                                <img src="/{{$product->thumb_image_1}}"  width="120" height="120">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">2-ci Ön şəkil</label>
                                                 <input type="file" name="thumb_image_2" class="form-control" id="basiInput">
+                                                <img src="/{{$product->thumb_image_2}}"  width="120" height="120">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Məhsul Şəkilləri</label>
                                                 <input type="file" name="images[]" class="form-control" id="basiInput" multiple>
+                                               {{--  {{dd($product->images())}} --}}
+                                               
+                                                @foreach ($images as $item)
+                                                <img src="{{$item->image}}" width="120" height="120" style="margin: 10px;">
+
+                                                @endforeach
                                             </div>
                                         </div>
                                        
@@ -171,7 +180,7 @@
                                             <label class="form-check-label" for="customSwitchsizelg">Passiv/Aktiv</label>
                                         </div>
                                                         <div class="text-end">
-                                                            <button type="submit" class="btn btn-primary">Əlavə et</button>
+                                                            <button type="submit" class="btn btn-primary">Redaktə et</button>
                                                         </div>
                                                     
                                                 </div>

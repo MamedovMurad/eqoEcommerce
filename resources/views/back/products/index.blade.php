@@ -30,15 +30,15 @@
                                     <tr>
 
                                         <th scope="row"><a href="#" class="fw-semibold">#{{$partner->id}}</a></th>
-                                        <td>{{$partner->title}}</td>
-                                        <td> <img src="{{$partner->image}}" width="50" height="50"> </td>
+                                        <td>{{$partner->translate('az')->title}}</td>
+                                        <td> <img src="{{$partner->thumb_image_1}}" width="50" height="50"> </td>
                                         
                                         <td>
                                             <div class="flex-wrap gap-3 hstack">
 
                                                     <a href="{{route('product.edit',$partner->id)}}" type="button" class="btn btn-ghost-info waves-effect waves-light shadow-none" {{-- onclick="formEditButton('{{$partner->id}}')" --}}><i class="ri-edit-2-fill"></i></a>
 
-                                            <form action="{{route('partner.destroy',$partner->id)}}" method="post">
+                                            <form action="{{route('product.destroy',$partner->id)}}" method="post">
                                                 @method('delete')
                                                 @csrf
                                                 <button type="submit" class="from_edit btn btn-ghost-danger waves-effect waves-light shadow-none"><i class="ri-delete-bin-line"></i></button>

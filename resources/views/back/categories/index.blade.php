@@ -132,7 +132,7 @@
                                             <select name="parent_id" class="form-select " aria-label="Default select example" name="type" id="type_form">
                                                {{--  <option selected>Üst Kateqoriya</option> --}}
                                                 @foreach ($categories as $item)
-                                                <option value="{{$item->id}}">{{$item->translate('az')->title}}</option>
+                                                <option value="{{$item->id}}">{{$item->translate('az')->title ?? ''}}</option>
                                                 @endforeach
                                             
 

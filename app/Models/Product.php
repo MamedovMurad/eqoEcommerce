@@ -12,4 +12,19 @@ class Product extends Model implements TranslatableContract
     use HasFactory, Translatable;
     public $translatedAttributes = ['title','sub_title', 'description','file_name' ];
     protected $fillable = ['brend_id','slug','price','discount','stock','thumb_image_1','thumb_image_2','file','order','status'];
+
+    public function images()
+  {
+   return $this->hasMany(ProductImage::class, );
+  }
+
+  public function brend()
+  {
+   return $this->belongsTo(Brend::class, );
+  }
+
+  public function categories()
+  {
+   return $this->belongsToMany(Category::class, );
+  }
 }
