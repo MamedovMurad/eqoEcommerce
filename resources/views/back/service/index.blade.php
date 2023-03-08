@@ -80,7 +80,8 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{route('service.store')}}" id="partner_form" method="post"  enctype='multipart/form-data'>
+
+                                <form action="{{route('service.store')}}" id="partner_form" method="post"  enctype='multipart/form-data' >
                                    @csrf
                               
                                    <div class="row mb-3">
@@ -148,7 +149,7 @@
                            </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary " id="submit_button" form="partner_form">Save Changes</button>
+                                <button type="submit" class="btn btn-primary "  id="submit_button" form="partner_form">Save Changes</button>
                             </div>
 
                         </div><!-- /.modal-content -->
@@ -160,6 +161,29 @@
 
 @endsection
 @section('script')
+
+<script>
+
+
+           $("#partner_form").on('submit', function(e){
+        e.preventDefault();
+        var datastring = $("#partner_form").serialize();
+        console.log(datastring,'dsdsd');
+$.ajax({
+    type: "POST",
+    url:  $("#partner_form").attr('action'),
+    data: datastring,
+    dataType: "json",
+    success: function(data) {
+        location.reload();
+    },
+    error: function() {
+       console.log('fsadfasd');
+    }
+})})
+</script>
+
+
     <script>
         // tab function
 
@@ -221,6 +245,7 @@
        }
 
 
+       
 
 
 

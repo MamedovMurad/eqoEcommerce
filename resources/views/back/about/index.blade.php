@@ -45,7 +45,8 @@
 
                     <div class="col-xl-12">
                         <div class="card">
-                         
+             
+
                             <div class="card-body">
                                 <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
                                    @csrf
@@ -75,12 +76,17 @@
                                                         <div class="mb-3">
                                                             <label for="formFile" class="form-label">Başlıq-{{$item->code}}</label>
                                                             <input value="{{ $about->translate($item->code)->title ?? '' }}" class="form-control" name="title:{{$item->code}}" type="text" id="formFile" />
+                                                            @error("title:".$item->code)
+                                                            <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
                                                         </div>
                                                         
                                                         <div>
                                                             <label class="form-label" for="des-info-description-input">Ətraflı-{{$item->code}}</label>
                                                             <textarea id="editor-{{$item->code}}" class="form-control" name="text:{{$item->code}}" placeholder="Enter Description" id="des-info-description-input" rows="3" required> {{ $about->translate($item->code)->text ?? '' }}</textarea>
-                                                            <div class="invalid-feedback">Please enter a description</div>
+                                                            @error("text:".$item->code)
+                                                            <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
                                                         </div>
                                                    
                                             </div>

@@ -211,7 +211,7 @@
                                     </li>
                                     <li><a href="{{route('news')}}">XƏBƏRLƏR<i class="fa fa-angle-down"></i></a>
                                         <ul class="sub_menu pages">
-                                            <li><a href="{{route('news.detail')}}">XƏBƏRLƏR details</a></li>
+                                            <li><a href="{{route('news.detail',1)}}">XƏBƏRLƏR details</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="{{route('about')}}">HAQQIMIZDA</a></li>

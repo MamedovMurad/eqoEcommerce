@@ -48,8 +48,19 @@ class ServiceController extends Controller
             $requests['image']=$checkedPhoto;
         }
    
-        Service::create($requests);
-        return redirect()->back();
+       Service::create($requests);
+        if ($code=200) {
+           return response()->json('success',201);
+        }else{
+            $validator = \Illuminate\Support\Facades\Validator::make($request->all(), $this->rules());
+
+            if ($validator->fails()) {
+               return response()->json($validator->errors(), 422);
+            }
+        }
+     
+      
+       
     }
 
     /**
