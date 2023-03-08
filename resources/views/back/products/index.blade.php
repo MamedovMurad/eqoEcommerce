@@ -21,7 +21,7 @@
                                     <th scope="col">ID</th>
                                     <th scope="col">Başlıq</th>
                                     <th scope="col">Foto</th>
-                                    <th scope="col">Tipi</th>
+                                   
                                     <th scope="col">Action</th>
                                 </tr>
                                 </thead>
@@ -32,13 +32,11 @@
                                         <th scope="row"><a href="#" class="fw-semibold">#{{$partner->id}}</a></th>
                                         <td>{{$partner->title}}</td>
                                         <td> <img src="{{$partner->image}}" width="50" height="50"> </td>
-                                        <td>{{$partner->type?' Partnyor ':'Referans'}}</td>
+                                        
                                         <td>
                                             <div class="flex-wrap gap-3 hstack">
 
-                                                    <button type="button"
-                                                            data-bs-toggle="modal" data-bs-target="#partners_modal"
-                                                            class="btn btn-ghost-info waves-effect waves-light shadow-none" onclick="formEditButton('{{$partner->id}}')"><i class="ri-edit-2-fill"></i></button>
+                                                    <a href="{{route('product.edit',$partner->id)}}" type="button" class="btn btn-ghost-info waves-effect waves-light shadow-none" {{-- onclick="formEditButton('{{$partner->id}}')" --}}><i class="ri-edit-2-fill"></i></a>
 
                                             <form action="{{route('partner.destroy',$partner->id)}}" method="post">
                                                 @method('delete')

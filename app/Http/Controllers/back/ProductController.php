@@ -86,7 +86,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('back.products.edit',['categories'=>Category::get(),'languages'=>Language::get(),'brends'=>Brend::where('status', true)->get()]);
     }
 
     /**
@@ -98,7 +98,30 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $requests=$request->all();
+       
+        $photo = new FIle_download();
+        $checkedPhoto =  $photo->download($request)??false;
+        if ($checkedPhoto){
+            $requests['thumb_image_1']=$checkedPhoto;
+        }
+        if ($checkedPhoto){
+            $requests['thumb_image_2']=$checkedPhoto;
+        }
+      
+       
+        $product->update($requests);
+        
+        foreach ($request->file('images') as $imagefile) {
+            $image = new ProductImage();
+            $imageName= time() . "-" . uniqid() . '.' .$imagefile->getClientOriginalExtension();
+            $imagefile->move(public_path('uploads'),$imageName);
+            $image->image='/uploads/'.$imageName;
+            $image->product_id = $product->id;
+            $image->save();
+          }
+        return redirect()->back();
     }
 
     /**

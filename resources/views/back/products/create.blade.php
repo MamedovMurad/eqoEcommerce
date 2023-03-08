@@ -134,7 +134,7 @@
                                         <select name="brend_id" class="form-select mb-3" aria-label=".form-select-lg example">
                                             <option selected>Brend Seç</option>
                                             @foreach ($brends as $item)
-                                            <option value="1">{{$item->translate('az')->title}}</option>
+                                            <option value="{{$item->id}}">{{$item->translate('az')->title}}</option>
                                             @endforeach
                                            
                                            
