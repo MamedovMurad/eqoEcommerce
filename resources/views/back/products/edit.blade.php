@@ -85,17 +85,18 @@
                                         </div>
                                         <!-- end col -->
                                         <!--end col-->
-                                     
+                                       
                                        
                                       
                                         <div class="col-lg-12">
                                             <div class="mt-4 mt-lg-0">
                                                 <h5 class="fs-14 mb-1">Kateqoriyalar</h5>
-                                            
+                                         
                                           
-                                                    <select name="category" required multiple="multiple" name="favorite_cars" id="multiselect-header">
+                                                    <select name="categories" required multiple="multiple" name="favorite_cars" id="multiselect-header">
                                                         @foreach ($categories as $item)
-                                                        <option value="{{$item->id}}">{{$item->translate('az')->title}}</option>
+                                                      
+                                                        <option value="{{$item->id}}" {{-- @if($item->category->category_id==$item->id) selected @endif  --}}>{{$item->translate('az')->title}}</option>
                                                         @endforeach
                                                       
                                                        
@@ -163,7 +164,8 @@
                                                {{--  {{dd($product->images())}} --}}
                                                
                                                 @foreach ($images as $item)
-                                                <img src="{{$item->image}}" width="120" height="120" style="margin: 10px;">
+                                                <a href="{{route('image.destroy', $item->id)}}"> <img src="{{$item->image}}" width="120" height="120" style="margin: 10px;"></a>
+                                               
 
                                                 @endforeach
                                             </div>

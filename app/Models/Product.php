@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Product extends Model implements TranslatableContract
 {
@@ -22,9 +23,12 @@ class Product extends Model implements TranslatableContract
   {
    return $this->belongsTo(Brend::class, );
   }
-
-  public function categories()
+  public function category()
   {
-   return $this->belongsToMany(Category::class, );
+   return $this->belongsTo(ProductCategory::class, 'product_id' );
+  }
+  public function categories(): BelongsToMany
+  {
+      return $this->belongsToMany(Category::class, 'product_categories');
   }
 }

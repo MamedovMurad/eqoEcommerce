@@ -8,6 +8,7 @@ use App\Models\Brend;
 use App\Models\Category;
 use App\Models\Language;
 use App\Models\Product;
+use App\Models\ProductCategory;
 use App\Models\ProductImage;
 use App\Services\FIle_download;
 use Illuminate\Http\Request;
@@ -43,7 +44,7 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $requests=$request->all();
-       
+        $product = Product::create($requests);
         if($request->hasFile('thumb_image_1')){
 
             $imgExtension = $requests['thumb_image_1']->getClientOriginalExtension();
@@ -61,9 +62,9 @@ class ProductController extends Controller
              $requests['thumb_image_2']= 'uploads/'.$imageName;
         };
       
-       
-        $product = Product::create($requests);
-        
+        if ($request->filled('categories')) {
+            $product->categories()->sync($request->categories);
+        }
         foreach ($request->file('images') as $imagefile) {
             $image = new ProductImage();
             $imageName= time() . "-" . uniqid() . '.' .$imagefile->getClientOriginalExtension();
@@ -98,7 +99,7 @@ class ProductController extends Controller
         $languages = Language::get();
         $brends = Brend::where('status', true)->get();
 
-        return view('back.products.edit',['categories'=>Category::get(),'languages'=>Language::get(),'brends'=>Brend::where('status', true)->get(),'product'=>Product::find($id),'images'=>ProductImage::where('product_id', $id)->get()]);
+        return view('back.products.edit',['categories'=>Category::get(),'languages'=>Language::get(),'brends'=>Brend::where('status', true)->get(),'product'=>Product::find($id),'images'=>ProductImage::where('product_id', $id)->get(),/* 'category'=>ProductCategory::where('product_id',$id)->get() */]);
     }
 
     /**
@@ -129,7 +130,9 @@ class ProductController extends Controller
     
              $requests['thumb_image_2']= 'uploads/'.$imageName;
         };
-      
+        if ($request->filled('categories')) {
+            $product->categories()->sync($request->categories);
+        }
        
         $product->update($requests);
         if (is_array($request->file('images')) || is_object($request->file('images')))
@@ -155,6 +158,12 @@ class ProductController extends Controller
     public function destroy($id)
     {
         Product::where('id',$id)->delete();
+        return redirect()->back();
+    }
+
+    public function image_destroy($id)
+    {
+        ProductImage::where('id',$id)->delete();
         return redirect()->back();
     }
 }

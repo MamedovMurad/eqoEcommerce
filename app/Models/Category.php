@@ -12,4 +12,9 @@ class Category extends Model implements TranslatableContract
     use HasFactory, Translatable;
     public $translatedAttributes = ['title', 'description' ];
     protected $fillable = ['parent_id','home','slug','order','image','status'];
+
+    public function category()
+    {
+        return $this->belongsTo(ProductCategory::class, );
+    }
 }

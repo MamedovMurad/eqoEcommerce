@@ -44,8 +44,8 @@ class ContactRequest extends FormRequest
         $return[] = [
             'email'=>['required','max:11'],
             'phone' => ['max:255'],
-            'map'=>['max:2'],
-            'facebook'=>['max:11'],
+            'map'=>['min:2'],
+            'facebook'=>['max:255'],
             'instagram'=>['max:2024']
 
         ];

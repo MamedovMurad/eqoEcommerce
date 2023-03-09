@@ -89,12 +89,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="{{route('support.index')}}">
+                            <a class="nav-link menu-link" href="{{route('banner.index')}}">
                                 <i class="mdi mdi-puzzle-outline"></i> <span data-key="t-widgets">Bannerlər</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="{{route('support.index')}}">
+                            <a class="nav-link menu-link" href="{{route('slider.index')}}">
                                 <i class="mdi mdi-puzzle-outline"></i> <span data-key="t-widgets">Slayderlər</span>
                             </a>
                         </li>

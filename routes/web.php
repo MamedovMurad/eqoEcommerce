@@ -48,8 +48,10 @@ Route::post('/admin-post', [AuthController:: class, 'login_post'])->name('log_in
     Route::resource('category', 'App\Http\Controllers\back\CategoryController')->names('category');
     Route::resource('product', 'App\Http\Controllers\back\ProductController')->names('product');
     Route::resource('brend', 'App\Http\Controllers\back\BrendController')->names('brend');
-    Route::resource('contact', 'App\Http\Controllers\back\ContactController')->names('contact');
-
+    Route::get('contact', [App\Http\Controllers\back\ContactController::class,'index'])->name('contact.index');
+    Route::post('contact', [App\Http\Controllers\back\ContactController::class,'update'])->name('contact.update');
+/*     Route::resource('contact', 'App\Http\Controllers\back\ContactController')->names('contact'); */
+    Route::get('delete-image/{id}', [App\Http\Controllers\back\ProductController::class, 'image_destroy'])->name('image.destroy');
 
 
     Route::get('/admin/dash', function () {

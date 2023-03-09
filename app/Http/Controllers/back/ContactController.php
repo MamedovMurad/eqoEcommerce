@@ -10,31 +10,14 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('back.contact.index',['contact'=>Contact::paginate(10), 'languages'=>Language::where('status', 1)->get()]);
+    public function index(){
+        return view('back.contact.index',['contact'=>Contact::first(), 'languages'=>Language::where('status', 1)->get()]);
     }
 
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(ContactRequest $request, $id)
-    {
+    public function update (ContactRequest $request){
         $about = Contact::first();
         $requests=$request->all();
       $about->update($requests);
       return redirect()->back();
     }
-
-   
 }
