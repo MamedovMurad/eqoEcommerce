@@ -134,9 +134,9 @@
                                             <div>
                                                 <label for="basiInput" class="form-label">Brendlər</label>
                                         <select name="brend_id" class="form-select mb-3" aria-label=".form-select-lg example">
-                                            <option value="{{$product->brend->id}}" selected>{{$product->brend->translate('az')->title}}</option>
+                                            <option value="{{$product->brend->id}}" >Brend Seç</option>
                                             @foreach ($brends as $item)
-                                            <option value="{{$item->id}}">{{$item->translate('az')->title}}</option>
+                                            <option value="{{$item->id}}" @if($product->brend->id==$item->id)  selected @endif>{{$item->translate('az')->title}}</option>
                                             @endforeach
                                            
                                            
