@@ -34,7 +34,7 @@ class AboutRequest extends FormRequest
             $return[] = [
                
                 'title:' . $lang['code'] => ['required', 'max:255'],
-                'text:' . $lang['code'] => ['required','max:255'],
+                'text:' . $lang['code'] => ['required'],
            
             ];
 

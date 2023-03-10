@@ -27,12 +27,13 @@
         <div class="row align-items-center">
             <div class="col-12">
                 <div class="about_thumb">
-                    <img src="{{ asset('themeplate') }}/assets/img/about/about1.jpg" alt="">
+                    <img src="{{ asset($about->image) }}" alt="">
                 </div>
-{{$about->hasTranslation('az')}}
+                {{-- {{dd(App::getLocale())}} --}}
+                
                 <div class="about_content">
-                  {{--   <h1>{{$about->translate('az')->title??''}}</h1> --}}
-                    <p>Duis autem vel eum iriure dolor in hendrerit in vulpuhendrerit in vulputate velit esse molestie consequat, vel illum do hendrerit in vulputate velit esse molestie consequat, vel illum do tate velit esse mole hendrerit in vulputate velit esse molestie consequat, vel illum do hendrerit in vulputate velit esse molestie consequat, vel illum dostie consequat, vel illum  hendrerit in vulputate velit esse molestie consequat, vel illum do dhendrerit in vulputate velit esse molestie consequat, vel illum doolore eu feugiat nulla facilisis</p>
+                    <h1> {{$about->translate(App::getLocale())->title ?? '' }}</h1>
+                    <p>{!!$about->translate(App::getLocale())->text ?? '' !!}</p>
                 </div>
             </div>
         </div>

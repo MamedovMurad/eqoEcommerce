@@ -34,7 +34,7 @@ class PartnerRequest extends FormRequest
             $return[] = [
                
                 'title:' . $lang['code'] => ['required', 'max:255'],
-                'description:' . $lang['code'] => ['required','max:255'],
+                'description:' . $lang['code'] => ['required'],
            
             ];
 

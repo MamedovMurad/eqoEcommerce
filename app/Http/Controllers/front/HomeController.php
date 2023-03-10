@@ -15,12 +15,14 @@ class HomeController extends Controller
     }
 
     public function news(){
-        return view('front.news.index');
+        $news = News::where('status',1)->paginate(18);
+       /*  dd($news); */
+        return view('front.news.index',compact('news'));
     }
 
-    public function newsDetail($id){
+    public function newsDetail($slug){
 
-        return view('front.news.news',['data'=>News::whereSlug($id)->first()]);
+        return view('front.news.news',['data'=>News::whereSlug($slug)->first()]);
     }
 
     public function about(){
