@@ -47,7 +47,7 @@
                                     </span>
                                 </div>
                                 <div class="blog_desc">
-                                    <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue </p>
+                                    <p>{!!Str::limit($item->translate(App::getLocale())->description,120)!!}</p>
                                 </div>
                                 <div class="readmore_button">
                                     <a href="{{route('news.detail', $item->slug)}}">read more</a>

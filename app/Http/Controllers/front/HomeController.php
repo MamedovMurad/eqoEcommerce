@@ -4,25 +4,38 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Banner;
 use App\Models\News;
+use App\Models\NewsCategory;
+use App\Models\Partner;
+use App\Models\Slider;
 use App\Services\FIle_download;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    public function __construct()
+    {
+        
+    }
     public function index(){
-        return view('front.home.index');
+        $sliders = Slider::where('status',1)->get();
+        $banners = Banner::where('status',1)->limit(2)->get();
+        $news = News::where('status', 1)->orderBy('created_at', 'ASC')->limit(6)->get();
+        $partners = Partner::where('type',1)->get();
+        return view('front.home.index',compact('sliders','banners','news','partners'));
     }
 
     public function news(){
         $news = News::where('status',1)->paginate(18);
-       /*  dd($news); */
         return view('front.news.index',compact('news'));
     }
 
     public function newsDetail($slug){
-
-        return view('front.news.news',['data'=>News::whereSlug($slug)->first()]);
+        $news = News::whereSlug($slug)->first();
+        $news_category=NewsCategory::where('id',$news->news_category_id)->first() ?? [];
+        $similar_products = News::where('news_category_id', $news_category->id)->get() ?? [];
+        return view('front.news.news',compact('news','news_category','similar_products'));
     }
 
     public function about(){
@@ -38,8 +51,10 @@ class HomeController extends Controller
         return view('front.products.index');
     }
 
-    public function productDetail(){
+    public function productDetail($slug){
         return view('front.products.product');
     }
-
+    public function productCategory($slug){
+        return view('front.products.product');
+    }
 }

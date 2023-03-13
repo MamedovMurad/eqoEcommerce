@@ -9,8 +9,8 @@
                 <div class="breadcrumb_content">
                     <ul>
                         <li><a href="index.html">home</a></li>
-                        <li><a href="#">fashion</a></li>
-                        <li>blog details</li>
+                        <li><a href="#">{{$news_category->translate(App::getLocale())->title}}</a></li>
+                        <li>{{$news->translate(App::getLocale())->title}}</li>
                     </ul>
                 </div>
             </div>
@@ -28,18 +28,13 @@
                 <!--blog grid area start-->
                 <div class="blog_details_wrapper">
                     <div class="blog_thumb">
-                        <a href="#"><img src="{{ asset('themeplate') }}/assets/img/blog/blog-big1.jpg" alt=""></a>
+                        <a href="#"><img src="{{ asset($news->image) }}" alt=""></a>
                     </div>
                     <div class="blog_content">
-                        <h3 class="post_title">Blog image post</h3>
+                        <h3 class="post_title">{{$news->translate(App::getLocale())->title}}</h3>
                         
                         <div class="post_content">
-                            <p>Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.</p>
-                            <blockquote>
-                                <p>Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur. In venenatis elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed, cursus blandit lectus. In ullamcorper sit amet ligula ut eleifend. Proin dictum tempor ligula, ac feugiat metus. Sed finibus tortor eu scelerisque scelerisque.</p>
-                            </blockquote>
-                            <p>Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.</p>
-                            <p>Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed, commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc. Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie.</p>
+                           {!!$news->translate(App::getLocale())->description!!}
                         </div>
                      
                     </div>
@@ -47,39 +42,26 @@
                     <div class="related_posts">
                         <h3>Related posts</h3>
                         <div class="row">
+
+
+                            @foreach ($similar_products as $item)
+                                
                             <div class="col-lg-4 col-md-6">
                                 <div class="single_related">
                                     <div class="related_thumb">
-                                        <img src="{{ asset('themeplate') }}/assets/img/blog/blog3.jpg" alt="">
+                                        <img src="{{asset($item->image)}}" alt="">
                                     </div>
                                     <div class="related_content">
-                                        <h3><a href="#">Post with Gallery</a></h3>
-                                        <span><i class="fa fa-calendar" aria-hidden="true"></i> December 10, 2019 </span>
+                                        <h3><a href="#">{{$item->translate(App::getLocale())->title}}</a></h3>
+                                        <span><i class="fa fa-calendar" aria-hidden="true"></i>{{$item->created_at->format('M d, Y')}}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single_related">
-                                    <div class="related_thumb">
-                                        <img src="{{ asset('themeplate') }}/assets/img/blog/blog4.jpg" alt="">
-                                    </div>
-                                    <div class="related_content">
-                                        <h3><a href="#">Post with Audio</a></h3>
-                                        <span><i class="fa fa-calendar" aria-hidden="true"></i> December 10, 2019 </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single_related column_3">
-                                    <div class="related_thumb">
-                                        <img src="{{ asset('themeplate') }}/assets/img/blog/blog5.jpg" alt="">
-                                    </div>
-                                    <div class="related_content">
-                                        <h3><a href="#">Post with Video</a></h3>
-                                        <span><i class="fa fa-calendar" aria-hidden="true"></i> December 10, 2019 </span>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+
+
+                            
+                           
                         </div>
                     </div>
                    

@@ -152,10 +152,8 @@
                         <div class="main_menu header_position">
                             <nav>
                                 <ul>
-                                    <li><a href="{{route('home')}}">home<i class="fa fa-angle-down"></i></a>
-                                        <ul class="sub_menu">
-                                            <li><a href="{{route('home')}}">Home 4</a></li>
-                                        </ul>
+                                    <li><a href="{{route('home')}}">home</a>
+                                       
                                     </li>
                                     <li class="mega_items"><a href="shop.html">MAĞAZA<i class="fa fa-angle-down"></i></a>
                                         <div class="mega_menu">
@@ -209,10 +207,8 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li><a href="{{route('news')}}">XƏBƏRLƏR<i class="fa fa-angle-down"></i></a>
-                                        <ul class="sub_menu pages">
-                                            <li><a href="{{route('news.detail',1)}}">XƏBƏRLƏR details</a></li>
-                                        </ul>
+                                    <li><a href="{{route('news')}}">XƏBƏRLƏR</a>
+                                       
                                     </li>
                                     <li><a href="{{route('about')}}">HAQQIMIZDA</a></li>
                                     <li><a href="{{route('elaqe')}}">BİZİMLƏ ƏLAQƏ</a></li>

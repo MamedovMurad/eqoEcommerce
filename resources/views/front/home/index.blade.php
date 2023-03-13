@@ -4,48 +4,30 @@
     <!--slider area start-->
     <section class="slider_section slider_two mb-50">
         <div class="slider_area owl-carousel">
-            <div class="single_slider d-flex align-items-center" data-bgimg="{{ asset('themeplate') }}/assets/img/slider/slider10.jpg">
+
+
+            @foreach ($sliders as $item)
+                
+           
+            <div class="single_slider d-flex align-items-center" data-bgimg="{{ asset($item->image) }}" style="background-repeat: no-repeat; background-size:cover">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="slider_content">
-                                <h2>Hight Quality</h2>
-                                <h1>The Parts Of Shock Absorbers Assembly</h1>
-                                <a class="button" href="shop.html">shopping now</a>
+                                <h2>{{$item->translate(App::getLocale())->title}}</h2>
+                                <h1>{{$item->translate(App::getLocale())->description}}</h1>
+                                <a class="button" href="{{$item->link}}">{{$item->translate(App::getLocale())->link_title}}</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div class="single_slider d-flex align-items-center" data-bgimg="{{ asset('themeplate') }}/assets/img/slider/slider11.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="slider_content">
-                                <h2>Special Offer</h2>
-                                <h1>Get &250 In Total Discount On A New Set Of Tries</h1>
-                                <a class="button" href="shop.html">shopping now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            @endforeach
 
-            </div>
-            <div class="single_slider d-flex align-items-center" data-bgimg="{{ asset('themeplate') }}/assets/img/slider/slider12.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="slider_content">
-                                <h2>HP Racer Skutex</h2>
-                                <h1>Feel The Greatest Oil Power With Best One Oil</h1>
-                                <a class="button" href="shop.html">shopping now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
+           
+         
         </div>
     </section>
     <!--slider area end-->
@@ -56,26 +38,24 @@
             <div class="row">
                 <div class="col-12">
                     <div class="banner_container">
+
+                        @foreach ($banners as $item)
+                            
+                       
                         <div class="single_banner">
                             <div class="banner_thumb">
-                                <a href="shop.html"><img src="{{ asset('themeplate') }}/assets/img/bg/banner3.jpg" alt=""></a>
+                                <a href="{{$item->link}}"><img src="{{ asset($item->image) }}" alt=""></a>
                                 <div class="banner_text">
-                                    <h3>Car Audio</h3>
-                                    <h2>Super Natural Sound</h2>
-                                    <a href="shop.html">Shop Now</a>
+                                    <h3>{{$item->translate(App::getLocale())->title}}</h3>
+                                    <h2>{{$item->translate(App::getLocale())->sub_title}}</h2>
+                                   {{--  <a href="{{$item->link}}">Shop Now</a> --}}
                                 </div>
                             </div>
                         </div>
-                        <div class="single_banner">
-                            <div class="banner_thumb">
-                                <a href="shop.html"><img src="{{ asset('themeplate') }}/assets/img/bg/banner4.jpg" alt=""></a>
-                                <div class="banner_text">
-                                    <h3>All - New</h3>
-                                    <h2>Perfomance Parts</h2>
-                                    <a href="shop.html">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
+
+                       
                     </div>
                 </div>
             </div>
@@ -1192,24 +1172,15 @@
             <div class="row">
                 <div class="col-12">
                     <div class="brand_container owl-carousel">
+                        @foreach ($partners as $item)
+                            
+                      
                         <div class="single_brand">
-                            <a href="#"><img src="{{ asset('themeplate') }}/assets/img/brand/brand.png" alt=""></a>
+                            <a href="#"><img src="{{ asset($item->image) }}" alt=""></a>
                         </div>
-                        <div class="single_brand">
-                            <a href="#"><img src="{{ asset('themeplate') }}/assets/img/brand/brand1.png" alt=""></a>
-                        </div>
-                        <div class="single_brand">
-                            <a href="#"><img src="{{ asset('themeplate') }}/assets/img/brand/brand2.png" alt=""></a>
-                        </div>
-                        <div class="single_brand">
-                            <a href="#"><img src="{{ asset('themeplate') }}/assets/img/brand/brand3.png" alt=""></a>
-                        </div>
-                        <div class="single_brand">
-                            <a href="#"><img src="{{ asset('themeplate') }}/assets/img/brand/brand4.png" alt=""></a>
-                        </div>
-                        <div class="single_brand">
-                            <a href="#"><img src="{{ asset('themeplate') }}/assets/img/brand/brand2.png" alt=""></a>
-                        </div>
+
+                        @endforeach
+                       
                     </div>
                 </div>
             </div>
@@ -1226,90 +1197,29 @@
                         <h2><span> <strong>Latest</strong>Blogs</span></h2>
                     </div>
                     <div class="blog_carousel blog_column4 owl-carousel">
+
+
+                        @foreach ($news as $item)
+                            
+                     
                         <div class="single_blog">
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{ asset('themeplate') }}/assets/img/blog/blog1.jpg" alt=""></a>
+                                <a href="{{route('news.detail',$item->slug)}}"><img src="{{ asset($item->image) }}" alt=""></a>
                             </div>
                             <div class="blog_content">
                                 <div class="date_post">
-                                    <span>07 Feb 2019</span>
+                                    <span>{{$item->created_at->format('d M Y')}}</span>
                                 </div>
-                                <h3><a href="blog-details.html">2-Bromeliad Mount Care: How to Water and Care for Mounted</a></h3>
+                                <h3><a href="{{route('news.detail',$item->slug)}}">{{$item->translate(App::getLocale())->title}}</a></h3>
                                 <div class="blog_desc">
-                                    <p>Virtual reality and 3-D technology are already well-established in the entertainment...</p>
+                                    {!!Str::limit($item->translate(App::getLocale())->description,120)!!}
                                 </div>
                             </div>
                         </div>
-                        <div class="single_blog">
-                            <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{ asset('themeplate') }}/assets/img/blog/blog2.jpg" alt=""></a>
-                            </div>
-                            <div class="blog_content">
-                                <div class="date_post">
-                                    <span>05 Feb 2019</span>
-                                </div>
-                                <h3><a href="blog-details.html">Bromeliad Mount Care: How to Water and Care for Mounted</a></h3>
-                                <div class="blog_desc">
-                                    <p>Virtual reality and 3-D technology are already well-established in the entertainment...</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_blog">
-                            <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{ asset('themeplate') }}/assets/img/blog/blog3.jpg" alt=""></a>
-                            </div>
-                            <div class="blog_content">
-                                <div class="date_post">
-                                    <span>04 Feb 2019</span>
-                                </div>
-                                <h3><a href="blog-details.html">Mounted Tropical Plant Care: How to Grow Tropical Plants</a></h3>
-                                <div class="blog_desc">
-                                    <p>Virtual reality and 3-D technology are already well-established in the entertainment...</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_blog">
-                            <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{ asset('themeplate') }}/assets/img/blog/blog4.jpg" alt=""></a>
-                            </div>
-                            <div class="blog_content">
-                                <div class="date_post">
-                                    <span>07 Feb 2019</span>
-                                </div>
-                                <h3><a href="blog-details.html">Plantlet Care: How To Pot Up and Care For Juvenile Houseplants</a></h3>
-                                <div class="blog_desc">
-                                    <p>Virtual reality and 3-D technology are already well-established in the entertainment...</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_blog">
-                            <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{ asset('themeplate') }}/assets/img/blog/blog5.jpg" alt=""></a>
-                            </div>
-                            <div class="blog_content">
-                                <div class="date_post">
-                                    <span>08 Feb 2019</span>
-                                </div>
-                                <h3><a href="blog-details.html">The Definitive List of Pumpkin Spice Everything fotr 2018</a></h3>
-                                <div class="blog_desc">
-                                    <p>Virtual reality and 3-D technology are already well-established in the entertainment...</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_blog">
-                            <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{ asset('themeplate') }}/assets/img/blog/blog3.jpg" alt=""></a>
-                            </div>
-                            <div class="blog_content">
-                                <div class="date_post">
-                                    <span>07 Feb 2019</span>
-                                </div>
-                                <h3><a href="blog-details.html">Mounted Tropical Plant Care: How to Grow Tropical Plants</a></h3>
-                                <div class="blog_desc">
-                                    <p>Virtual reality and 3-D technology are already well-established in the entertainment...</p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
+                      
+                       
                     </div>
                 </div>
             </div>
