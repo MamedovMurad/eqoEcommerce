@@ -66,6 +66,7 @@ class HomeController extends Controller
         return view('front.products.product');
     }
     public function productCategory($slug){
+        
         return view('front.products.product');
     }
 }
