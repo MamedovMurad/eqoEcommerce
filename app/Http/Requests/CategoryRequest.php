@@ -42,7 +42,7 @@ class CategoryRequest extends FormRequest
         }
 
         $return[] = [
-            'parent_id'=>['max:11'],
+            'parent_id'=>['nullable'],
             'home'=>['max:11'],
             'slug' => ['max:255'],
             'status'=>['max:2'],

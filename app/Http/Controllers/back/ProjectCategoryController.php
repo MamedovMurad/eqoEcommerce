@@ -46,7 +46,9 @@ class ProjectCategoryController extends Controller
         if ($checkedPhoto){
             $requests['image']=$checkedPhoto;
         }
-   
+        if(!isset($requests['status'])){
+            $requests['status']='0';
+        }
         ProjectCategory::create($requests);
         return redirect()->back();
     }

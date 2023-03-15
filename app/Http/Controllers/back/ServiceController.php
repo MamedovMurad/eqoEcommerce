@@ -47,7 +47,9 @@ class ServiceController extends Controller
         if ($checkedPhoto){
             $requests['image']=$checkedPhoto;
         }
-   
+        if(!isset($requests['status'])){
+            $requests['status']='0';
+        }
        Service::create($requests);
         if ($code=200) {
            return response()->json('success',201);

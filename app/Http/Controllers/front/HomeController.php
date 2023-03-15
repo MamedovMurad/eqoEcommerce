@@ -5,25 +5,36 @@ namespace App\Http\Controllers\front;
 use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\Banner;
+use App\Models\Category;
+use App\Models\Contact;
 use App\Models\News;
 use App\Models\NewsCategory;
 use App\Models\Partner;
 use App\Models\Slider;
 use App\Services\FIle_download;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class HomeController extends Controller
 {
     public function __construct()
     {
+        $categories = Category::where('parent_id', null)->where('status',1)->get();
+
+        View::share('categories', $categories);
+
         
+        $contact = Contact::first();
+
+        View::share('contact', $contact);
     }
     public function index(){
         $sliders = Slider::where('status',1)->get();
         $banners = Banner::where('status',1)->limit(2)->get();
         $news = News::where('status', 1)->orderBy('created_at', 'ASC')->limit(6)->get();
         $partners = Partner::where('type',1)->get();
-        return view('front.home.index',compact('sliders','banners','news','partners'));
+        $cats = Category::where('home', 1)->where('status',1)->with('category_prods')->get();
+        return view('front.home.index',compact('sliders','banners','news','partners', 'cats'));
     }
 
     public function news(){

@@ -31,11 +31,17 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         $requests=$request->all();
-       
+      /*  dd($requests=$request->all()); */
         $photo = new FIle_download();
         $checkedPhoto =  $photo->download($request)??false;
         if ($checkedPhoto){
             $requests['image']=$checkedPhoto;
+        }
+        if(!isset($requests['status'])){
+            $requests['status']='0';
+        }
+        if(!isset($requests['home'])){
+            $requests['home']='0';
         }
         Category::create($requests);
         return redirect()->back();
@@ -71,6 +77,12 @@ class CategoryController extends Controller
       if ($checkedPhoto){
           $requests['image']=$checkedPhoto;
       }
+      if(!isset($requests['status'])){
+        $requests['status']='0';
+    }
+    if(!isset($requests['home'])){
+        $requests['home']='0';
+    }
       $category->update($requests);
       return redirect()->back();
     }

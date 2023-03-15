@@ -47,7 +47,9 @@ class BannerController extends Controller
         if ($checkedPhoto){
             $requests['image']=$checkedPhoto;
         }
-   
+        if(!isset($requests['status'])){
+            $requests['status']='0';
+        }
         Banner::create($requests);
         return redirect()->back();
     }
@@ -92,6 +94,10 @@ class BannerController extends Controller
       if ($checkedPhoto){
           $requests['image']=$checkedPhoto;
       }
+
+      if(!isset($requests['status'])){
+        $requests['status']='0';
+    }
       $category->update($requests);
       return redirect()->back();
     }

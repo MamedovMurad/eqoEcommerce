@@ -93,7 +93,7 @@
                                                 <h5 class="fs-14 mb-1">Kateqoriyalar</h5>
                                          
                                           
-                                                    <select name="categories" required multiple="multiple" name="favorite_cars" id="multiselect-header">
+                                                    <select name="categories[]" required multiple="multiple" name="favorite_cars" id="multiselect-header">
                                                         @foreach ($categories as $item)
                                                       
                                                         <option value="{{$item->id}}" {{-- @if($item->category->category_id==$item->id) selected @endif  --}}>{{$item->translate('az')->title}}</option>

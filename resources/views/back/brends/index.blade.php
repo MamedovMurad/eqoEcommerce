@@ -177,7 +177,7 @@
         }
         ;
        function formEditButton(id_) {
-
+        $('#checkbox').prop("checked", false)
            $("#partner_form").attr('action','http://127.0.0.1:8000/brend/'+id_)
            $("#partner_form").append( `<input type="hidden" name="_method" value="PUT" id="hidden__">`)
            $('#partners_modalLabel').text('Brendi yenilə')
@@ -194,12 +194,9 @@
                    $('#update_photo').attr('src','/'+data.image)
                  
                   
-            if($('#checkbox').val(data.status)== true){
-                console.log('sd');
-                $("#checkbox").prop('checked', true);
-            }else{
-                $("#checkbox").prop('checked', false);
-            }
+                   if (data.status=='1') {
+            $('#checkbox').prop("checked", true);
+          }
                    $('.titlesParent').html('')
                    $('.nav-link').removeClass( 'active');
           

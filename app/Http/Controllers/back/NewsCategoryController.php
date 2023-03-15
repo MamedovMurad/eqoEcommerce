@@ -39,6 +39,9 @@ class NewsCategoryController extends Controller
         if ($checkedPhoto){
             $requests['image']=$checkedPhoto;
         }
+        if(!isset($requests['status'])){
+            $requests['status']='0';
+        }
         NewsCategory::create($requests);
         return redirect()->back();
     }
@@ -73,6 +76,9 @@ class NewsCategoryController extends Controller
         $checkedPhoto =  $photo->download($request)??false;
         if ($checkedPhoto){
             $requests['image']=$checkedPhoto;
+        }
+        if(!isset($requests['status'])){
+            $requests['status']='0';
         }
         $news_category->update($requests);
         return redirect()->back();

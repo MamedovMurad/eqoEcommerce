@@ -50,7 +50,9 @@ class ProjectController extends Controller
     
              $requests['image']= 'uploads/'.$imageName;
         };
-   
+        if(!isset($requests['status'])){
+            $requests['status']='0';
+        }
         Project::create($requests);
         return redirect()->back();
     }

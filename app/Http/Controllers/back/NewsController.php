@@ -39,7 +39,9 @@ class NewsController extends Controller
         if ($checkedPhoto){
             $requests['image']=$checkedPhoto;
         }
-   
+        if(!isset($requests['status'])){
+            $requests['status']='0';
+        }
         News::create($requests);
         return redirect()->back();
     }

@@ -130,8 +130,9 @@
                                         <div class="col-lg-9">
 
                                             <select name="parent_id" class="form-select " aria-label="Default select example" name="type" id="type_form">
-                                               {{--  <option selected>Üst Kateqoriya</option> --}}
+                                                <option value=""  selected>Üst Kateqoriya et</option>
                                                 @foreach ($categories as $item)
+                                             
                                                 <option value="{{$item->id}}">{{$item->translate('az')->title ?? ''}}</option>
                                                 @endforeach
                                             
@@ -158,7 +159,7 @@
                                     </div>
                                     <div class="form-check form-check-secondary mb-3">
                                        
-                                        <input id="checkbox" name="home" type="checkbox" value="1">
+                                        <input id="home_checkbox" name="home" type="checkbox" value="1">
                                         <label class="form-check-label" for="formCheck7">
                                            Ana Səhifədə göstər
                                         </label>
@@ -209,6 +210,7 @@
         ;
        function formEditButton(id_) {
         $('#checkbox').prop("checked", false)
+        $('#home_checkbox').prop("checked", false)
            $("#partner_form").attr('action','http://127.0.0.1:8000/category/'+id_)
            $("#partner_form").append( `<input type="hidden" name="_method" value="PUT" id="hidden__">`)
            $('#partners_modalLabel').text('Kateqoriyanı yenilə')
@@ -232,6 +234,9 @@
       
           if (data.status=='1') {
             $('#checkbox').prop("checked", true);
+          }
+          if (data.home=='1') {
+            $('#home_checkbox').prop("checked", true);
           }
           
                    data.translations.forEach(item => {

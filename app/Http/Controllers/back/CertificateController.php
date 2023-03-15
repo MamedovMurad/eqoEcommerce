@@ -47,7 +47,9 @@ class CertificateController extends Controller
         if ($checkedPhoto){
             $requests['image']=$checkedPhoto;
         }
-   
+        if(!isset($requests['status'])){
+            $requests['status']='0';
+        }
         Certificate::create($requests);
         return redirect()->back();
     }

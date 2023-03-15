@@ -47,6 +47,9 @@ class SupportController extends Controller
         if ($checkedPhoto){
             $requests['image']=$checkedPhoto;
         }
+        if(!isset($requests['status'])){
+            $requests['status']='0';
+        }
    
         Support::create($requests);
         return redirect()->back();

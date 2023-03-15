@@ -158,49 +158,22 @@
                                     <li class="mega_items"><a href="shop.html">MAĞAZA<i class="fa fa-angle-down"></i></a>
                                         <div class="mega_menu">
                                             <ul class="mega_menu_inner">
-                                                <li><a href="{{route('product')}}">Əsas &nbsp; kateqoriya</a>
-                                                    <ul>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                      
-                                                    </ul>
-                                                </li>
-                                                <li><a href="{{route('product')}}">Əsas &nbsp; kateqoriya</a>
-                                                    <ul>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="{{route('product')}}">Əsas &nbsp; kateqoriya</a>
-                                                    <ul>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
+                                                @foreach ($categories as $item)
+                                                <li><a href="{{route('product')}}">{{$item->translate(App::getLocale())->title}}</a>
 
-                                                    </ul>
-                                                </li>
-                                                <li><a href="{{route('product')}}">Əsas &nbsp; kateqoriya</a>
+                                                    @if(count($item->subcategory))
                                                     <ul>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-                                                        <li><a href="{{route('product')}}">Alt kateqoriya</a></li>
-
-                                                    </ul>
+                                                    @foreach ( $item->subcategory as $sub_cat)
+                                                        
+                                                        <li><a href="{{route('product')}}">{{$sub_cat->translate(App::getLocale())->title}}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                                    @endif
+                                                  
                                                 </li>
+                                                @endforeach
+                                              
+                                              
                                             </ul>
                                             <div class="banner_static_menu">
                                                 <a href="shop.html"><img src="assets/img/bg/banner1.jpg" alt=""></a>
