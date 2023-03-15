@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\back\AuthController;
 use App\Http\Controllers\front\HomeController;
+use App\Http\Controllers\PaginationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,13 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Paginator
+Route::get('pagination', [PaginationController::class, 'index']);
+
 //front
 Route::get('/', [HomeController:: class, 'index'])->name('home');
 Route::get('/news1', [HomeController:: class, 'news'])->name('news');
 Route::get('/news-detail/{slug}', [HomeController:: class, 'newsDetail'])->name('news.detail');
 Route::get('/about1', [HomeController:: class, 'about'])->name('about');
 Route::get('/elaqe', [HomeController:: class, 'elaqe'])->name('elaqe');
-Route::get('/products', [HomeController:: class, 'products'])->name('product');
+Route::get('/products/{slug}', [HomeController:: class, 'productCategory'])->name('product');
 Route::get('/product-detail', [HomeController:: class, 'productDetail'])->name('product.detail');
 
 

@@ -159,13 +159,13 @@
                                         <div class="mega_menu">
                                             <ul class="mega_menu_inner">
                                                 @foreach ($categories as $item)
-                                                <li><a href="{{route('product')}}">{{$item->translate(App::getLocale())->title}}</a>
+                                                <li><a href="{{route('product',$item->slug)}}">{{$item->translate(App::getLocale())->title}}</a>
 
                                                     @if(count($item->subcategory))
                                                     <ul>
                                                     @foreach ( $item->subcategory as $sub_cat)
                                                         
-                                                        <li><a href="{{route('product')}}">{{$sub_cat->translate(App::getLocale())->title}}</a></li>
+                                                        <li><a href="{{route('product',$sub_cat->slug)}}">{{$sub_cat->translate(App::getLocale())->title}}</a></li>
                                                     @endforeach
                                                 </ul>
                                                     @endif

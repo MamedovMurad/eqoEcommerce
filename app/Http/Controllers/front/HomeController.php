@@ -10,6 +10,7 @@ use App\Models\Contact;
 use App\Models\News;
 use App\Models\NewsCategory;
 use App\Models\Partner;
+use App\Models\Product;
 use App\Models\Slider;
 use App\Services\FIle_download;
 use Illuminate\Http\Request;
@@ -58,14 +59,20 @@ class HomeController extends Controller
         return view('front.contact.contact');
     }
 
-    public function products(){
+   /*  public function products(){
+        
         return view('front.products.index');
-    }
+    } */
 
-    public function productDetail($slug){
-        return view('front.products.product');
-    }
     public function productCategory($slug){
+        $category = Category::where('slug',$slug)->first() ?? abort(404);
+        $products = Product::whereHas('categories', function($q) use($category){
+            $q->where('slug', $category->slug);
+        })->paginate(18);
+      /*   dd( $products); */
+        return view('front.products.index', compact('products'));
+    }
+    public function productDetail($slug){
         
         return view('front.products.product');
     }
