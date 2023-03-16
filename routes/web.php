@@ -27,7 +27,7 @@ Route::get('/about1', [HomeController:: class, 'about'])->name('about');
 Route::get('/elaqe', [HomeController:: class, 'elaqe'])->name('elaqe');
 Route::get('/products/{slug}', [HomeController:: class, 'productCategory'])->name('product');
 Route::get('/product-detail', [HomeController:: class, 'productDetail'])->name('product.detail');
-
+Route::get('/filter', [HomeController:: class, 'filter'])->name('filter');
 
 
 

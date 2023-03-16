@@ -27,3 +27,4 @@
 
 <!-- Main JS -->
 <script src="{{ asset('themeplate') }}/assets/js/main.js"></script>
+@yield('js')

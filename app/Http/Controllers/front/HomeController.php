@@ -5,6 +5,7 @@ namespace App\Http\Controllers\front;
 use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\Banner;
+use App\Models\Brend;
 use App\Models\Category;
 use App\Models\Contact;
 use App\Models\News;
@@ -14,6 +15,7 @@ use App\Models\Product;
 use App\Models\Slider;
 use App\Services\FIle_download;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 
 class HomeController extends Controller
@@ -65,15 +67,40 @@ class HomeController extends Controller
     } */
 
     public function productCategory($slug){
+        $brends = Brend::where('status',1)->get();
         $category = Category::where('slug',$slug)->first() ?? abort(404);
         $products = Product::whereHas('categories', function($q) use($category){
             $q->where('slug', $category->slug);
         })->paginate(18);
-      /*   dd( $products); */
-        return view('front.products.index', compact('products'));
+        return view('front.products.index', compact('products','brends'));
     }
     public function productDetail($slug){
         
+        return view('front.products.product');
+    }
+
+    public function filter(Request $request){
+        $query =Product::where('status',1);
+        if($request->category_ids){
+            $query = $query->whereHas('categories', function($q) use($request){
+                $q->whereIn('categories.id', $request->category_ids);
+            });
+        }
+        if($request->price){
+           $min =   (int) str_replace ('€','',explode('-', $request->price )[0]);
+           $max = (int) str_replace ('€','',explode('-', $request->price )[1]);
+           
+            $query = $query->where('price','>=',$min)->where('price','<=',$max);
+        }
+        if($request->brend_ids){
+            $query = $query->whereIn('brend_id', $request->brend_ids );
+        }
+        $products = $query->get();
+
+        if($request->ajax()){
+            $view = view('front.widgets.productfilter',['products'=>$products])->render();
+            return ['html'=>$view];
+        }
         return view('front.products.product');
     }
 }
