@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\back\AuthController;
+use App\Http\Controllers\front\AuthController as FrontAuthController;
 use App\Http\Controllers\front\HomeController;
 use App\Http\Controllers\PaginationController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,16 @@ Route::get('/elaqe', [HomeController:: class, 'elaqe'])->name('elaqe');
 Route::get('/products/{slug}', [HomeController:: class, 'productCategory'])->name('product');
 Route::get('/product-detail', [HomeController:: class, 'productDetail'])->name('product.detail');
 Route::get('/filter', [HomeController:: class, 'filter'])->name('filter');
+Route::get('/login',[FrontAuthController::class,'login'])->name('front.login');
+Route::post('/login-post',[FrontAuthController::class,'login_post'])->name('login.post');
+Route::get('/register',[FrontAuthController::class,'register'])->name('front.register');
+Route::post('register-post',[FrontAuthController::class,'register_post'])->name('register.post');
+Route::get('/logout', [FrontAuthController:: class, 'logout'])->name('front.logout');
+
+
+
+
+
 
 
 
@@ -61,7 +72,7 @@ Route::post('/admin-post', [AuthController:: class, 'login_post'])->name('log_in
     Route::get('/admin/dash', function () {
         return view('back.dashboard');
     })->name('dashboard');
-    Route::get('/logout', [AuthController:: class, 'logout'])->name('logout');
+    Route::get('/admin/logout', [AuthController:: class, 'logout'])->name('logout');
 
 /* }); */
 

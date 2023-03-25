@@ -15,22 +15,12 @@ use App\Models\Product;
 use App\Models\Slider;
 use App\Services\FIle_download;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 
 class HomeController extends Controller
 {
-    public function __construct()
-    {
-        $categories = Category::where('parent_id', null)->where('status',1)->get();
-
-        View::share('categories', $categories);
-
-        
-        $contact = Contact::first();
-
-        View::share('contact', $contact);
-    }
     public function index(){
         $sliders = Slider::where('status',1)->get();
         $banners = Banner::where('status',1)->limit(2)->get();

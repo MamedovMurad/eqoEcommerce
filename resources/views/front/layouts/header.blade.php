@@ -27,12 +27,23 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="top_right text-end">
                                 <ul>
+                                    @auth
                                     <li class="top_links"><a href="#"><i class="ion-android-person"></i> şəxsi kabinet<i class="ion-ios-arrow-down"></i></a>
                                         <ul class="dropdown_links">
-                                            <li><a href="login.html">giriş</a></li>
+                                          
                                             <li><a href="cart.html">səbət</a></li>
+                                            <li><a href="{{route('front.logout')}}">logout</a></li>
                                         </ul>
                                     </li>
+                                    @endauth
+                                  @guest
+                                  <li class="top_links"><a href="#"><i class="ion-android-person"></i> şəxsi kabinet<i class="ion-ios-arrow-down"></i></a>
+                                    <ul class="dropdown_links">
+                                        <li><a href="{{route('front.login')}}">giriş</a></li>
+                                        <li><a href="{{route('front.register')}}">Qeydiyyat</a></li>
+                                    </ul>
+                                </li>
+                                  @endguest
                                     <li class="language"><a href="#"><img src="assets/img/logo/language.png" alt="">az-ru<i class="ion-ios-arrow-down"></i></a>
                                         <ul class="dropdown_language">
                                             <li><a href="#"><img src="assets/img/logo/language.png" alt=""> Az</a></li>

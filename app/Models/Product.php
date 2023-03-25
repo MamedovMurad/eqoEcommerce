@@ -31,4 +31,9 @@ class Product extends Model implements TranslatableContract
   {
       return $this->belongsToMany(Category::class, 'product_categories');
   }
+
+  public function cart_products(): BelongsToMany
+  {
+      return $this->belongsToMany(User::class, 'carts');
+  }
 }
