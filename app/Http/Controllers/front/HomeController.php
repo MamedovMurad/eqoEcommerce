@@ -12,6 +12,7 @@ use App\Models\News;
 use App\Models\NewsCategory;
 use App\Models\Partner;
 use App\Models\Product;
+use App\Models\ProductImage;
 use App\Models\Slider;
 use App\Services\FIle_download;
 use Illuminate\Http\Request;
@@ -65,8 +66,9 @@ class HomeController extends Controller
         return view('front.products.index', compact('products','brends'));
     }
     public function productDetail($slug){
-        
-        return view('front.products.product');
+        $product = Product::where('slug', $slug)->where('status',1)->first() ?? abort(404);
+        $images = ProductImage::where('product_id',$product->id)->get();
+        return view('front.products.product',compact('product','images'));
     }
 
     public function filter(Request $request){

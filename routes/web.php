@@ -27,7 +27,7 @@ Route::get('/news-detail/{slug}', [HomeController:: class, 'newsDetail'])->name(
 Route::get('/about1', [HomeController:: class, 'about'])->name('about');
 Route::get('/elaqe', [HomeController:: class, 'elaqe'])->name('elaqe');
 Route::get('/products/{slug}', [HomeController:: class, 'productCategory'])->name('product');
-Route::get('/product-detail', [HomeController:: class, 'productDetail'])->name('product.detail');
+Route::get('/product-detail/{slug}', [HomeController:: class, 'productDetail'])->name('product.detail');
 Route::get('/filter', [HomeController:: class, 'filter'])->name('filter');
 Route::get('/login',[FrontAuthController::class,'login'])->name('front.login');
 Route::post('/login-post',[FrontAuthController::class,'login_post'])->name('login.post');

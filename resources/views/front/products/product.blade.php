@@ -10,7 +10,7 @@
                     <ul>
                         <li><a href="index.html">home</a></li>
                         <li><a href="shop.html">shop</a></li>
-                        <li><a href="shop.html">Clothing</a></li>
+                      
                         <li>product details</li>
                     </ul>
                 </div>
@@ -230,12 +230,12 @@
                 <div class="product_carousel product_column5 owl-carousel">
                     <div class="single_product">
                         <div class="product_name">
-                            <h3><a href="{{route('product.detail')}}">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
+                            <h3><a href="#-#">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
                             <p class="manufacture_product"><a href="#">Accessories</a></p>
                         </div>
                         <div class="product_thumb">
-                            <a class="primary_img" href="{{route('product.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/product/product19.jpg" alt=""></a>
-                            <a class="secondary_img" href="{{route('product.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/product/product11.jpg" alt=""></a>
+                            <a class="primary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product19.jpg" alt=""></a>
+                            <a class="secondary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product11.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">-57%</span>
                             </div>
@@ -270,12 +270,12 @@
                     </div>
                     <div class="single_product">
                         <div class="product_name">
-                            <h3><a href="{{route('product.detail')}}">Bose SoundLink Bluetooth Speaker</a></h3>
+                            <h3><a href="#-#">Bose SoundLink Bluetooth Speaker</a></h3>
                             <p class="manufacture_product"><a href="#">Accessories</a></p>
                         </div>
                         <div class="product_thumb">
-                            <a class="primary_img" href="{{route('product.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/product/product12.jpg" alt=""></a>
-                            <a class="secondary_img" href="{{route('product.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/product/product13.jpg" alt=""></a>
+                            <a class="primary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product12.jpg" alt=""></a>
+                            <a class="secondary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product13.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">-47%</span>
                             </div>
@@ -311,12 +311,12 @@
                     </div>
                     <div class="single_product">
                         <div class="product_name">
-                            <h3><a href="{{route('product.detail')}}">Variable with soldout product for title</a></h3>
+                            <h3><a href="#-#">Variable with soldout product for title</a></h3>
                             <p class="manufacture_product"><a href="#">Accessories</a></p>
                         </div>
                         <div class="product_thumb">
-                            <a class="primary_img" href="{{route('product.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/product/product15.jpg" alt=""></a>
-                            <a class="secondary_img" href="{{route('product.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/product/product14.jpg" alt=""></a>
+                            <a class="primary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product15.jpg" alt=""></a>
+                            <a class="secondary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product14.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">-57%</span>
                             </div>
@@ -351,12 +351,12 @@
                     </div>
                     <div class="single_product">
                         <div class="product_name">
-                            <h3><a href="{{route('product.detail')}}">Lorem ipsum dolor sit amet, consectetur</a></h3>
+                            <h3><a href="#-#">Lorem ipsum dolor sit amet, consectetur</a></h3>
                             <p class="manufacture_product"><a href="#">Accessories</a></p>
                         </div>
                         <div class="product_thumb">
-                            <a class="primary_img" href="{{route('product.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/product/product16.jpg" alt=""></a>
-                            <a class="secondary_img" href="{{route('product.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/product/product17.jpg" alt=""></a>
+                            <a class="primary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product16.jpg" alt=""></a>
+                            <a class="secondary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product17.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">-57%</span>
                             </div>
@@ -391,12 +391,12 @@
                     </div>
                     <div class="single_product">
                         <div class="product_name">
-                            <h3><a href="{{route('product.detail')}}">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
+                            <h3><a href="#-#">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
                             <p class="manufacture_product"><a href="#">Accessories</a></p>
                         </div>
                         <div class="product_thumb">
-                            <a class="primary_img" href="{{route('product.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/product/product18.jpg" alt=""></a>
-                            <a class="secondary_img" href="{{route('product.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/product/product1.jpg" alt=""></a>
+                            <a class="primary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product18.jpg" alt=""></a>
+                            <a class="secondary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product1.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">-07%</span>
                             </div>
@@ -432,12 +432,12 @@
                     </div>
                     <div class="single_product">
                         <div class="product_name">
-                            <h3><a href="{{route('product.detail')}}">Accusantium dolorem Security Camera</a></h3>
+                            <h3><a href="#-#">Accusantium dolorem Security Camera</a></h3>
                             <p class="manufacture_product"><a href="#">Accessories</a></p>
                         </div>
                         <div class="product_thumb">
-                            <a class="primary_img" href="{{route('product.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/product/product2.jpg" alt=""></a>
-                            <a class="secondary_img" href="{{route('product.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/product/product3.jpg" alt=""></a>
+                            <a class="primary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product2.jpg" alt=""></a>
+                            <a class="secondary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product3.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">-57%</span>
                             </div>
@@ -473,12 +473,12 @@
                     </div>
                     <div class="single_product">
                         <div class="product_name">
-                            <h3><a href="{{route('product.detail')}}">Koss Porta Pro On Ear Headphones </a></h3>
+                            <h3><a href="#-#">Koss Porta Pro On Ear Headphones </a></h3>
                             <p class="manufacture_product"><a href="#">Accessories</a></p>
                         </div>
                         <div class="product_thumb">
-                            <a class="primary_img" href="{{route('product.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/product/product4.jpg" alt=""></a>
-                            <a class="secondary_img" href="{{route('product.detail')}}"><img src="{{ asset('themeplate') }}/assets/img/product/product5.jpg" alt=""></a>
+                            <a class="primary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product4.jpg" alt=""></a>
+                            <a class="secondary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product5.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">-57%</span>
                             </div>

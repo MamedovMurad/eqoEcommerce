@@ -65,7 +65,7 @@
                     <div class="col-lg-4 col-md-4 col-12 ">
                         <div class="single_product">
                             <div class="product_name grid_name">
-                                <h3><a href="{{route('product.detail')}}">{{$item->translate(App::getLocale())->title}}</a></h3>
+                                <h3><a href="{{route('product.detail',$item->slug)}}">{{$item->translate(App::getLocale())->title}}</a></h3>
                                
                                 @foreach ($item->categories as $cat)
                                 <p class="manufacture_product"><a href="#">{{$cat->translate(App::getLocale())->title}}</a></p>
@@ -73,8 +73,8 @@
                                
                             </div>
                             <div class="product_thumb">
-                                <a class="primary_img" href="{{route('product.detail')}}"><img src="{{ asset($item->thumb_image_1) }}" alt=""></a>
-                                <a class="secondary_img" href="{{route('product.detail')}}"><img src="{{ asset($item->thumb_image_2) }}" alt=""></a>
+                                <a class="primary_img" href="{{route('product.detail',$item->slug)}}"><img src="{{ asset($item->thumb_image_1) }}" alt=""></a>
+                                <a class="secondary_img" href="{{route('product.detail',$item->slug)}}"><img src="{{ asset($item->thumb_image_2) }}" alt=""></a>
                               {{--   <div class="label_product">
                                     <span class="label_sale">-47%</span>
                                 </div> --}}
@@ -108,7 +108,7 @@
                             <div class="product_content list_content">
                                 <div class="left_caption">
                                     <div class="product_name">
-                                        <h3><a href="{{route('product.detail')}}">{{$item->translate(App::getLocale())->title}}</a></h3>
+                                        <h3><a href="{{route('product.detail',$item->slug)}}">{{$item->translate(App::getLocale())->title}}</a></h3>
                                     </div>
 
                                     <div class="product_desc">
