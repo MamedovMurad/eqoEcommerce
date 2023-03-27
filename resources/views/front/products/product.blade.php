@@ -29,36 +29,28 @@
 
                     <div id="img-1" class="zoomWrapper single-zoom">
                         <a href="#">
-                            <img id="zoom1" src="{{ asset('themeplate') }}/assets/img/product/product15.jpg" data-zoom-image="{{ asset('themeplate') }}/assets/img/product/product15.jpg" alt="big-1">
+                            <img id="zoom1" src="{{ asset($product->thumb_image_1) }}" data-zoom-image="{{ asset($product->thumb_image_1) }}" alt="big-1">
                         </a>
                     </div>
 
                     <div class="single-zoom-thumb">
                         <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
                             <li>
-                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="{{ asset('themeplate') }}/assets/img/product/product8.jpg" data-zoom-image="{{ asset('themeplate') }}/assets/img/product/product8.jpg">
-                                    <img src="{{ asset('themeplate') }}/assets/img/product/product8.jpg" alt="zo-th-1" />
+                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="{{ asset($product->thumb_image_1) }}" data-zoom-image="{{ asset($product->thumb_image_1) }}">
+                                    <img src="{{ asset($product->thumb_image_1) }}" alt="zo-th-1" />
                                 </a>
 
                             </li>
+                            @foreach ($images as $item)
+                                
+                         
                             <li>
-                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="{{ asset('themeplate') }}/assets/img/product/product9.jpg" data-zoom-image="{{ asset('themeplate') }}/assets/img/product/product9.jpg">
-                                    <img src="{{ asset('themeplate') }}/assets/img/product/product9.jpg" alt="zo-th-1" />
+                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="{{ asset($item->image) }}" data-zoom-image="{{ asset($item->image) }}">
+                                    <img src="{{ asset($item->image) }}" alt="zo-th-1" />
                                 </a>
 
                             </li>
-                            <li>
-                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="{{ asset('themeplate') }}/assets/img/product/product10.jpg" data-zoom-image="{{ asset('themeplate') }}/assets/img/product/product10.jpg">
-                                    <img src="{{ asset('themeplate') }}/assets/img/product/product10.jpg" alt="zo-th-1" />
-                                </a>
-
-                            </li>
-                            <li>
-                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="{{ asset('themeplate') }}/assets/img/product/product13.jpg" data-zoom-image="{{ asset('themeplate') }}/assets/img/product/product13.jpg">
-                                    <img src="{{ asset('themeplate') }}/assets/img/product/product13.jpg" alt="zo-th-1" />
-                                </a>
-
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -228,14 +220,19 @@
                     <h2><span> <strong>Related</strong>Products</span></h2>
                 </div>
                 <div class="product_carousel product_column5 owl-carousel">
+
+                    {{-- @foreach ($similar_products->category_prods as $item) --}}
+                        
+                    
+
                     <div class="single_product">
                         <div class="product_name">
-                            <h3><a href="#-#">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
-                            <p class="manufacture_product"><a href="#">Accessories</a></p>
+                           {{--  <h3><a href="product-details.html">{{$item->translate(App::getLocale())->title}}</a></h3> --}}
+                           {{--  <p class="manufacture_product"><a href="#">Accessories</a></p> --}}
                         </div>
                         <div class="product_thumb">
-                            <a class="primary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product19.jpg" alt=""></a>
-                            <a class="secondary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product11.jpg" alt=""></a>
+                            <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product19.jpg" alt=""></a>
+                            <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product11.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">-57%</span>
                             </div>
@@ -249,15 +246,7 @@
                             </div>
                         </div>
                         <div class="product_content">
-                            <div class="product_ratings">
-                                <ul>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                </ul>
-                            </div>
+                          
                             <div class="product_footer d-flex align-items-center">
                                 <div class="price_box">
                                     <span class="regular_price">$180.00</span>
@@ -266,251 +255,19 @@
                                     <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="single_product">
-                        <div class="product_name">
-                            <h3><a href="#-#">Bose SoundLink Bluetooth Speaker</a></h3>
-                            <p class="manufacture_product"><a href="#">Accessories</a></p>
-                        </div>
-                        <div class="product_thumb">
-                            <a class="primary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product12.jpg" alt=""></a>
-                            <a class="secondary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product13.jpg" alt=""></a>
-                            <div class="label_product">
-                                <span class="label_sale">-47%</span>
-                            </div>
+                           {{--  <div class="quantity_progress">
+                              
+                                <p class="product_available">Stok: <span></span></p>
+                            </div> --}}
+                            <div class="bar_percent">
 
-                            <div class="action_links">
-                                <ul>
-                                    <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
-                                    <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
-                                    <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="product_content">
-                            <div class="product_ratings">
-                                <ul>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="product_footer d-flex align-items-center">
-                                <div class="price_box">
-                                    <span class="current_price">$160.00</span>
-                                    <span class="old_price">$3200.00</span>
-                                </div>
-                                <div class="add_to_cart">
-                                    <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="single_product">
-                        <div class="product_name">
-                            <h3><a href="#-#">Variable with soldout product for title</a></h3>
-                            <p class="manufacture_product"><a href="#">Accessories</a></p>
-                        </div>
-                        <div class="product_thumb">
-                            <a class="primary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product15.jpg" alt=""></a>
-                            <a class="secondary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product14.jpg" alt=""></a>
-                            <div class="label_product">
-                                <span class="label_sale">-57%</span>
-                            </div>
+                    {{-- @endforeach --}}
 
-                            <div class="action_links">
-                                <ul>
-                                    <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
-                                    <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
-                                    <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="product_content">
-                            <div class="product_ratings">
-                                <ul>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="product_footer d-flex align-items-center">
-                                <div class="price_box">
-                                    <span class="regular_price">$150.00</span>
-                                </div>
-                                <div class="add_to_cart">
-                                    <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single_product">
-                        <div class="product_name">
-                            <h3><a href="#-#">Lorem ipsum dolor sit amet, consectetur</a></h3>
-                            <p class="manufacture_product"><a href="#">Accessories</a></p>
-                        </div>
-                        <div class="product_thumb">
-                            <a class="primary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product16.jpg" alt=""></a>
-                            <a class="secondary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product17.jpg" alt=""></a>
-                            <div class="label_product">
-                                <span class="label_sale">-57%</span>
-                            </div>
 
-                            <div class="action_links">
-                                <ul>
-                                    <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
-                                    <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
-                                    <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="product_content">
-                            <div class="product_ratings">
-                                <ul>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="product_footer d-flex align-items-center">
-                                <div class="price_box">
-                                    <span class="regular_price">$175.00</span>
-                                </div>
-                                <div class="add_to_cart">
-                                    <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single_product">
-                        <div class="product_name">
-                            <h3><a href="#-#">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
-                            <p class="manufacture_product"><a href="#">Accessories</a></p>
-                        </div>
-                        <div class="product_thumb">
-                            <a class="primary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product18.jpg" alt=""></a>
-                            <a class="secondary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product1.jpg" alt=""></a>
-                            <div class="label_product">
-                                <span class="label_sale">-07%</span>
-                            </div>
 
-                            <div class="action_links">
-                                <ul>
-                                    <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
-                                    <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
-                                    <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="product_content">
-                            <div class="product_ratings">
-                                <ul>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="product_footer d-flex align-items-center">
-                                <div class="price_box">
-                                    <span class="current_price">$180.00</span>
-                                    <span class="old_price">$420.00</span>
-                                </div>
-                                <div class="add_to_cart">
-                                    <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single_product">
-                        <div class="product_name">
-                            <h3><a href="#-#">Accusantium dolorem Security Camera</a></h3>
-                            <p class="manufacture_product"><a href="#">Accessories</a></p>
-                        </div>
-                        <div class="product_thumb">
-                            <a class="primary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product2.jpg" alt=""></a>
-                            <a class="secondary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product3.jpg" alt=""></a>
-                            <div class="label_product">
-                                <span class="label_sale">-57%</span>
-                            </div>
-
-                            <div class="action_links">
-                                <ul>
-                                    <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
-                                    <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
-                                    <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="product_content">
-                            <div class="product_ratings">
-                                <ul>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="product_footer d-flex align-items-center">
-                                <div class="price_box">
-                                    <span class="current_price">$140.00</span>
-                                    <span class="old_price">$320.00</span>
-                                </div>
-                                <div class="add_to_cart">
-                                    <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single_product">
-                        <div class="product_name">
-                            <h3><a href="#-#">Koss Porta Pro On Ear Headphones </a></h3>
-                            <p class="manufacture_product"><a href="#">Accessories</a></p>
-                        </div>
-                        <div class="product_thumb">
-                            <a class="primary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product4.jpg" alt=""></a>
-                            <a class="secondary_img" href="#-#"><img src="{{ asset('themeplate') }}/assets/img/product/product5.jpg" alt=""></a>
-                            <div class="label_product">
-                                <span class="label_sale">-57%</span>
-                            </div>
-
-                            <div class="action_links">
-                                <ul>
-                                    <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
-                                    <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
-                                    <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="product_content">
-                            <div class="product_ratings">
-                                <ul>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="product_footer d-flex align-items-center">
-                                <div class="price_box">
-                                    <span class="regular_price">$160.00</span>
-                                </div>
-                                <div class="add_to_cart">
-                                    <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
