@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function cart_incriment(){
+    public function cart(){
        
-        return redirect()->back();
+        return view('front.cart.index');
     }
 }
