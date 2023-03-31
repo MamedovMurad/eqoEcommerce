@@ -101,4 +101,27 @@ dd($similar_products['category_prods']); */
         }
         return view('front.products.product');
     }
+
+    public function services(){
+
+        return view('front.about.about',['about'=>About::first()]);
+    }
+
+    public function certificates(){
+
+        return view('front.about.about',['about'=>About::first()]);
+    }
+
+    public function support(){
+
+        return view('front.about.about',['about'=>About::first()]);
+    }
+    public function projects(){
+
+        return view('front.about.about',['about'=>About::first()]);
+    }
+    public function project_categories(){
+
+        return view('front.about.about',['about'=>About::first()]);
+    }
 }
