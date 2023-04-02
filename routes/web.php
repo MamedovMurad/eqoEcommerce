@@ -34,7 +34,11 @@ Route::post('/login-post',[FrontAuthController::class,'login_post'])->name('logi
 Route::get('/register',[FrontAuthController::class,'register'])->name('front.register');
 Route::post('register-post',[FrontAuthController::class,'register_post'])->name('register.post');
 Route::get('/logout', [FrontAuthController:: class, 'logout'])->name('front.logout');
-
+Route::get('/project-category/{slug}', [HomeController:: class, 'project_category'])->name('project.category');
+Route::get('/project/{slug}', [HomeController:: class, 'project_detail'])->name('projects.detail');
+Route::get('/certificates', [HomeController:: class, 'certificates'])->name('certificates');
+Route::get('/supports', [HomeController:: class, 'support'])->name('support');
+Route::get('/services', [HomeController:: class, 'services'])->name('services');
 
 
 

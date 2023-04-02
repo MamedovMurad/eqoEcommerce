@@ -166,6 +166,7 @@
                                     <li><a href="{{route('home')}}">home</a>
                                        
                                     </li>
+                                    <li><a href="{{route('about')}}">HAQQIMIZDA</a></li>
                                     <li class="mega_items"><a href="shop.html">MAĞAZA<i class="fa fa-angle-down"></i></a>
                                         <div class="mega_menu">
                                             <ul class="mega_menu_inner">
@@ -191,10 +192,26 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li><a href="{{route('news')}}">XƏBƏRLƏR</a>
+                                    <li><a href="#">Layiheler <i class="fa fa-angle-down"></i></a>
+                                        <ul class="sub_menu pages">
+                                            @foreach ($project_categories as $item)
+                                            <li><a href="{{route('project.category',$item->slug)}}">{{$item->translate(App::getLocale())->title}}</a></li>
+                                            @endforeach
+                                           
+                                          
+                                        </ul>
+                                    </li>
+                                    <li><a href="{{route('services')}}">Xİdmətlər</a>
                                        
                                     </li>
-                                    <li><a href="{{route('about')}}">HAQQIMIZDA</a></li>
+                                    <li><a href="{{route('certificates')}}">Sertifikatlar</a>
+                                       
+                                    </li>
+                                    <li><a href="{{route('support')}}">Texniki dəsdək</a>
+                                       
+                                    </li>
+                                    
+                                    
                                     <li><a href="{{route('elaqe')}}">BİZİMLƏ ƏLAQƏ</a></li>
                                 </ul>
                             </nav>

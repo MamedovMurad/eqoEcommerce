@@ -119,7 +119,7 @@
                                         <div class="col-lg-9 d-flex">
 
                                             <img id="update_photo"/>
-                                                <input class="form-control" name="file" type="file" id="foto">
+                                                <input class="form-control" name="image" type="file" id="foto">
 
                                         </div>
                                     </div>

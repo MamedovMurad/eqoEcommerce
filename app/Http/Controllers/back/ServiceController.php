@@ -22,15 +22,7 @@ class ServiceController extends Controller
         return view('back.service.index',['service'=>Service::paginate(10), 'languages'=>Language::where('status', 1)->get()]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -42,11 +34,14 @@ class ServiceController extends Controller
     {
         $requests=$request->all();
        
-        $photo = new FIle_download();
-        $checkedPhoto =  $photo->download($request)??false;
-        if ($checkedPhoto){
-            $requests['image']=$checkedPhoto;
-        }
+        if($request->hasFile('image')){
+
+            $imgExtension = $requests['image']->getClientOriginalExtension();
+            $imageName = time() . "-" . uniqid() . '.' . $imgExtension;
+             $requests['image']->move(public_path('uploads'),$imageName);
+    
+             $requests['image']= 'uploads/'.$imageName;
+        };
         if(!isset($requests['status'])){
             $requests['status']='0';
         }
@@ -76,16 +71,7 @@ class ServiceController extends Controller
         return Service::find($id);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+
 
     /**
      * Update the specified resource in storage.
@@ -100,11 +86,14 @@ class ServiceController extends Controller
      
           $requests=$request->all();
         
-        $photo = new FIle_download();
-        $checkedPhoto =  $photo->download($request)??false;
-        if ($checkedPhoto){
-            $requests['image']=$checkedPhoto;
-        }
+          if($request->hasFile('image')){
+
+            $imgExtension = $requests['image']->getClientOriginalExtension();
+            $imageName = time() . "-" . uniqid() . '.' . $imgExtension;
+             $requests['image']->move(public_path('uploads'),$imageName);
+    
+             $requests['image']= 'uploads/'.$imageName;
+        };
       
         if(!isset($requests['status'])){
             $requests['status']='0';
@@ -112,6 +101,16 @@ class ServiceController extends Controller
       
      
         $service->update($requests);
+        if ($code=200) {
+            return response()->json('success',201);
+         }else{
+             $validator = \Illuminate\Support\Facades\Validator::make($request->all(), $this->rules());
+ 
+             if ($validator->fails()) {
+                return response()->json($validator->errors(), 422);
+             }
+         }
+
         return redirect()->back();
     }
 

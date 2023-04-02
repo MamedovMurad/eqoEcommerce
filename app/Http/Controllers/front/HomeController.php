@@ -7,13 +7,18 @@ use App\Models\About;
 use App\Models\Banner;
 use App\Models\Brend;
 use App\Models\Category;
+use App\Models\Certificate;
 use App\Models\Contact;
 use App\Models\News;
 use App\Models\NewsCategory;
 use App\Models\Partner;
 use App\Models\Product;
 use App\Models\ProductImage;
+use App\Models\Project;
+use App\Models\ProjectCategory;
+use App\Models\Service;
 use App\Models\Slider;
+use App\Models\Support;
 use App\Services\FIle_download;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -104,24 +109,29 @@ dd($similar_products['category_prods']); */
 
     public function services(){
 
-        return view('front.about.about',['about'=>About::first()]);
+        return view('front.services.index',['services'=>Service::where('status',1)->paginate(6)]);
     }
 
     public function certificates(){
 
-        return view('front.about.about',['about'=>About::first()]);
+        return view('front.certificates.index',['certificates'=>Certificate::where('status',1)->get()]);
     }
 
     public function support(){
 
-        return view('front.about.about',['about'=>About::first()]);
+        return view('front.support.index',['support'=>Support::where('status',1)->get()]);
     }
-    public function projects(){
+   
+    public function project_category($slug){
+        $project_cat=ProjectCategory::where('slug',$slug)->first() ?? abort(404);
+        $projects=Project::where('project_category_id',$project_cat->id)->where('status',1)->paginate(9);
 
-        return view('front.about.about',['about'=>About::first()]);
+        return view('front.projects.index',compact('projects'));
     }
-    public function project_categories(){
 
-        return view('front.about.about',['about'=>About::first()]);
+    public function project_detail($slug){
+        $project = Project::where('slug', $slug)->first() ?? abort(404);
+
+        return view('front.projects.project',compact('project'));
     }
 }
