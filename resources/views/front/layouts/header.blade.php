@@ -19,8 +19,8 @@
                             <div class="follow_us">
                                 <label>Bizi izləyin:</label>
                                 <ul class="follow_link">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                                    <li><a href="{{$contact->facebook}}"><i class="ion-social-facebook"></i></a></li>
+                                    <li><a href="{{$contact->instagram}}"><i class="ion-social-instagram"></i></a></li>
                                 </ul>
                             </div>
                         </div>
