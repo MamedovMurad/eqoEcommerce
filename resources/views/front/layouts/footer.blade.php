@@ -104,11 +104,11 @@
                         <p>Copyright &copy; 2021 <a href="#">Autima</a> All Right Reserved.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                {{-- <div class="col-lg-6 col-md-6">
                     <div class="footer_payment text-right">
                         <a href="#"><img src="{{ asset('themeplate') }}/assets/img/icon/payment.png" alt=""></a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
