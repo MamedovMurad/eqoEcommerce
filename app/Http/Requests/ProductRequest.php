@@ -54,6 +54,8 @@ class ProductRequest extends FormRequest
             'thumb_image_2'=>['max:2024'],
             'images' => '',
             'images.*' => 'mimes:png,gif,jpg,jpeg',
+            'files' => 'nullable',
+            'files.*' => 'mimes:pdf',
             'categories' => 'nullable',
             'categories.*' => 'exists:categories,id',
 

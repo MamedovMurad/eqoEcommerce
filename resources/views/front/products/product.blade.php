@@ -11,7 +11,7 @@
                         <li><a href="index.html">home</a></li>
                         <li><a href="shop.html">shop</a></li>
                       
-                        <li>product details</li>
+                        <li>{{$product->translate(App::getLocale())->title}}</li>
                     </ul>
                 </div>
             </div>
@@ -63,9 +63,15 @@
                         <div class="product_nav">
                         </div>
                         <div class="price_box">
-                            <span class="current_price">$70.00</span>
-                            <span class="old_price">$80.00</span>
-
+                           
+                            @if ($product->discount !=null)
+                            <span class="current_price">{{$product->discount}}  ₼</span>
+                            <span class="old_price">{{$product->price}} ₼</span>
+                            @else
+                            <div class="price_box">
+                                <span class="current_price">{{$product->price}}  ₼</span>
+                            </div>
+                            @endif
                         </div>
                         <div class="product_desc">
                             <p>eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in </p>
@@ -75,12 +81,7 @@
                             <button class="button" type="submit">add to cart</button>
 
                         </div>
-                        <div class=" product_d_action">
-                            <ul>
-                                <li><a href="#" title="Add to wishlist">+ Add to Wishlist</a></li>
-                                <li><a href="#" title="Add to wishlist">+ Compare</a></li>
-                            </ul>
-                        </div>
+                     
                         <div class="product_meta">
                             <span>Category: <a href="#">Clothing</a></span>
                         </div>

@@ -119,7 +119,7 @@
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Endirimli qiymət</label>
-                                                <input name="discount_price" type="text" class="form-control" id="basiInput">
+                                                <input name="discount" type="text" class="form-control" id="basiInput">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">

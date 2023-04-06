@@ -84,30 +84,31 @@
                        
                         <div class="single_product">
                             <div class="product_name">
-                                <h3><a href="product-details.html">{{$prod->translate(App::getLocale())->title}}</a></h3>
+                                <h3><a href="{{route('product.detail',$prod->slug)}}">{{$prod->translate(App::getLocale())->title}}</a></h3>
                                {{--  <p class="manufacture_product"><a href="#">Accessories</a></p> --}}
                             </div>
                             <div class="product_thumb">
-                                <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product19.jpg" alt=""></a>
-                                <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product11.jpg" alt=""></a>
-                                <div class="label_product">
+                                <a class="primary_img" href="{{route('product.detail',$prod->slug)}}"><img src="{{ asset($prod->thumb_image_1) }}" alt=""></a>
+                                <a class="secondary_img" href="{{route('product.detail',$prod->slug)}}"><img src="{{ asset($prod->thumb_image_2) }}" alt=""></a>
+                               {{--  <div class="label_product">
                                     <span class="label_sale">-57%</span>
-                                </div>
+                                </div> --}}
 
-                                <div class="action_links">
-                                    <ul>
-                                        <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
-                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
-                                        <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
-                                    </ul>
-                                </div>
                             </div>
                             <div class="product_content">
                               
                                 <div class="product_footer d-flex align-items-center">
                                     <div class="price_box">
-                                        <span class="regular_price">$180.00</span>
+                                        @if ($prod->discount !=null)
+                                    <span class="current_price">{{$prod->discount}}  ₼</span>
+                                    <span class="old_price">{{$prod->price}} ₼</span>
+                                    @else
+                                    <div class="price_box">
+                                        <span class="regular_price">{{$prod->price}} ₼</span>
                                     </div>
+                                    @endif
+                                    </div>
+                                   
                                     <div class="add_to_cart">
                                         <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
                                     </div>
@@ -116,9 +117,7 @@
                                   
                                     <p class="product_available">Stok: <span></span></p>
                                 </div> --}}
-                                <div class="bar_percent">
-
-                                </div>
+                                
                             </div>
                         </div>
                     

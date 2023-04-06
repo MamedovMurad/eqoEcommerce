@@ -121,7 +121,7 @@
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
                                             <div>
                                                 <label for="basiInput" class="form-label">Endirimli qiymət</label>
-                                                <input value="{{$product->discount_price}}" name="discount_price" type="text" class="form-control" id="basiInput">
+                                                <input value="{{$product->discount}}" name="discount" type="text" class="form-control" id="basiInput">
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-md-6" style="margin-top: 20px">
