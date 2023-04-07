@@ -15,7 +15,17 @@ return new class extends Migration
     {
         Schema::create('product_file_translations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('product_file_id');
+            $table->string('locale');
+            $table->string('file_name');
+           
             $table->timestamps();
+
+            $table->foreign('product_file_id')
+            ->references('id')
+            ->on('product_files')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

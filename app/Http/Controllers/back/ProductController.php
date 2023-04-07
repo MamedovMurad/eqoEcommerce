@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Language;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\ProductFile;
 use App\Models\ProductImage;
 use App\Services\FIle_download;
 use Illuminate\Http\Request;
@@ -72,6 +73,17 @@ class ProductController extends Controller
             $image->image='/uploads/'.$imageName;
             $image->product_id = $product->id;
             $image->save();
+          }
+
+          foreach ($request->pdf_files as $filepdf) {
+            dd($request->pdf_files);
+            $file = new ProductFile();
+            $fileName= time() . "-" . uniqid() . '.' .$filepdf->getClientOriginalExtension();
+            $filepdf->move(public_path('uploads'),$fileName);
+            $file->file='/uploads/'.$fileName;
+            $file->product_id = $product->id;
+            $file->product_id = $product->id;
+            $file->save();
           }
         return redirect()->back();
     }
