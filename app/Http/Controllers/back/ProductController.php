@@ -52,7 +52,7 @@ class ProductController extends Controller
             $imageName = time() . "-" . uniqid() . '.' . $imgExtension;
              $requests['thumb_image_1']->move(public_path('uploads'),$imageName);
     
-             $requests['thumb_image_1']= 'uploads/'.$imageName;
+             $requests['thumb_image_1']= 'uploads/'.$imageName; 
         };
         if($request->hasFile('thumb_image_1')){
 
@@ -74,16 +74,25 @@ class ProductController extends Controller
             $image->product_id = $product->id;
             $image->save();
           }
-
+        
           foreach ($request->pdf_files as $filepdf) {
-            dd($request->pdf_files);
-            $file = new ProductFile();
-            $fileName= time() . "-" . uniqid() . '.' .$filepdf->getClientOriginalExtension();
-            $filepdf->move(public_path('uploads'),$fileName);
-            $file->file='/uploads/'.$fileName;
-            $file->product_id = $product->id;
-            $file->product_id = $product->id;
-            $file->save();
+          
+           /*  $filepdf = new ProductFile(); */
+            dd($filepdf);
+            if($request->hasFile('file')){
+
+                $imgExtension = $file_requests['file']->getClientOriginalExtension();
+                $imageName = time() . "-" . uniqid() . '.' . $imgExtension;
+                 $file_requests['file']->move(public_path('uploads'),$imageName);
+        
+                 $file_requests['file']= 'uploads/'.$imageName; 
+            };
+            $fileName= time() . "-" . uniqid() . '.' .$filepdf['file']->getClientOriginalExtension();
+            $filepdf['file']->move(public_path('uploads'),$fileName);
+            $filepdf['file']='/uploads/'.$fileName;
+            $filepdf->product_id= $product->id;
+            $filepdf['file_name'] = $product->id;
+            $filepdf->save();
           }
         return redirect()->back();
     }

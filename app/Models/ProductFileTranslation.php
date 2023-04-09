@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class ProductFileTranslation extends Model
 {
     use HasFactory;
+    protected $fillable =  ['file_name'];
 }
