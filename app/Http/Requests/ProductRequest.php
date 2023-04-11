@@ -36,7 +36,7 @@ class ProductRequest extends FormRequest
                 'title:' . $lang['code'] => ['required', 'max:255'],
                 'sub_title:' . $lang['code'] => ['required', 'max:255'],
                 'description:' . $lang['code'] => ['required'],
-                'pdf_files.*.file_name:' . $lang['code'] => [ 'max:255'],
+                'file_name:' . $lang['code']. '.*' => [ 'max:255'],
             ];
 
      
@@ -54,8 +54,8 @@ class ProductRequest extends FormRequest
             'thumb_image_2'=>['max:2024'],
             'images' => '',
             'images.*' => 'mimes:png,gif,jpg,jpeg',
-            'pdf_files' => 'nullable',
-            'pdf_files.*.file' => 'mimes:pdf',
+         /*    'pdf_files' => 'nullable', */
+            'file.*' => 'mimes:pdf',
             'categories' => 'nullable',
             'categories.*' => 'exists:categories,id',
 

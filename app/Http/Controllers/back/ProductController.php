@@ -43,7 +43,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(ProductRequest $request)
-    {
+    {   dd($request->all());
         $requests=$request->all();
         $product = Product::create($requests);
         if($request->hasFile('thumb_image_1')){
@@ -52,7 +52,7 @@ class ProductController extends Controller
             $imageName = time() . "-" . uniqid() . '.' . $imgExtension;
              $requests['thumb_image_1']->move(public_path('uploads'),$imageName);
     
-             $requests['thumb_image_1']= 'uploads/'.$imageName; 
+             $requests['thumb_image_1']= 'uploads/'.$imageName;
         };
         if($request->hasFile('thumb_image_1')){
 
@@ -74,11 +74,11 @@ class ProductController extends Controller
             $image->product_id = $product->id;
             $image->save();
           }
-        
+       
           foreach ($request->pdf_files as $filepdf) {
           
            /*  $filepdf = new ProductFile(); */
-            dd($filepdf);
+       
             if($request->hasFile('file')){
 
                 $imgExtension = $file_requests['file']->getClientOriginalExtension();

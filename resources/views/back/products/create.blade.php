@@ -169,11 +169,11 @@
                                             </tr>
                                             <tr>
                                                 @foreach ($languages as $item)
-                                                <td><input type="text" name="pdf_files[0][file_name:{{$item->code}}]" placeholder="Adı ({{$item->code}})" class="form-control" />
+                                                <td><input type="text" name="file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" />
                                                 </td>
                                                 @endforeach
                                               
-                                                <td><input type="file" name="pdf_files[0][file]" class="form-control" />
+                                                <td><input type="file" name="file[]" class="form-control" />
                                                 </td>
                                                 <td><button type="button" name="add" id="dynamic-ar" class="btn btn-outline-primary">Fayl əlavə et</button></td>
                                             </tr>
@@ -228,13 +228,14 @@
     var i = 0;
     $("#dynamic-ar").click(function () {
         ++i;
-        $("#dynamicAddRemove").append('<tr> @foreach ($languages as $item)<td><input type="text" name="pdf_files[' + i +
-            '][file_name:{{$item->code}}]" placeholder="Adı ({{$item->code}})" class="form-control" /></td>@endforeach<td><input type="file" name="pdf_files[' + i +
-            '][file]"  class="form-control" /></td><td><button type="button" class="btn btn-outline-danger remove-input-field">Sil</button></td></tr>'
+        $("#dynamicAddRemove").append('<tr> @foreach ($languages as $item)<td><input type="text" name="file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" /></td>@endforeach<td><input type="file" name="file[]"  class="form-control" /></td><td><button type="button" class="btn btn-outline-danger remove-input-field">Sil</button></td></tr>'
             );
     });
     $(document).on('click', '.remove-input-field', function () {
         $(this).parents('tr').remove();
     });
+    $('"#dynamic-ar').submit(function() {
+                $(this).find(':input').prop('disabled', false);
+            });
 </script>
 @endsection
