@@ -42,7 +42,10 @@
                                                                 
                                                             </ul>
                                                         </div>
-                
+                                                        {{-- <div id="cover">
+                                                            <input type="file" name="jj[]">
+                                                        </div>
+                                                        <button type="button" onclick="myFunction()">add jj</button> --}}
                                                         <div class="tab-content">
                                                             @foreach ($languages as $item)
                                                                 
@@ -59,7 +62,7 @@
                                                                             </div>
                                                                             <div>
                                                                                 <label class="form-label" for="des-info-description-input">Ətraflı-{{$item->code}}</label>
-                                                                                <textarea class="form-control" name="description:{{$item->code}}" placeholder="Enter Description" id="des-info-description-input" rows="3" required></textarea>
+                                                                                <textarea class="form-control" name="description:{{$item->code}}" placeholder="Enter Description" id="des-info-description-input" rows="3" ></textarea>
                                                                                 <div class="invalid-feedback">Please enter a description</div>
                                                                             </div>
                                                                        
@@ -92,7 +95,7 @@
                                                 <h5 class="fs-14 mb-1">Kateqoriyalar</h5>
                                             
                                           
-                                                    <select name="categories[]" required multiple="multiple" name="favorite_cars" id="multiselect-header">
+                                                    <select name="categories[]"  multiple="multiple" name="favorite_cars" id="multiselect-header">
                                                         @foreach ($categories as $item)
                                                         <option value="{{$item->id}}">{{$item->translate('az')->title}}</option>
                                                         @endforeach
@@ -161,19 +164,19 @@
                                         </div>
                                         <table class="table table-bordered" id="dynamicAddRemove">
                                             <tr>
-                                                @foreach ($languages as $item)
+                                              {{--   @foreach ($languages as $item)
                                                 <th>Fayl adı ({{$item->code}})</th>
-                                                @endforeach
+                                                @endforeach --}}
                                                 <th>Fayl</th>
                                                 <th>Əməliyyatlar</th>
                                             </tr>
                                             <tr>
-                                                @foreach ($languages as $item)
+                                           {{--      @foreach ($languages as $item)
                                                 <td><input type="text" name="file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" />
                                                 </td>
-                                                @endforeach
+                                                @endforeach --}}
                                               
-                                                <td><input type="file" name="file[]" class="form-control" />
+                                                <td><input type="file" name="test[]"  />
                                                 </td>
                                                 <td><button type="button" name="add" id="dynamic-ar" class="btn btn-outline-primary">Fayl əlavə et</button></td>
                                             </tr>
@@ -225,17 +228,18 @@
  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
  <script type="text/javascript">
-    var i = 0;
+/*  function myFunction(){
+    $("#dynamicAddRemove").append(`<tr> @foreach ($languages as $item)<td><input type="text" name="file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" /></td>@endforeach<td><input type="file" name="test['${i}'][test]"  class="form-control" /></td><td><button type="button" class="btn btn-outline-danger remove-input-field">Sil</button></td></tr>`)
+ } */
+    
     $("#dynamic-ar").click(function () {
-        ++i;
-        $("#dynamicAddRemove").append('<tr> @foreach ($languages as $item)<td><input type="text" name="file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" /></td>@endforeach<td><input type="file" name="file[]"  class="form-control" /></td><td><button type="button" class="btn btn-outline-danger remove-input-field">Sil</button></td></tr>'
+        
+        $("#dynamicAddRemove").append(`<tr> <td><input type="file" name="test[]"   /></td><td><button type="button" class="btn btn-outline-danger remove-input-field">Sil</button></td></tr>`
             );
     });
     $(document).on('click', '.remove-input-field', function () {
         $(this).parents('tr').remove();
     });
-    $('"#dynamic-ar').submit(function() {
-                $(this).find(':input').prop('disabled', false);
-            });
+    
 </script>
 @endsection

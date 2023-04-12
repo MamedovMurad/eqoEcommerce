@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ContactMessageRequest;
 use App\Models\About;
 use App\Models\Banner;
 use App\Models\Brend;
 use App\Models\Category;
 use App\Models\Certificate;
 use App\Models\Contact;
+use App\Models\ContactMessage;
 use App\Models\News;
 use App\Models\NewsCategory;
 use App\Models\Partner;
@@ -133,5 +135,12 @@ dd($similar_products['category_prods']); */
         $project = Project::where('slug', $slug)->first() ?? abort(404);
 
         return view('front.projects.project',compact('project'));
+    }
+
+    public function contact_message(ContactMessageRequest $request){
+      
+        $requests=$request->all();
+        ContactMessage::create($requests);
+        return redirect()->back();
     }
 }
