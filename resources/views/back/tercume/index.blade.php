@@ -27,20 +27,19 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">ID</th>
-                                    <th scope="col">Başlıq</th>
-                                    <th scope="col">Foto</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Key</th>
+                                    <th scope="col">Text</th>
                                     <th scope="col">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($news as $partner)
+                                @foreach($tercume as $partner)
                                     <tr>
 
                                         <th scope="row"><a href="#" class="fw-semibold">#{{$partner->id}}</a></th>
-                                        <td>{{$partner->translate('az')->title}}</td>
-                                        <td> <img src="{{$partner->image}}" width="50" height="50"> </td>
-                                        <td>{{$partner->status==1?' Aktiv ':'Passiv'}}</td>
+                                        <td>{{$partner->key}}</td>
+                                        <td> {{$partner->translate('az')->text}}</td>
+                                     
                                         <td>
                                             <div class="flex-wrap gap-3 hstack">
 
@@ -48,7 +47,7 @@
                                                             data-bs-toggle="modal" data-bs-target="#partners_modal"
                                                             class="btn btn-ghost-info waves-effect waves-light shadow-none" onclick="formEditButton('{{$partner->id}}')"><i class="ri-edit-2-fill"></i></button>
 
-                                            <form action="{{route('news.destroy',$partner->id)}}" method="post">
+                                            <form action="{{route('tercume.destroy',$partner->id)}}" method="post">
                                                 @method('delete')
                                                 @csrf
                                                 <button type="submit" class="from_edit btn btn-ghost-danger waves-effect waves-light shadow-none"><i class="ri-delete-bin-line"></i></button>
@@ -76,20 +75,28 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="partners_modalLabel">Xəbər Əlavə Et</h5>
+                                <h5 class="modal-title" id="partners_modalLabel">Tərcümə Əlavə Et</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{route('news.store')}}" id="partner_form" method="post"  enctype='multipart/form-data'>
+                                <form action="{{route('tercume.store')}}" id="partner_form" method="post"  enctype='multipart/form-data'>
                                    @csrf
                               
+                                   <div class="row mb-3">
+                                    <div class="col-lg-3">
+                                        <label for="titleInput" class="form-label">Key</label>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control" id="titleInput" placeholder="Key" name="key">
+                                    </div>
+                                </div>
                                    <div class="row mb-3">
                                     <div class="custom__tab">
                                         <header>
                                          <ul class="nav nav-pills">
                                             @foreach ($languages as $key=>$item )
                                              <li onclick="setTab('titleInput{{$item->code}}',this)" class="nav-item">
-                                                 <label for="titleInput{{$item->code}}" class="nav-link {{$key==0?'active':''}}" >Başlıq_{{$item->code}}</label>
+                                                 <label for="titleInput{{$item->code}}" class="nav-link {{$key==0?'active':''}}" >Text {{$item->code}}</label>
                                              </li>
                                              @endforeach
                                          </ul>
@@ -98,8 +105,8 @@
                                         @foreach ($languages as $item )
                                         <div id="titleInput{{$item->code}}" class="title__input">
                                         
-                                            <input type="text" class="form-control "  placeholder="title {{$item->code}}" name="title:{{$item->code}}">  
-                                          <textarea name="description:{{$item->code}}"  class="form-control mt-3"  cols="30" rows="10">{{$item->code}}</textarea>
+                                            
+                                          <textarea name="text:{{$item->code}}"  class="form-control mt-3"  cols="30" rows="10">{{$item->code}}</textarea>
                                        
                                         </div>
                                          @endforeach
@@ -110,55 +117,6 @@
 
                                 </div>
                                 
-                                    
-                                    <div class="row mb-3">
-                                        <div class="col-lg-3">
-                                            <label for="foto" class="form-label">Foto</label>
-                                        </div>
-                                        <div class="col-lg-9 d-flex">
-
-                                            <img id="update_photo"/>
-                                                <input class="form-control" name="file" type="file" id="foto">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <div class="col-lg-3">
-                                            <label for="dateInput" class="form-label" >Kateqoriya</label>
-                                        </div>
-                                        <div class="col-lg-9">
-
-                                            <select name="news_category_id" class="form-select " aria-label="Default select example" name="type" id="type_form">
-                                                @foreach ($categories as $item)
-                                                <option value="{{$item->id}}">{{$item->translate('az')->title}}</option>
-                                                @endforeach
-                                            
-
-                                             
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <div class="col-lg-3">
-                                            <label for="titleInput" class="form-label">Slug</label>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control" id="titleInput" placeholder="Slug" name="slug">
-                                        </div>
-                                    </div>
-                                    <div class="form-check form-check-secondary mb-3">
-                                       
-                                        <input id="checkbox" name="status" type="checkbox" value="1">
-                                        <label class="form-check-label" for="formCheck7">
-                                           Status
-                                        </label>
-                                    </div>
-
-
-
-
                                 </form>
                            </div>
                             <div class="modal-footer">
@@ -201,35 +159,29 @@
         ;
        function formEditButton(id_) {
         $('#checkbox').prop("checked", false)
-           $("#partner_form").attr('action','http://127.0.0.1:8000/news/'+id_)
+           $("#partner_form").attr('action','http://127.0.0.1:8000/tercume/'+id_)
            $("#partner_form").append( `<input type="hidden" name="_method" value="PUT" id="hidden__">`)
            $('#partners_modalLabel').text('Xəbəri yenilə')
            $.ajax({
                type: "GET",
-               url: 'news/'+id_,
+               url: 'tercume/'+id_,
                 // serializes the form's elements.
                success: function(data)
                {
-                   $('#titleInput').val(data.title)
-                   $('#titleInput').val(data.slug)
-                   $('#update_photo').css({'width':'80px','height':'80px'})
-                   $('#update_photo').attr('src','/'+data.image)
-                 
-                  
-           
+                   
+                   $('#titleInput').val(data.key)
+            
                    $('.titlesParent').html('')
                    $('.nav-link').removeClass( 'active');
           
           $('.nav-pills .nav-item:first-child .nav-link').addClass( 'active')
       
-          if (data.status=='1') {
-            $('#checkbox').prop("checked", true);
-          }
+       
           
                    data.translations.forEach(item => {
                   let custom_input=  $("<div/>").addClass('title__input').attr('id','titleInput'+item.locale)
-                   $('.titlesParent').append(custom_input.append($("<input/>").addClass('form-control ').attr({ "name": 'title:'+item.locale,'value':item.title})))
-                   $('.titlesParent').append(custom_input.append($('<textarea/>').addClass('form-control mt-3').attr({"name":'description:'+item.locale,"cols":"30", "rows":"10"}).val(item.description)))
+                  
+                   $('.titlesParent').append(custom_input.append($('<textarea/>').addClass('form-control mt-3').attr({"name":'text:'+item.locale,"cols":"30", "rows":"10"}).val(item.text)))
                 });
           }
            });

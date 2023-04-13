@@ -15,7 +15,18 @@ return new class extends Migration
     {
         Schema::create('tercume_translations', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('tercume_id');
+            $table->string('locale');
+            $table->text('text');
+           
             $table->timestamps();
+
+            $table->foreign('tercume_id')
+            ->references('id')
+            ->on('tercumes')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

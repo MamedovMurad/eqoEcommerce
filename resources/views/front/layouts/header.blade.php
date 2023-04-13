@@ -17,7 +17,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6 col-md-6">
                             <div class="follow_us">
-                                <label>Bizi izləyin:</label>
+                                <label>{{__('lang.Bizi izləyin')}}:</label>
                                 <ul class="follow_link">
                                     <li><a href="{{$contact->facebook}}"><i class="ion-social-facebook"></i></a></li>
                                     <li><a href="{{$contact->instagram}}"><i class="ion-social-instagram"></i></a></li>
@@ -46,8 +46,8 @@
                                   @endguest
                                     <li class="language"><a href="#"><img src="assets/img/logo/language.png" alt="">az-ru<i class="ion-ios-arrow-down"></i></a>
                                         <ul class="dropdown_language">
-                                            <li><a href="#"><img src="assets/img/logo/language.png" alt=""> Az</a></li>
-                                            <li><a href="#"><img src="assets/img/logo/language2.png" alt=""> Ru</a></li>
+                                            <li><a href="{{ url('/az') }}"><img src="assets/img/logo/language.png" alt=""> Az</a></li>
+                                            <li><a href="{{ url('/ru') }}"><img src="assets/img/logo/language2.png" alt=""> Ru</a></li>
                                         </ul>
                                     </li>
                                 </ul>

@@ -2,14 +2,13 @@
 use App\Models\Tercume;
 
 $langs = Tercume::all();
- $langs= $langs->translate('az'); /* $langs->load('translations'); */
 
 $output = array();
 
 
 foreach($langs as $lang)
 {
-    $output[$lang->key]=$lang->text;
+    $output[$lang->key]=$lang->translate('az')->text;
 
 }
 

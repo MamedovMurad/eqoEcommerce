@@ -32,15 +32,18 @@ class TercumeRequest extends FormRequest
         foreach ($active_langs as $lang){
       
             $return[] = [
-               
-                'key:' . $lang['code'] => ['required', 'max:255'],
                 'text:' . $lang['code'] => ['required'],
            
             ];
 
      
         }
+        $return[] = [
+               
+            'key' => ['required','max:255'],
+          
 
+        ];
 
         return Arr::collapse($return);
     }

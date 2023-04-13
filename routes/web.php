@@ -4,6 +4,7 @@ use App\Http\Controllers\back\AuthController;
 use App\Http\Controllers\front\AuthController as FrontAuthController;
 use App\Http\Controllers\front\HomeController;
 use App\Http\Controllers\PaginationController;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +17,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return redirect(app()->getLocale() . RouteServiceProvider::HOME);
 
+});
 //Paginator
 Route::get('pagination', [PaginationController::class, 'index']);
 
+
+Route::prefix('{locale}')
+    ->where(['locale' => '[a-zA-Z]{2}'])
+    ->middleware('setlocale')
+    ->group(function () {
 //front
 Route::get('/', [HomeController:: class, 'index'])->name('home');
 Route::get('/news1', [HomeController:: class, 'news'])->name('news');
@@ -34,12 +43,12 @@ Route::post('/login-post',[FrontAuthController::class,'login_post'])->name('logi
 Route::get('/register',[FrontAuthController::class,'register'])->name('front.register');
 Route::post('register-post',[FrontAuthController::class,'register_post'])->name('register.post');
 Route::get('/logout', [FrontAuthController:: class, 'logout'])->name('front.logout');
-Route::get('/project-category/{slug}', [HomeController:: class, 'project_category'])->name('project.category');
+Route::get('project-category/{slug}', [HomeController:: class, 'project_category'])->name('project.category');
 Route::get('/project/{slug}', [HomeController:: class, 'project_detail'])->name('projects.detail');
 Route::get('/certificates', [HomeController:: class, 'certificates'])->name('certificates');
 Route::get('/supports', [HomeController:: class, 'support'])->name('support');
 Route::get('/services', [HomeController:: class, 'services'])->name('services');
-
+});
 
 
 
