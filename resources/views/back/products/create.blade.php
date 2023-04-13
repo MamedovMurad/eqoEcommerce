@@ -29,6 +29,31 @@
                                                 <div class="card-body">
                                                     <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
                                                        @csrf
+
+
+
+
+
+
+                                                                 <table class="table table-bordered" id="dynamicAddRemove">
+                                            <tr>
+                                              {{--   @foreach ($languages as $item)
+                                                <th>Fayl adı ({{$item->code}})</th>
+                                                @endforeach --}}
+                                                <th>Fayl</th>
+                                                <th>Əməliyyatlar</th>
+                                            </tr>
+                                            <tr>
+                                           {{--      @foreach ($languages as $item)
+                                                <td><input type="text" name="file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" />
+                                                </td>
+                                                @endforeach --}}
+                                              
+                                                <td><input type="file" name="test[]"  />
+                                                </td>
+                                                <td><button type="button" name="add" id="dynamic-ar" class="btn btn-outline-primary">Fayl əlavə et</button></td>
+                                            </tr>
+                                        </table>
                                                         <div class="step-arrow-nav mb-4">
                 
                                                             <ul class="nav nav-pills custom-nav nav-justified" role="tablist">
@@ -162,25 +187,7 @@
                                                 <input type="file" name="images[]" class="form-control" id="basiInput" multiple>
                                             </div>
                                         </div>
-                                        <table class="table table-bordered" id="dynamicAddRemove">
-                                            <tr>
-                                              {{--   @foreach ($languages as $item)
-                                                <th>Fayl adı ({{$item->code}})</th>
-                                                @endforeach --}}
-                                                <th>Fayl</th>
-                                                <th>Əməliyyatlar</th>
-                                            </tr>
-                                            <tr>
-                                           {{--      @foreach ($languages as $item)
-                                                <td><input type="text" name="file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" />
-                                                </td>
-                                                @endforeach --}}
-                                              
-                                                <td><input type="file" name="test[]"  />
-                                                </td>
-                                                <td><button type="button" name="add" id="dynamic-ar" class="btn btn-outline-primary">Fayl əlavə et</button></td>
-                                            </tr>
-                                        </table>
+                              
                                     <div class="col-xxl-12">
                                         <div class="card">
                                           
