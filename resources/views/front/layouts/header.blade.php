@@ -39,6 +39,7 @@
                                   @guest
                                   <li class="top_links"><a href="#"><i class="ion-android-person"></i> şəxsi kabinet<i class="ion-ios-arrow-down"></i></a>
                                     <ul class="dropdown_links">
+                                        <li><a href="cart.html">səbət</a></li>
                                         <li><a href="{{route('front.login')}}">giriş</a></li>
                                         <li><a href="{{route('front.register')}}">Qeydiyyat</a></li>
                                     </ul>
@@ -103,44 +104,29 @@
                     <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
                 </div>
             </div>
+
+            @if(session('cart'))
+            @foreach(session('cart') as $id => $details)
             <div class="cart_item">
                 <div class="cart_img">
-                    <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
+                    <a href="#"><img src="{{ asset($details['image'] )}}" alt=""></a>
                 </div>
                 <div class="cart_info">
-                    <a href="#">JBL Flip 3 Splasroof Portable Bluetooth 2</a>
+                    <a href="#">{{ $details['name'] }}</a>
 
-                    <span class="quantity">Qty: 1</span>
-                    <span class="price_cart">$60.00</span>
+                    <span class="quantity">Qty: {{ $details['quantity'] }}</span>
+                    <span class="price_cart">{{ $details['price'] }}</span>
 
                 </div>
                 <div class="cart_remove">
-                    <a href="#"><i class="ion-android-close"></i></a>
+                    <a href="{{route('remove.from.cart',$details['id'])}}"><i class="ion-android-close"></i></a>
                 </div>
             </div>
-            <div class="cart_item">
-                <div class="cart_img">
-                    <a href="#"><img src="assets/img/s-product/product2.jpg" alt=""></a>
-                </div>
-                <div class="cart_info">
-                    <a href="#">Koss Porta Pro On Ear Headphones </a>
-                    <span class="quantity">Qty: 1</span>
-                    <span class="price_cart">$69.00</span>
-                </div>
-                <div class="cart_remove">
-                    <a href="#"><i class="ion-android-close"></i></a>
-                </div>
-            </div>
-            <div class="mini_cart_table">
-                <div class="cart_total">
-                    <span>Sub total:</span>
-                    <span class="price">$138.00</span>
-                </div>
-                <div class="cart_total mt-10">
-                    <span>total:</span>
-                    <span class="price">$138.00</span>
-                </div>
-            </div>
+            @endforeach
+            @endif
+
+            
+          
 
             <div class="mini_cart_footer">
                 <div class="cart_button">

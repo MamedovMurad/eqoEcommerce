@@ -110,7 +110,7 @@
                                     </div>
                                    
                                     <div class="add_to_cart">
-                                        <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                        <a href="{{ route('add.to.cart', $prod->id) }}" title="add to cart"><span class="lnr lnr-cart"></span></a>
                                     </div>
                                 </div>
                                {{--  <div class="quantity_progress">

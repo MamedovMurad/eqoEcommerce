@@ -33,17 +33,17 @@ class ProductRequest extends FormRequest
       
             $return[] = [
                
-           /*      'title:' . $lang['code'] => ['required', 'max:255'],
+              'title:' . $lang['code'] => ['required', 'max:255'],
                 'sub_title:' . $lang['code'] => ['required', 'max:255'],
-                'description:' . $lang['code'] => ['required'], */
-                'file_name:' . $lang['code'] => [ 'max:255'],
+                'description:' . $lang['code'] => ['required'],
+               /*    'file_name:' . $lang['code'] => [ 'max:255'], */
             ];
 
      
         }
 
         $return[] = [
-           /*  'brend_id'=>['required','max:11'],
+             'brend_id'=>['required','max:11'],
             'slug' => ['max:255'],
             'price' => ['required','max:255'],
             'discount' => ['max:255'],
@@ -53,11 +53,11 @@ class ProductRequest extends FormRequest
             'thumb_image_1'=>['max:2024'],
             'thumb_image_2'=>['max:2024'],
             'images' => '',
-            'images.*' => 'mimes:png,gif,jpg,jpeg', */
-         /*    'pdf_files' => 'nullable', */
-            'file' => 'max:2024',
-         /*    'categories' => 'nullable',
-            'categories.*' => 'exists:categories,id', */
+            'images.*' => 'mimes:png,gif,jpg,jpeg', 
+            /*  'pdf_files' => 'nullable', 
+            'file' => 'max:2024', */
+             'categories' => 'nullable',
+            'categories.*' => 'exists:categories,id', 
 
         ];
 

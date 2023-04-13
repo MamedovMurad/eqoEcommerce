@@ -44,7 +44,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     
-    {   dd($request->all());
+    {   
+        //dd($request->all());
         $requests=$request->all();
         $product = Product::create($requests);
         if($request->hasFile('thumb_image_1')){
@@ -75,10 +76,10 @@ class ProductController extends Controller
             $image->product_id = $product->id;
             $image->save();
           }
-       
+       /*
           foreach ($request->pdf_files as $filepdf) {
           
-           /*  $filepdf = new ProductFile(); */
+             $filepdf = new ProductFile(); 
        
             if($request->hasFile('file')){
 
@@ -94,7 +95,7 @@ class ProductController extends Controller
             $filepdf->product_id= $product->id;
             $filepdf['file_name'] = $product->id;
             $filepdf->save();
-          }
+          }*/
         return redirect()->back();
     }
 
@@ -168,7 +169,7 @@ class ProductController extends Controller
             $image->save();
           }
         }
-        return redirect()->route('product.index');
+        return redirect()->route('product.index')->with('success', 'Product updated!');;
     }
 
     /**

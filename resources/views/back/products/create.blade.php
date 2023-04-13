@@ -35,25 +35,25 @@
 
 
 
-                                                                 <table class="table table-bordered" id="dynamicAddRemove">
+                                                             {{--     <table class="table table-bordered" id="dynamicAddRemove">
                                             <tr>
-                                              {{--   @foreach ($languages as $item)
+                                                @foreach ($languages as $item)
                                                 <th>Fayl adı ({{$item->code}})</th>
-                                                @endforeach --}}
+                                                @endforeach 
                                                 <th>Fayl</th>
                                                 <th>Əməliyyatlar</th>
                                             </tr>
                                             <tr>
-                                           {{--      @foreach ($languages as $item)
+                                                @foreach ($languages as $item)
                                                 <td><input type="text" name="file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" />
                                                 </td>
-                                                @endforeach --}}
+                                                @endforeach 
                                               
                                                 <td><input type="file" name="test[]"  />
                                                 </td>
                                                 <td><button type="button" name="add" id="dynamic-ar" class="btn btn-outline-primary">Fayl əlavə et</button></td>
                                             </tr>
-                                        </table>
+                                        </table>--}}
                                                         <div class="step-arrow-nav mb-4">
                 
                                                             <ul class="nav nav-pills custom-nav nav-justified" role="tablist">

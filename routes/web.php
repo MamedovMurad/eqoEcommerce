@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\back\AuthController;
 use App\Http\Controllers\front\AuthController as FrontAuthController;
+use App\Http\Controllers\front\CartController;
 use App\Http\Controllers\front\HomeController;
 use App\Http\Controllers\PaginationController;
 use App\Providers\RouteServiceProvider;
@@ -17,18 +18,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return redirect(app()->getLocale() . RouteServiceProvider::HOME);
+// Route::get('/', function () {
+//     return redirect(app()->getLocale() . RouteServiceProvider::HOME);
 
-});
+// });
 //Paginator
 Route::get('pagination', [PaginationController::class, 'index']);
 
 
-Route::prefix('{locale}')
-    ->where(['locale' => '[a-zA-Z]{2}'])
-    ->middleware('setlocale')
-    ->group(function () {
+// Route::prefix('{locale}')
+//     ->where(['locale' => '[a-zA-Z]{2}'])
+//     ->middleware('setlocale')
+//     ->group(function () {
 //front
 Route::get('/', [HomeController:: class, 'index'])->name('home');
 Route::get('/news1', [HomeController:: class, 'news'])->name('news');
@@ -48,7 +49,10 @@ Route::get('/project/{slug}', [HomeController:: class, 'project_detail'])->name(
 Route::get('/certificates', [HomeController:: class, 'certificates'])->name('certificates');
 Route::get('/supports', [HomeController:: class, 'support'])->name('support');
 Route::get('/services', [HomeController:: class, 'services'])->name('services');
-});
+Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
+Route::patch('update-cart', [CartController::class, 'update'])->name('update.cart');
+Route::get('remove-from-cart/{id}', [CartController::class, 'remove'])->name('remove.from.cart');
+//});
 
 
 
