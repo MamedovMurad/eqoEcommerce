@@ -31,7 +31,7 @@
                                     <li class="top_links"><a href="#"><i class="ion-android-person"></i> şəxsi kabinet<i class="ion-ios-arrow-down"></i></a>
                                         <ul class="dropdown_links">
                                           
-                                            <li><a href="cart.html">səbət</a></li>
+                                            <li><a href="{{route('cart')}}">səbət</a></li>
                                             <li><a href="{{route('front.logout')}}">logout</a></li>
                                         </ul>
                                     </li>
@@ -39,7 +39,7 @@
                                   @guest
                                   <li class="top_links"><a href="#"><i class="ion-android-person"></i> şəxsi kabinet<i class="ion-ios-arrow-down"></i></a>
                                     <ul class="dropdown_links">
-                                        <li><a href="cart.html">səbət</a></li>
+                                        <li><a href="{{route('cart')}}">səbət</a></li>
                                         <li><a href="{{route('front.login')}}">giriş</a></li>
                                         <li><a href="{{route('front.register')}}">Qeydiyyat</a></li>
                                     </ul>
@@ -119,7 +119,7 @@
 
                 </div>
                 <div class="cart_remove">
-                    <a href="{{route('remove.from.cart',$details['id'])}}"><i class="ion-android-close"></i></a>
+                    <a href="{{route('remove.from.cart',['id'=>$details['id']])}}"><i class="ion-android-close"></i></a>
                 </div>
             </div>
             @endforeach
@@ -130,7 +130,7 @@
 
             <div class="mini_cart_footer">
                 <div class="cart_button">
-                    <a href="cart.html">View cart</a>
+                    <a href="{{route('cart')}}">View cart</a>
                 </div>
                 <div class="cart_button">
                     <a class="active" href="checkout.html">Checkout</a>
@@ -246,7 +246,7 @@
                                     <ul class="dropdown_links">
                                    
                                         <li><a href="my-account.html">My Account </a></li>
-                                        <li><a href="cart.html">Shopping Cart</a></li>
+                                        <li><a href="{{route('cart')}}">Shopping Cart</a></li>
                                       
                                     </ul>
                                 </li>
