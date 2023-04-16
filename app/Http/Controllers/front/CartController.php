@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -19,7 +20,7 @@ class CartController extends Controller
      *
      * @return response()
      */
-    public function addToCart($id)
+    public function addToCart(Request $request, $id)
     {
         $product = Product::findOrFail($id);
           
@@ -38,7 +39,13 @@ class CartController extends Controller
         }
           
         session()->put('cart', $cart);
-        //dd($cart);
+        // Session::flash('success', 'File has been uploaded successfully!');
+        if ($request->ajax()) {
+           return  ['html'=> view('front.widgets.mini_card')->render(),
+                    'count'=>count($cart)]
+           
+           ;
+        }
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
   
@@ -55,6 +62,14 @@ class CartController extends Controller
             session()->put('cart', $cart);
             session()->flash('success', 'Cart updated successfully');
         }
+        $total=0;
+        foreach($cart as $details){
+            $total+=$details['price']*$details['quantity'];
+        }
+        if ($request->ajax()) {
+            return ['html'=>view('front.widgets.productTable')->render(),
+                    'total'=>$total];
+         }
     }
   
     /**

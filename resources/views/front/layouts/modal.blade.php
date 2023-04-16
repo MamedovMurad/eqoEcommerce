@@ -13,7 +13,9 @@
                                 <div class="tab-content product-details-large">
                                     <div class="tab-pane fade show active" id="tab1" role="tabpanel">
                                         <div class="modal_tab_img">
-                                            <a href="#"><img src="{{ asset('themeplate') }}/assets/img/product/product1.jpg" alt=""></a>
+                                            <a href="#" id="modalDynamicPhoto">
+                                                <img src="{{ asset('themeplate') }}/assets/img/product/product1.jpg" alt="">
+                                            </a>
                                         </div>
                                     </div>
                                   

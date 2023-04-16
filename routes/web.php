@@ -51,7 +51,7 @@ Route::get('/supports', [HomeController:: class, 'support'])->name('support');
 Route::get('/services', [HomeController:: class, 'services'])->name('services');
 Route::get('/cart', [CartController::class,'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
-Route::patch('update-cart', [CartController::class, 'update'])->name('update.cart');
+Route::put('update-cart', [CartController::class, 'update'])->name('update.cart');
 Route::get('remove-from-cart', [CartController::class, 'remove'])->name('remove.from.cart');
 //});
 

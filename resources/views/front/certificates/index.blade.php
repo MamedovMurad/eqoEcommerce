@@ -42,7 +42,7 @@
                         
                     
                     <div class="col-lg-3 col-md-4 col-12 ">
-                        <div class="single_product">
+                        <div class="single_product" onclick="setPhoto('{{asset($item->image)}}')">
                             <div class="product_name grid_name">
                                 <h3><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view">{{$item->translate(App::getLocale())->title}}</a></h3>
                                
@@ -80,4 +80,13 @@
 <!--shop  area end-->
 
 
+ @endsection
+
+
+ @section('js')
+<script>
+    function setPhoto(params) {
+        $('#modalDynamicPhoto').html(` <img src="${params}" alt="">`)
+    }
+</script>
  @endsection

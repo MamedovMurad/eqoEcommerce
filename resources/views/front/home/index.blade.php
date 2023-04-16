@@ -110,7 +110,7 @@
                                     </div>
                                    
                                     <div class="add_to_cart">
-                                        <a href="{{ route('add.to.cart', $prod->id) }}" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                        <a href="#" title="add to cart"  onclick="addToBasket('{{$prod->id}}')"><span class="lnr lnr-cart"></span></a>
                                     </div>
                                 </div>
                                {{--  <div class="quantity_progress">
@@ -202,4 +202,26 @@
 
    
 
+   @endsection
+
+
+   @section('js')
+       <script>
+        function addToBasket(id) {
+
+            $.ajax(`/add-to-cart/${id}`, 
+{
+
+    success: function (data,status,xhr) {  
+        $('#mini-card-parent').html(data.html) 
+        $('.cart_quantity').html(data.count)
+        // success callback function
+    //   $('.flash-message').html('sdfdsgfdgdg')
+    },
+    error: function (jqXhr, textStatus, errorMessage) { // error callback 
+       
+    }
+});
+        }
+       </script>
    @endsection
