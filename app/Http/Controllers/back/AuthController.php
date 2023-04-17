@@ -16,8 +16,8 @@ class AuthController extends Controller
 
         
         public function login_post(AdminRequest $request){
-            if (Auth::attempt($request->only(['email', 'password']))) {
-                toastr()->success(Auth::user()->name,'Xoş gəldiniz');
+            if (Auth::guard('admin')->attempt($request->only(['email', 'password']))) {
+                toastr()->success(Auth::guard('admin')->user()->name,'Xoş gəldiniz');
             return redirect()->route('dashboard');
            
             }else{
@@ -29,7 +29,7 @@ class AuthController extends Controller
         }
         public function logout()
         {
-            Auth::guard('web')->logout();
+            Auth::guard('admin')->logout();
             return redirect()->route('login');
         }
     }

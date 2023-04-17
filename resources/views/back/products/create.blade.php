@@ -35,7 +35,7 @@
 
 
 
-                                                             {{--     <table class="table table-bordered" id="dynamicAddRemove">
+                                                                 <table class="table table-bordered" id="dynamicAddRemove">
                                             <tr>
                                                 @foreach ($languages as $item)
                                                 <th>Fayl adı ({{$item->code}})</th>
@@ -49,11 +49,11 @@
                                                 </td>
                                                 @endforeach 
                                               
-                                                <td><input type="file" name="test[]"  />
+                                                <td><input type="file" name="file[]"  />
                                                 </td>
                                                 <td><button type="button" name="add" id="dynamic-ar" class="btn btn-outline-primary">Fayl əlavə et</button></td>
                                             </tr>
-                                        </table>--}}
+                                        </table>
                                                         <div class="step-arrow-nav mb-4">
                 
                                                             <ul class="nav nav-pills custom-nav nav-justified" role="tablist">
@@ -241,7 +241,7 @@
     
     $("#dynamic-ar").click(function () {
         
-        $("#dynamicAddRemove").append(`<tr> <td><input type="file" name="test[]"   /></td><td><button type="button" class="btn btn-outline-danger remove-input-field">Sil</button></td></tr>`
+        $("#dynamicAddRemove").append(`<tr> @foreach ($languages as $item)<td><input type="text" name=file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" /></td>@endforeach<td><input type="file" name="file[]"  class="form-control" /></td><td><button type="button" class="btn btn-outline-danger remove-input-field">Sil</button></td></tr>`
             );
     });
     $(document).on('click', '.remove-input-field', function () {

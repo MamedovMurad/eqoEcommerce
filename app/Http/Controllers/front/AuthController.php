@@ -21,7 +21,7 @@ class AuthController extends Controller
         $requests=$request->all();
         $user = User::create($requests);
         auth()->login($user);
-        toastr()->success(Auth::user()->name,'Xoş gəldiniz');
+        toastr()->success(Auth::guard('web')->user()->name,'Xoş gəldiniz');
         return redirect()->route('home');
     }
 

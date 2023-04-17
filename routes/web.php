@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\back\AuthController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\front\AuthController as FrontAuthController;
 use App\Http\Controllers\front\CartController;
 use App\Http\Controllers\front\HomeController;
@@ -53,6 +54,7 @@ Route::get('/cart', [CartController::class,'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
 Route::put('update-cart', [CartController::class, 'update'])->name('update.cart');
 Route::get('remove-from-cart', [CartController::class, 'remove'])->name('remove.from.cart');
+Route::get('/checkout', [CheckoutController::class,'checkout'])->name('checkout');
 //});
 
 

@@ -45,7 +45,7 @@ class ProductController extends Controller
     public function store(Request $request)
     
     {   
-        //dd($request->all());
+       // dd($request->all());
         $requests=$request->all();
         $product = Product::create($requests);
         if($request->hasFile('thumb_image_1')){
@@ -76,26 +76,67 @@ class ProductController extends Controller
             $image->product_id = $product->id;
             $image->save();
           }
-       /*
-          foreach ($request->pdf_files as $filepdf) {
-          
-             $filepdf = new ProductFile(); 
-       
-            if($request->hasFile('file')){
+          foreach ($request->file('files') as $imagefile) {
+            $image = new ProductFile();
+            $imageName= time() . "-" . uniqid() . '.' .$imagefile->getClientOriginalExtension();
+            $imagefile->move(public_path('uploads'),$imageName);
+            $image->file='/uploads/'.$imageName;
+            $image->product_id = $product->id;
+            $image->save();
+          }
+          dd('dss');
+          /* foreach ($request->pdf_files as $filepdf) { */
+           /*   dd($request->pdf_files); */
+           /*  if ($request->filled('pdf_files')) {
+                $pdf_files = $request->pdf_files;
+    
+    
+                if ($product->pdf_files()->count() > 0) {
+                    for ($i = 0; $i < count($pdf_files['file']); $i++) {
+                        $product->pdf_files()->attach($pdf_files['file'][$i], [ 'file_name:az' => $pdf_files['file_name:az'][$i], 'code' => $pdf_files['code'][$i]]);
+                    }
+                  
+    
+                } else {
+                
+                    $product->pdf_files()->detach();
+                    for ($i = 0; $i < count($pdf_files['file']); $i++) {
+                        $product->pdf_files()->attach($pdf_files['file'][$i], [ 'file_name:az' => $pdf_files['file_name:az'][$i], 'code' => $pdf_files['code'][$i]]);
+                    }
+                }
+    
+            } */
+          /* 
+           $files=[];
+           foreach ($request->pdf_files['file'] as $imagefile) {
+            $imgExtension = $imagefile->getClientOriginalExtension();
+            $imageName = time() . "-" . uniqid() . '.' . $imgExtension;
+             $imagefile->move(public_path('uploads'),$imageName);
+    
+             $imagefile= 'uploads/'.$imageName; */
+            
+            /*  dd($imagefile); */
+           /*   $files[]= ['file'=>$imagefile, 'product_id'=>$product->id];
+          } */
+         /*  $data=ProductFile::create($request->pdf_files, ['product_id'=>$product->id,'file'=>$files]); */
+        /*   dd($files);
+          foreach ($request->pdf_files as $key => $value) {
+            dd($value);
+            $data=ProductFile::create($value,);
+           dd($data);
 
-                $imgExtension = $file_requests['file']->getClientOriginalExtension();
-                $imageName = time() . "-" . uniqid() . '.' . $imgExtension;
-                 $file_requests['file']->move(public_path('uploads'),$imageName);
-        
-                 $file_requests['file']= 'uploads/'.$imageName; 
-            };
-            $fileName= time() . "-" . uniqid() . '.' .$filepdf['file']->getClientOriginalExtension();
-            $filepdf['file']->move(public_path('uploads'),$fileName);
-            $filepdf['file']='/uploads/'.$fileName;
-            $filepdf->product_id= $product->id;
-            $filepdf['file_name'] = $product->id;
-            $filepdf->save();
-          }*/
+        } */
+        /*   for ($i = 0; $i < count($request->pdf_files['file']); $i++) {
+            $request->pdf_files['file']=
+            $product->pdf_files()->attach($pdf_files['file'][$i], [ 'file_name:az' => $pdf_files['file_name:az'][$i], 'code' => $pdf_files['code'][$i]]);
+        }*/
+         /*  dd(['file'=>$files]); 
+          $data=ProductFile::create(/* $request->pdf_files, ['product_id'=>$product->id,'file'=>$files]); */
+        /*   dd('sd'); */
+          /*   $filepdf->product_id= $product->id; */
+           /*  $filepdf->file_name = $product->id; */
+          /*   $filepdf->save(); */
+        /*   } */
         return redirect()->back();
     }
 

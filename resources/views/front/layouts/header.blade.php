@@ -27,7 +27,7 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="top_right text-end">
                                 <ul>
-                                    @auth
+                                    @auth('web')
                                     <li class="top_links"><a href="#"><i class="ion-android-person"></i> şəxsi kabinet<i class="ion-ios-arrow-down"></i></a>
                                         <ul class="dropdown_links">
                                           

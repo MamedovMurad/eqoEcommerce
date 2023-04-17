@@ -31,7 +31,10 @@ class Product extends Model implements TranslatableContract
   {
       return $this->belongsToMany(Category::class, 'product_categories');
   }
-
+  public function pdf_files(): BelongsToMany
+  {
+      return $this->belongsToMany(ProductFile::class, 'product_files')->withPivot('product_id','file')->withTimestamps();
+  }
   public function cart_products(): BelongsToMany
   {
       return $this->belongsToMany(User::class, 'carts');

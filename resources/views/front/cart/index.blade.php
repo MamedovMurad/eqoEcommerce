@@ -62,9 +62,9 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="cart_submit">
+                 {{--        <div class="cart_submit">
                             <button type="submit">update cart</button>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@
                                     <p class="cart_amount">£215.00</p>
                                 </div> --}}
                                 <div class="checkout_btn">
-                                    <a href="#">Proceed to Checkout</a>
+                                    <a href="{{route('checkout')}}">Proceed to Checkout</a>
                                 </div>
                             </div>
                         </div>
