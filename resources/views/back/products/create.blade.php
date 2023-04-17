@@ -35,7 +35,7 @@
 
 
 
-                                                                 <table class="table table-bordered" id="dynamicAddRemove">
+                                        <table class="table table-bordered" id="dynamicAddRemove">
                                             <tr>
                                                 @foreach ($languages as $item)
                                                 <th>Fayl adı ({{$item->code}})</th>
@@ -49,7 +49,7 @@
                                                 </td>
                                                 @endforeach 
                                               
-                                                <td><input type="file" name="file[]"  />
+                                                <td><input type="file" name="file[]" class="form-control"  />
                                                 </td>
                                                 <td><button type="button" name="add" id="dynamic-ar" class="btn btn-outline-primary">Fayl əlavə et</button></td>
                                             </tr>
