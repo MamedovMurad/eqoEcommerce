@@ -33,7 +33,7 @@ Route::get('pagination', [PaginationController::class, 'index']);
 //     ->group(function () {
 //front
 Route::get('/', [HomeController:: class, 'index'])->name('home');
-Route::get('/news1', [HomeController:: class, 'news'])->name('news');
+Route::get('/news1/{slug}', [HomeController:: class, 'news'])->name('news');
 Route::get('/news-detail/{slug}', [HomeController:: class, 'newsDetail'])->name('news.detail');
 Route::get('/about1', [HomeController:: class, 'about'])->name('about');
 Route::get('/elaqe', [HomeController:: class, 'elaqe'])->name('elaqe');

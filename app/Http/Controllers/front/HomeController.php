@@ -39,8 +39,9 @@ class HomeController extends Controller
         return view('front.home.index',compact('sliders','banners','news','partners', 'cats'));
     }
 
-    public function news(){
-        $news = News::where('status',1)->paginate(18);
+    public function news($slug){
+        $news_cat=NewsCategory::where('slug',$slug)->first() ?? abort(404);
+        $news = News::where('news_category_id',$news_cat->id)->where('status',1)->paginate(18);
         return view('front.news.index',compact('news'));
     }
 
