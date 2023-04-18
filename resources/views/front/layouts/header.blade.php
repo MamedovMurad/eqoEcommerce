@@ -83,7 +83,7 @@
 
                                 <div class="mini_cart_wrapper">
                                     <a href="javascript:void(0)"><span class="lnr lnr-cart"></span>Səbət </a>
-                                    <span class="cart_quantity">{{ count(session('cart')) }}</span>
+                                    <span class="cart_quantity">@if(is_countable(session('cart')) && count(session('cart')) > 0) {{ count(session('cart')) }} @else 0  @endif</span>
                                 </div>
                             </div>
 
@@ -179,13 +179,22 @@
                                               
                                             </ul>
                                             <div class="banner_static_menu">
-                                                <a href="shop.html"><img src="assets/img/bg/banner1.jpg" alt=""></a>
+                                                <a href="#"><img src="assets/img/bg/banner1.jpg" alt=""></a>
                                             </div>
                                         </div>
                                     </li>
                                     <li><a href="#">Layiheler <i class="fa fa-angle-down"></i></a>
                                         <ul class="sub_menu pages">
                                             @foreach ($project_categories as $item)
+                                            <li><a href="{{route('project.category',$item->slug)}}">{{$item->translate(App::getLocale())->title}}</a></li>
+                                            @endforeach
+                                           
+                                          
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Xəbərlər <i class="fa fa-angle-down"></i></a>
+                                        <ul class="sub_menu pages">
+                                            @foreach ($news_categories as $item)
                                             <li><a href="{{route('project.category',$item->slug)}}">{{$item->translate(App::getLocale())->title}}</a></li>
                                             @endforeach
                                            

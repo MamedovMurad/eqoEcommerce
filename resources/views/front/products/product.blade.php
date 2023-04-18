@@ -83,7 +83,10 @@
                         </div>
                      
                         <div class="product_meta">
-                            <span>Category: <a href="#">Clothing</a></span>
+                            @foreach ( $product->categories as $cat)
+                            <span>Category: <a href="#">{{$cat->translate(App::getLocale())->title}}</a></span> <br>
+                            @endforeach
+                          
                         </div>
 
                     </form>
@@ -118,7 +121,10 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="sheet" role="tabpanel">
-                            <a href=""></a>
+                            @foreach ($product_files as $item)
+                            <a href="{{asset($item->file)}}">{{$item->translate(App::getLocale())->file_name}}</a> <br />
+                            @endforeach
+                            
                         </div>
 
                        

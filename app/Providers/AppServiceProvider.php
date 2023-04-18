@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Category;
 use App\Models\Contact;
+use App\Models\NewsCategory;
 use App\Models\Product;
 use App\Models\ProjectCategory;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,10 @@ class AppServiceProvider extends ServiceProvider
         $project_categories = ProjectCategory::where('status',1)->get();
 
         View::share('project_categories', $project_categories);
+
+        $news_categories = NewsCategory::where('status',1)->get();
+
+        View::share('news_categories', $news_categories);
 
         $contact = Contact::first();
 

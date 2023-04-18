@@ -15,6 +15,7 @@ use App\Models\News;
 use App\Models\NewsCategory;
 use App\Models\Partner;
 use App\Models\Product;
+use App\Models\ProductFile;
 use App\Models\ProductImage;
 use App\Models\Project;
 use App\Models\ProjectCategory;
@@ -74,14 +75,11 @@ class HomeController extends Controller
     }
     public function productDetail($slug){
         $product = Product::with('categories')->where('slug', $slug)->where('status',1)->first() ?? abort(404);
+       /*  dd($product->categories); */
         $images = ProductImage::where('product_id',$product->id)->get();
+       $product_files =ProductFile::where('product_id',$product->id)->get();
 
-       // $similar_products = Product::with('categories')->where('status',1)->get();
-        /* foreach($product['categories'] as $item){
-            $similar_products = Category::where('id',$item->id)->with('category_prods')->where('status',1)->get();
-        }
-dd($similar_products['category_prods']); */
-        return view('front.products.product',compact('product','images'));
+        return view('front.products.product',compact('product','images','product_files'));
     }
 
     public function filter(Request $request){

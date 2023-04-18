@@ -30,6 +30,37 @@
                                                     <form action="{{route('product.update',$product->id)}}" method="POST" enctype="multipart/form-data">
                                                         @method('PUT')
                                                        @csrf
+
+
+                                                       <table class="table table-bordered" id="dynamicAddRemove">
+                                                        <tr>
+                                                            @foreach ($languages as $item)
+                                                            <th>Fayl adı ({{$item->code}})</th>
+                                                            @endforeach 
+                                                            <th>Fayl</th>
+                                                            <th>Əməliyyatlar</th>
+                                                        </tr>
+                                                        <tr>
+                                                            @foreach ($languages as $item)
+                                                            <td><input type="text" value="{{$product_files[0]->translate($item->code)->file_name}}" name="file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" />
+                                                            </td>
+                                                            @endforeach 
+                                                          
+                                                            <td><input type="file" value="{{$product_files[0]->file}}" name="file[]" class="form-control"  />
+                                                                <a href="{{asset($product_files[0]->file)}}">{{$product_files[0]->file}}</a>
+                                                            </td>
+                                                            <td><button type="button" name="add" id="dynamic-ar" class="btn btn-outline-primary">Fayl əlavə et</button></td>
+                                                        </tr>
+                                                        @foreach ($product_files as $key=>$pf)
+                                                            
+                                                       @if($key>0)
+                                                        
+                                                  
+                                                        <tr> @foreach ($languages as $item)<td><input type="text" value="{{$pf->translate($item->code)->file_name}}" name="file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" /></td>@endforeach
+                                                            <td><input type="file" name="file[]" value="{{$pf->file}}"  class="form-control" />   <a href="{{asset($pf->file)}}">{{$pf->file}}</a></td><td><a href="{{route('file.destroy',$pf->id)}}"  class="btn btn-outline-danger remove-input-field">Sil</a></td></tr>
+                                                            @endif   @endforeach
+                                                    </table>
+
                                                         <div class="step-arrow-nav mb-4">
                 
                                                             <ul class="nav nav-pills custom-nav nav-justified" role="tablist">
@@ -215,4 +246,22 @@
  <script src="{{asset('admin-panel')}}/assets/js/pages/form-input-spin.init.js"></script>
  <!-- input flag init -->
  <script src="{{asset('admin-panel')}}/assets/js/pages/flag-input.init.js"></script>
+
+ <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+ <script type="text/javascript">
+/*  function myFunction(){
+    $("#dynamicAddRemove").append(`<tr> @foreach ($languages as $item)<td><input type="text" name="file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" /></td>@endforeach<td><input type="file" name="test['${i}'][test]"  class="form-control" /></td><td><button type="button" class="btn btn-outline-danger remove-input-field">Sil</button></td></tr>`)
+ } */
+    
+    $("#dynamic-ar").click(function () {
+        
+        $("#dynamicAddRemove").append(`<tr> @foreach ($languages as $item)<td><input type="text" name=file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" /></td>@endforeach<td><input type="file" name="file[]"  class="form-control" /></td><td><button type="button" class="btn btn-outline-danger remove-input-field">Sil</button></td></tr>`
+            );
+    });
+    $(document).on('click', '.remove-input-field', function () {
+        $(this).parents('tr').remove();
+    });
+    
+</script>
 @endsection

@@ -88,6 +88,7 @@ Route::post('/admin-post', [AuthController:: class, 'login_post'])->name('log_in
     Route::post('contact', [App\Http\Controllers\back\ContactController::class,'update'])->name('contact.update');
 /*     Route::resource('contact', 'App\Http\Controllers\back\ContactController')->names('contact'); */
     Route::get('delete-image/{id}', [App\Http\Controllers\back\ProductController::class, 'image_destroy'])->name('image.destroy');
+    Route::get('delete-file/{id}', [App\Http\Controllers\back\ProductController::class, 'file_destroy'])->name('file.destroy');
 
 
     Route::get('/admin/dash', function () {

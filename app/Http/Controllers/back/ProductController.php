@@ -128,11 +128,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $categories =Category::get();
+        $categories =Category::where('status', true)->get();
         $languages = Language::get();
         $brends = Brend::where('status', true)->get();
 
-        return view('back.products.edit',['categories'=>Category::get(),'languages'=>Language::get(),'brends'=>Brend::where('status', true)->get(),'product'=>Product::find($id),'images'=>ProductImage::where('product_id', $id)->get(),/* 'category'=>ProductCategory::where('product_id',$id)->get() */]);
+        return view('back.products.edit',['categories'=>Category::get(),'languages'=>Language::get(),'brends'=>Brend::where('status', true)->get(),'product'=>Product::find($id),'images'=>ProductImage::where('product_id', $id)->get(),'product_files'=> ProductFile::where('product_id',$id)->get()]);
     }
 
     /**
@@ -179,6 +179,23 @@ class ProductController extends Controller
             $image->save();
           }
         }
+        if (is_array($request->file('file')) || is_object($request->file('file')))
+        {
+        foreach ($request->file as $key=> $imagefile) {
+            // dd($request->file);
+            $image = new ProductFile();
+            $imageName= time() . "-" . uniqid() . '.' .$imagefile->getClientOriginalExtension();
+            $imagefile->move(public_path('uploads'),$imageName);
+            $image->file='/uploads/'.$imageName;
+            $image->product_id = $product->id;
+            foreach (['ru','az'] as $locale) {
+                $image->translateOrNew($locale)->file_name =  $request["file_name:".$locale][$key];
+              
+            };
+            $image->save();
+            
+          }
+        }
         return redirect()->route('product.index')->with('success', 'Product updated!');;
     }
 
@@ -197,6 +214,12 @@ class ProductController extends Controller
     public function image_destroy($id)
     {
         ProductImage::where('id',$id)->delete();
+        return redirect()->back();
+    }
+
+    public function file_destroy($id)
+    {
+        ProductFile::where('id',$id)->delete();
         return redirect()->back();
     }
 }
