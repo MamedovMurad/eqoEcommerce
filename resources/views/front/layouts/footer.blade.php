@@ -41,8 +41,8 @@
                         <div class="footer_contact">
                             <p>We are a team of designers and developers that
                                 create high quality Magento, Prestashop, Opencart...</p>
-                            <p><span>Address</span> 4710-4890 Breckinridge St, UK Burlington, VT 05401</p>
-                            <p><span>Need Help?</span>Call: <a href="tel:1-800-345-6789">1-800-345-6789</a></p>
+                            <p><span>Address</span> {!!$contact->translate(App::getLocale())->address!!}</p>
+                            <p><span>Need Help?</span>Call: <a href="tel:{{$contact->phone}}">{{$contact->phone}}</a></p>
                         </div>
                     </div>
                 </div>
@@ -51,13 +51,13 @@
                         <h3>Information</h3>
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="#">Delivery Information</a></li>
-                                <li><a href="privacy-policy.html">privacy policy</a></li>
-                                <li><a href="coming-soon.html">Coming Soon</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Returns</a></li>
-                                <li><a href="#">Gift Certificates</a></li>
+                                <li><a href="{{route('home')}}">Home</a></li>
+                                <li><a href="{{route('about')}}">Haqqımızda</a></li>
+                                <li><a href="{{route('services')}}">Xidmətlər</a></li>
+                                <li><a href="{{route('certificates')}}">Sertifikatlar</a></li>
+                                <li><a href="{{route('support')}}">Texniki dəsdək</a></li>
+                                <li><a href="{{route('elaqe')}}">Bizimlə əlaqə</a></li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -67,12 +67,10 @@
                         <h3>Extras</h3>
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="#">Returns</a></li>
-                                <li><a href="#">Order History</a></li>
-                                <li><a href="wishlist.html">Wish List</a></li>
-                                <li><a href="#">Newsletter</a></li>
-                                <li><a href="#">Affiliate</a></li>
-                                <li><a href="#">Specials</a></li>
+                                @foreach ($categories as $item)
+                                <li><a href="{{route('product',$item->slug)}}">{{$item->translate(App::getLocale())->title}}</a></li>
+                                @endforeach
+                              
                             </ul>
                         </div>
                     </div>

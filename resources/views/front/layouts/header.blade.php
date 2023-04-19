@@ -158,7 +158,7 @@
                                        
                                     </li>
                                     <li><a href="{{route('about')}}">HAQQIMIZDA</a></li>
-                                    <li class="mega_items"><a href="shop.html">MAĞAZA<i class="fa fa-angle-down"></i></a>
+                                    <li class="mega_items"><a href="#">MAĞAZA<i class="fa fa-angle-down"></i></a>
                                         <div class="mega_menu">
                                             <ul class="mega_menu_inner">
                                                 @foreach ($categories as $item)

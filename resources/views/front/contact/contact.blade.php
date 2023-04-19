@@ -41,9 +41,9 @@
                     <h3>contact us</h3>
                     <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum formas human. qui sequitur mutationem consuetudium lectorum. Mirum est notare quam</p>
                     <ul>
-                        <li><i class="fa fa-fax"></i> Address : No 40 Baria Sreet 133/2 NewYork City</li>
-                        <li><i class="fa fa-phone"></i> <a href="#">Infor@roadthemes.com</a></li>
-                        <li><i class="fa fa-envelope-o"></i><a href="tel:0(1234)567890">0 (1234) 567 890</a> </li>
+                        <li><i class="fa fa-fax"></i> Address :{!!$contact->translate(App::getLocale())->address!!}</li>
+                        <li><i class="fa fa-phone"></i> <a href="mailto:{{$contact->email}}">{{$contact->email}}</a></li>
+                        <li><i class="fa fa-envelope-o"></i><a href="tel:{{$contact->phone}}">{{$contact->phone}}</a> </li>
                     </ul>
                 </div>
             </div>

@@ -42,12 +42,14 @@
                                                         </tr>
                                                         <tr>
                                                             @foreach ($languages as $item)
-                                                            <td><input type="text" value="{{$product_files[0]->translate($item->code)->file_name}}" name="file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" />
+                                                            <td><input type="text" value="@if($product_files->isNotEmpty())
+                                                                {{$product_files[0]->translate($item->code)->file_name }}
+                                                            @endif " name="file_name:{{$item->code}}[]" placeholder="Adı ({{$item->code}})" class="form-control" />
                                                             </td>
                                                             @endforeach 
                                                           
-                                                            <td><input type="file" value="{{$product_files[0]->file}}" name="file[]" class="form-control"  />
-                                                                <a href="{{asset($product_files[0]->file)}}">{{$product_files[0]->file}}</a>
+                                                            <td><input type="file" value="{{$product_files[0]->file ?? ''}} " name="file[]" class="form-control"  />
+                                                                <a href="@if($product_files->isNotEmpty()){{asset($product_files[0]->file)}} @endif">{{$product_files[0]->file ?? ''}}</a>
                                                             </td>
                                                             <td><button type="button" name="add" id="dynamic-ar" class="btn btn-outline-primary">Fayl əlavə et</button></td>
                                                         </tr>

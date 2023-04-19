@@ -146,35 +146,35 @@
                 </div>
                 <div class="product_carousel product_column5 owl-carousel">
 
-                    {{-- @foreach ($similar_products->category_prods as $item) --}}
+                    @foreach ($similar_products as $item)
                         
                     
 
                     <div class="single_product">
                         <div class="product_name">
-                           {{--  <h3><a href="product-details.html">{{$item->translate(App::getLocale())->title}}</a></h3> --}}
-                           {{--  <p class="manufacture_product"><a href="#">Accessories</a></p> --}}
+                            <h3><a href="product-details.html">{{$item->translate(App::getLocale())->title}}</a></h3>
+                           
                         </div>
                         <div class="product_thumb">
-                            <a class="primary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product19.jpg" alt=""></a>
-                            <a class="secondary_img" href="product-details.html"><img src="{{ asset('themeplate') }}/assets/img/product/product11.jpg" alt=""></a>
-                            <div class="label_product">
-                                <span class="label_sale">-57%</span>
-                            </div>
+                            <a class="primary_img" href="product-details.html"><img src="{{ asset($item->thumb_image_1) }}" alt=""></a>
+                            <a class="secondary_img" href="product-details.html"><img src="{{ asset($item->thumb_image_2) }}" alt=""></a>
+                           
 
-                            <div class="action_links">
-                                <ul>
-                                    <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
-                                    <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
-                                    <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
-                                </ul>
-                            </div>
+                           
                         </div>
                         <div class="product_content">
                           
                             <div class="product_footer d-flex align-items-center">
                                 <div class="price_box">
-                                    <span class="regular_price">$180.00</span>
+                                    @if ($item->discount !=null)
+                                    <span class="current_price">{{$item->discount}}  ₼</span>
+                                    <span class="old_price">{{$item->price}} ₼</span>
+                                    @else
+                                    <div class="price_box">
+                                        <span class="regular_price">{{$item->price}} ₼</span>
+                                    </div>
+                                    @endif
+                                   
                                 </div>
                                 <div class="add_to_cart">
                                     <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
@@ -189,7 +189,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- @endforeach --}}
+                    @endforeach
 
 
 

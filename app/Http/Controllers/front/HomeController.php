@@ -74,12 +74,14 @@ class HomeController extends Controller
         return view('front.products.index', compact('products','brends'));
     }
     public function productDetail($slug){
-        $product = Product::with('categories')->where('slug', $slug)->where('status',1)->first() ?? abort(404);
-       /*  dd($product->categories); */
+        $product = Product::with('categories.category_prods')->where('slug', $slug)->where('status',1)->first() ?? abort(404);
+        $similar_products = $product->categories->pluck('category_prods')->flatten()->unique('id')->take(10);
+   
+      
         $images = ProductImage::where('product_id',$product->id)->get();
        $product_files =ProductFile::where('product_id',$product->id)->get();
 
-        return view('front.products.product',compact('product','images','product_files'));
+        return view('front.products.product',compact('product','images','product_files','similar_products'));
     }
 
     public function filter(Request $request){
