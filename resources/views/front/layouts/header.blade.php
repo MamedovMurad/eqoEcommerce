@@ -136,7 +136,7 @@
                         <a href="{{route('cart')}}">View cart</a>
                     </div>
                     <div class="cart_button">
-                        <a class="active" href="checkout.html">Checkout</a>
+                        <a class="active" href="{{ route('checkout') }}">Checkout</a>
                     </div>
     
                 </div>
@@ -195,7 +195,7 @@
                                     <li><a href="#">Xəbərlər <i class="fa fa-angle-down"></i></a>
                                         <ul class="sub_menu pages">
                                             @foreach ($news_categories as $item)
-                                            <li><a href="{{route('project.category',$item->slug)}}">{{$item->translate(App::getLocale())->title}}</a></li>
+                                            <li><a href="{{route('news',$item->slug)}}">{{$item->translate(App::getLocale())->title}}</a></li>
                                             @endforeach
                                            
                                           
@@ -315,7 +315,7 @@
                                 <li class="menu-item-has-children">
                                     <a href="#">blog</a>
                                     <ul class="sub-menu">
-                                        <li><a href="{{route('news')}}">blog</a></li>
+                                        <li><a href="">blog</a></li>
                                      
                                     </ul>
 
